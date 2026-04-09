@@ -293,3 +293,5 @@
     padding: 7px 12px;
   }
 }
+.topicCard--link { text-decoration: none; color: inherit; }
+.brandSection { padding-top: 34px; }
