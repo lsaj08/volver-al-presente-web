@@ -116,7 +116,7 @@ export default function Contacto() {
                       className="btn btn-ghost small"
                       href="https://www.google.com/maps/search/?api=1&query=Barrio%20Coraz%C3%B3n%20de%20Jes%C3%BAs%2C%20Heredia%2C%20Costa%20Rica"
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                     >
                       <PinIcon /> Cómo llegar
                     </a>
@@ -136,7 +136,7 @@ export default function Contacto() {
                       className="btn btn-ghost small"
                       href="https://www.google.com/maps/search/?api=1&query=Barrio%20Gonz%C3%A1lez%20Lahmann%2C%20San%20Jos%C3%A9%2C%20Costa%20Rica"
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                     >
                       <PinIcon /> Cómo llegar
                     </a>

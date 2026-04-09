@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://volveralpresente.cr/sitemap.xml
