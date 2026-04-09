@@ -364,3 +364,11 @@ export const SERVICE_AREAS = [
     relatedSlugs: ["terapia-ansiedad", "terapia-trauma"],
   },
 ];
+
+export const BRAND_VALUES = [
+  "Calidez y humanidad",
+  "Innovación, ciencia y excelencia",
+  "Conexión y comunidad",
+  "Volver al Presente",
+  "Ética y transparencia",
+];
