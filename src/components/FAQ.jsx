@@ -4,9 +4,13 @@ function Item({ q, a, isOpen, onToggle }) {
   return (
     <div className="faqItem">
       <button className="faqQ" onClick={onToggle} aria-expanded={isOpen}>
-        <span className="faqDot" aria-hidden="true">✓</span>
+        <span className="faqDot" aria-hidden="true">
+          ✓
+        </span>
         <span>{q}</span>
-        <span className={`chev ${isOpen ? "is-open" : ""}`} aria-hidden="true">▾</span>
+        <span className={`chev ${isOpen ? "is-open" : ""}`} aria-hidden="true">
+          ▾
+        </span>
       </button>
       {isOpen && <div className="faqA">{a}</div>}
     </div>
@@ -18,16 +22,28 @@ export default function FAQ() {
 
   const items = [
     {
-      q: "¿Cómo agendo una cita?",
-      a: "Podés escribir por WhatsApp y coordinamos horario. Si preferís, también podés llamar o dejar un mensaje en el formulario.",
+      q: "¿Cómo agendar terapia con Marcela Zamora?",
+      a: "Podés escribir por WhatsApp o reservar en agenda online. Si tenés dudas sobre qué servicio elegir, podés iniciar con un mensaje breve y lo orientamos juntas.",
     },
     {
-      q: "¿Ofreces terapia solo virtual o también presencial?",
-      a: "Ofrezco modalidad virtual y presencial (según disponibilidad de sede). Lo confirmamos al agendar.",
+      q: "¿La terapia es virtual, presencial o ambas?",
+      a: "Se ofrece modalidad virtual y presencial en Costa Rica (según disponibilidad). En el primer contacto te indico qué opciones están habilitadas.",
     },
     {
-      q: "¿Cuál es el costo de una sesión?",
-      a: "El costo puede variar por modalidad y tipo de proceso. Te lo comparto por WhatsApp al confirmar tu cita.",
+      q: "¿Cuánto dura una sesión psicológica?",
+      a: "Generalmente la sesión dura alrededor de 50 minutos. La frecuencia se acuerda según tus objetivos y momento terapéutico.",
+    },
+    {
+      q: "¿En qué situaciones conviene consultar?",
+      a: "Si hay ansiedad, estrés, tristeza persistente, trauma, conflictos de autoestima, límites o relación con la comida/cuerpo, consultar puede ayudarte a recuperar claridad y recursos.",
+    },
+    {
+      q: "¿Cuánto tiempo dura un proceso terapéutico?",
+      a: "No hay una duración única. Depende de tu motivo de consulta, objetivos y ritmo. Se revisan avances periódicamente para que el proceso tenga dirección.",
+    },
+    {
+      q: "¿Cómo saber si este espacio es para mí?",
+      a: "Si buscás un espacio cálido, ético y basado en evidencia para entender lo que te pasa y trabajar cambios concretos, es un buen punto de partida.",
     },
   ];
 
