@@ -2,7 +2,12 @@ import React, { useMemo } from "react";
 import { Link } from "react-router-dom";
 import usePageMeta from "../hooks/usePageMeta.js";
 import FAQ from "../components/FAQ.jsx";
-import { CONTACT, HOME_CONTENT, SERVICE_AREAS, WHATSAPP_DEFAULT_TEXT } from "../data/content.js";
+import {
+  BRAND_VALUES,
+  CONTACT,
+  SERVICE_AREAS,
+  WHATSAPP_DEFAULT_TEXT,
+} from "../data/content.js";
 import "../styles/home.css";
 import "../styles/internal.css";
 import heroPic from "../assets/banner.jpeg";
@@ -38,14 +43,36 @@ function PhoneIcon({ className }) {
   );
 }
 
-function TopicCard({ topic }) {
+function HeadIcon({ className }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <circle cx="12" cy="7" r="4" fill="currentColor" />
+      <path d="M8 12c0 3 8 3 8 0v5H8v-5Z" fill="currentColor" />
+    </svg>
+  );
+}
+
+function HeartIcon({ className }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M12 21s-7-4.5-7-10a5 5 0 0 1 10 0 5 5 0 0 1 10 0c0 5.5-7 10-7 10Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
+function TopicCard({ topic, index }) {
+  const colours = ["var(--teal)", "var(--magenta)", "var(--purple)"];
+  const Icon = index % 2 === 0 ? HeadIcon : HeartIcon;
+
   return (
     <Link className="topicCard topicCard--link" to={`/${topic.slug}`}>
-      <div className="topicCard__iconWrapper">
-        <span className="topicCard__chip">{topic.primaryKeyword}</span>
+      <div className="topicCard__iconWrapper" style={{ backgroundColor: colours[index % 3] }}>
+        <Icon className="topicCard__icon" />
       </div>
       <span className="topicCard__label">{topic.shortTitle}</span>
-      <small>{topic.subtitle}</small>
     </Link>
   );
 }
@@ -56,9 +83,10 @@ export default function Home() {
     return `https://wa.me/${CONTACT.waNumber}?text=${text}`;
   }, []);
 
-  usePageMeta(HOME_CONTENT.seoTitle, HOME_CONTENT.seoDescription, {
-    canonicalPath: "/",
-  });
+  usePageMeta(
+    "Volver al Presente | Psicóloga Marcela Zamora",
+    "Espacio de acompañamiento psicológico para ansiedad, autoestima, trauma, depresión y bienestar emocional."
+  );
 
   return (
     <main>
@@ -66,8 +94,8 @@ export default function Home() {
         <div className="container heroHome__inner">
           <div className="heroHome__copy">
             <div className="heroHome__titleWrapper">
-              <h1 className="heroHome__title">{HOME_CONTENT.heroTitle}</h1>
-              <p className="heroHome__subtitle">{HOME_CONTENT.heroSubtitle}</p>
+              <h1 className="heroHome__title">Te acompaño a volver al presente con bienestar emocional</h1>
+              <p className="heroHome__subtitle">Psicóloga Marcela Zamora</p>
             </div>
             <div className="heroHome__cta">
               <a className="btn btn-primary" href={waLink} target="_blank" rel="noreferrer">
@@ -76,9 +104,6 @@ export default function Home() {
               <a className="btn btn-secondary" href={CONTACT.bookingUrl} target="_blank" rel="noreferrer">
                 <PhoneIcon className="icon" /> Agendar sesión
               </a>
-              <Link className="btn btn-ghost" to="/servicios">
-                Ver servicios de psicología
-              </Link>
             </div>
           </div>
 
@@ -88,101 +113,65 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section brandSection">
-        <div className="container infoGrid">
-          <article className="card sectionCard">
-            <h2>{HOME_CONTENT.valueTitle}</h2>
-            <p>{HOME_CONTENT.valueText}</p>
-            <div className="inlineLinks">
-              <Link to="/sobre-mi">Conocer a Marcela Zamora</Link>
-              <Link to="/contacto">Agendar terapia</Link>
-            </div>
-          </article>
-
-          <article className="card sectionCard">
-            <h2>Áreas de acompañamiento terapéutico</h2>
-            <p>{HOME_CONTENT.areasIntro}</p>
-            <ul>
-              {SERVICE_AREAS.map((service) => (
-                <li key={service.slug}>
-                  <Link to={`/${service.slug}`}>{service.title}</Link>
-                </li>
-              ))}
-            </ul>
-          </article>
-        </div>
-      </section>
-
       <section className="topics">
         <div className="container topics__inner">
-          <div className="topics__list topics__list--cards">
-            {SERVICE_AREAS.map((topic) => (
-              <TopicCard key={topic.slug} topic={topic} />
+          <div className="topics__list">
+            {SERVICE_AREAS.map((topic, idx) => (
+              <TopicCard key={topic.slug} topic={topic} index={idx} />
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section lists">
+      <section className="section brandSection">
         <div className="container infoGrid">
           <article className="card sectionCard">
-            <h2>Cómo trabajo en psicoterapia</h2>
-            <ul>
-              <li>Calidez primero: el vínculo terapéutico como base de seguridad.</li>
-              <li>Proceso basado en evidencia, con herramientas clínicas aplicables.</li>
-              <li>Objetivos claros para que cada sesión tenga dirección.</li>
-              <li>Cuidado integral de emociones, cuerpo y contexto de vida.</li>
-            </ul>
-          </article>
-          <article className="card sectionCard">
-            <h2>Qué podés esperar al empezar</h2>
+            <h2>Una terapia centrada en vos</h2>
             <p>
-              En la primera sesión exploramos tu motivo de consulta y definimos
-              una hoja de ruta inicial. No necesitás llegar con todo claro: el
-              proceso se construye paso a paso.
+              En Volver al Presente vas a encontrar un espacio profesional y humano para comprender
+              lo que estás viviendo, ordenar emociones y avanzar con herramientas prácticas.
             </p>
-            <p>
-              Si venís por ansiedad, trauma, depresión o estrés, trabajamos desde
-              herramientas concretas para que recuperés presencia y capacidad de respuesta.
-            </p>
+            <Link className="btn btn-secondary" to="/sobre-mi">
+              Conocer enfoque terapéutico
+            </Link>
           </article>
-        </div>
-      </section>
 
-      <section className="section mutedSection">
-        <div className="container singleColumn">
           <article className="card sectionCard">
-            <h2>{HOME_CONTENT.authorityTitle}</h2>
+            <h2>Valores que guían el proceso</h2>
             <ul>
-              {HOME_CONTENT.authorityPoints.map((point) => (
-                <li key={point}>{point}</li>
+              {BRAND_VALUES.map((value) => (
+                <li key={value}>{value}</li>
               ))}
             </ul>
           </article>
         </div>
       </section>
 
-      <section className="section faqWrapper">
-        <div className="container">
-          <h2 className="sectionTitle">Preguntas frecuentes sobre terapia psicológica</h2>
-          <FAQ />
+      <section className="section lists">
+        <div className="container lists__inner">
+          <div className="listSection">
+            <h3>Cómo trabajo</h3>
+            <ul>
+              <li>Escucha empática y confidencial.</li>
+              <li>Objetivos claros y proceso personalizado.</li>
+              <li>Herramientas aplicables a tu vida diaria.</li>
+            </ul>
+          </div>
+          <div className="listSection">
+            <h3>Qué esperar en la primera sesión</h3>
+            <ul>
+              <li>Explorar tu motivo de consulta y contexto.</li>
+              <li>Definir prioridades y primeros pasos.</li>
+              <li>Salir con mayor claridad y contención.</li>
+            </ul>
+          </div>
         </div>
       </section>
 
-      <section className="section mutedSection">
-        <div className="container singleColumn">
-          <article className="card sectionCard ctaCard">
-            <h2>{HOME_CONTENT.finalCtaTitle}</h2>
-            <p>{HOME_CONTENT.finalCtaText}</p>
-            <div className="innerHero__cta">
-              <a className="btn btn-primary" href={waLink} target="_blank" rel="noreferrer">
-                Escribir por WhatsApp
-              </a>
-              <Link className="btn btn-secondary" to="/contacto">
-                Ver contacto
-              </Link>
-            </div>
-          </article>
+      <section className="section faqWrapper">
+        <div className="container">
+          <h2 className="sectionTitle">Preguntas Frecuentes</h2>
+          <FAQ />
         </div>
       </section>
     </main>

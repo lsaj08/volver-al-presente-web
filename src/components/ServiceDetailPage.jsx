@@ -45,13 +45,12 @@ export default function ServiceDetailPage({ slug }) {
     <main>
       <section className="innerHero">
         <div className="container innerHero__content">
-          <span className="sub">Psicoterapia en Costa Rica</span>
+          <span className="sub">Acompañamiento psicológico</span>
           <h1>{service.title}</h1>
           <p>{service.subtitle}</p>
-          <p className="innerHero__intro">{service.intro}</p>
           <div className="innerHero__cta">
             <a className="btn btn-primary" href={waLink} target="_blank" rel="noreferrer">
-              {service.ctaLabel}
+              Escribir por WhatsApp
             </a>
             <a
               className="btn btn-secondary"
@@ -65,37 +64,43 @@ export default function ServiceDetailPage({ slug }) {
         </div>
       </section>
 
-      <section className="section mutedSection">
-        <div className="container singleColumn">
-          <article className="card sectionCard quoteCard">
-            <h2>Una imagen para entender lo que te pasa</h2>
-            <p>{service.metaphor}</p>
-          </article>
-        </div>
-      </section>
-
       <section className="section">
         <div className="container infoGrid">
           <article className="card sectionCard">
-            <h2>¿Es para vos esta terapia?</h2>
+            <h2>¿En qué consiste?</h2>
+            <p>{service.intro}</p>
+          </article>
+
+          <article className="card sectionCard">
+            <h2>¿Es para vos?</h2>
             <ul>
               {service.isForYou.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
           </article>
+        </div>
+      </section>
 
+      <section className="section mutedSection">
+        <div className="container singleColumn">
           <article className="card sectionCard">
-            <h2>¿Cómo impacta en tu vida?</h2>
+            <h2>Impacto en tu bienestar</h2>
             <p>{service.impact}</p>
           </article>
+
+          <div className="centerCta">
+            <a className="btn btn-primary" href={waLink} target="_blank" rel="noreferrer">
+              Coordinar por WhatsApp
+            </a>
+          </div>
         </div>
       </section>
 
       <section className="section">
         <div className="container infoGrid">
           <article className="card sectionCard">
-            <h2>Cómo se trabaja en sesión</h2>
+            <h2>Cómo se trabaja</h2>
             <ul>
               {service.howWeWork.map((item) => (
                 <li key={item}>{item}</li>
@@ -104,7 +109,7 @@ export default function ServiceDetailPage({ slug }) {
           </article>
 
           <article className="card sectionCard">
-            <h2>Qué te podés llevar del proceso</h2>
+            <h2>Qué te llevás del proceso</h2>
             <ul>
               {service.outcomes.map((item) => (
                 <li key={item}>{item}</li>
@@ -116,28 +121,8 @@ export default function ServiceDetailPage({ slug }) {
 
       <section className="section mutedSection">
         <div className="container singleColumn">
-          <article className="card sectionCard ctaCard">
-            <h2>Podés dar el primer paso hoy</h2>
-            <p>
-              Si este servicio se parece a lo que estás viviendo, coordinemos una
-              primera cita. No necesitás llegar con todo resuelto para comenzar.
-            </p>
-            <div className="innerHero__cta">
-              <a className="btn btn-primary" href={waLink} target="_blank" rel="noreferrer">
-                Escribir por WhatsApp
-              </a>
-              <Link className="btn btn-secondary" to="/contacto">
-                Ver canales de contacto
-              </Link>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container singleColumn">
           <article className="card sectionCard">
-            <h2>Preguntas frecuentes</h2>
+            <h2>FAQ rápida</h2>
             <div className="faqSimple">
               {service.faq.map((item) => (
                 <div key={item.q}>
@@ -148,32 +133,15 @@ export default function ServiceDetailPage({ slug }) {
             </div>
           </article>
 
-          <article className="card sectionCard relatedCard">
-            <h2>Enlaces útiles para continuar</h2>
-            <div className="relatedLinks">
-              <Link className="btn btn-ghost" to="/servicios">
-                Ver todos los servicios
-              </Link>
-              <Link className="btn btn-ghost" to="/contacto">
-                Ir a contacto
-              </Link>
-              {relatedServices.map((item) => (
-                <Link key={item.slug} className="btn btn-ghost" to={`/${item.slug}`}>
-                  {item.shortTitle}
-                </Link>
-              ))}
-            </div>
-          </article>
-
           <article className="card sectionCard ctaCard">
-            <h2>¿Querés iniciar este proceso terapéutico?</h2>
+            <h2>¿Querés empezar este proceso?</h2>
             <p>
-              Estoy para acompañarte con calidez humana, ética profesional y
-              herramientas basadas en evidencia.
+              Si sentís que este acompañamiento es para vos, escribime y vemos la
+              mejor modalidad para iniciar.
             </p>
             <div className="innerHero__cta">
               <a className="btn btn-primary" href={waLink} target="_blank" rel="noreferrer">
-                {service.ctaLabel}
+                Escribir por WhatsApp
               </a>
               <a
                 className="btn btn-secondary"

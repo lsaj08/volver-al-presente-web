@@ -129,8 +129,8 @@ export default function Contacto() {
 
               <div className="card locationCard">
                 <div className="locationCard__info">
-                  <div className="locationTitle">Atención presencial en San José</div>
-                  <div className="locationSub">Barrio González Lahmann, Catedral, San José</div>
+                  <div className="locationTitle">Barrio González Lahmann</div>
+                  <div className="locationSub">Catedral, San José, Costa Rica</div>
                   <div className="locationActions">
                     <a
                       className="btn btn-ghost small"
@@ -149,23 +149,19 @@ export default function Contacto() {
             </div>
 
             <div className="card faqCard">
-              <div className="h3">Preguntas frecuentes antes de agendar</div>
+              <div className="h3">Preguntas Frecuentes</div>
               <div className="hr" />
               <FAQ />
             </div>
           </div>
 
           <div className="stack">
-            <h2 className="h2 sectionTitle">Canales de contacto reales</h2>
+            <h2 className="h2 sectionTitle">Canales de contacto</h2>
 
             <div className="card formCard">
               <p className="muted">
-                Actualmente este sitio no tiene formulario conectado a backend.
-                Para responderte rápido, priorizamos WhatsApp y agenda online.
-              </p>
-              <p className="muted">
-                Si no sabés qué escribir, podés mandar: “Hola, quiero iniciar
-                terapia y me gustaría orientación”.
+                Por ahora no hay formulario conectado a backend. Para una respuesta más rápida,
+                escribime por WhatsApp o agendá directamente tu sesión.
               </p>
               <a className="btn btn-primary formBtn" href={waLink} target="_blank" rel="noreferrer">
                 <WhatsIcon /> Escribir por WhatsApp
