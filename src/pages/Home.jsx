@@ -1,43 +1,15 @@
 import React, { useMemo } from "react";
-
-// The home page component for Volver al Presente.
-//
-// This file defines the structure and behaviour of the home page shown in the
-// reference mock‑up. It reuses the existing Header, Footer and FAQ
-// components (which you should have in your project from the contact page) and
-// introduces additional UI elements: a hero section with a call‑to‑action,
-// a scrollable row of therapeutic topic cards, explanatory lists describing
-// how the therapist works and what to expect from a first session, a set of
-// location cards and a FAQ. To keep things modular the icons used in this
-// file live next to the components that require them.
-
-// NOTE: You may need to adjust import paths depending on where you place
-// this file relative to your components. In a typical React+Vite project
-// these would live under src/components or src/pages.
-import Footer from "../components/Footer.jsx";
+import { Link } from "react-router-dom";
+import usePageMeta from "../hooks/usePageMeta.js";
 import FAQ from "../components/FAQ.jsx";
-
-// Import the styles for this page. When you integrate this file into a
-// React+Vite project place home.css next to this component and adjust
-// the path accordingly if needed.
+import { CONTACT, HOME_CONTENT, SERVICE_AREAS, WHATSAPP_DEFAULT_TEXT } from "../data/content.js";
 import "../styles/home.css";
+import "../styles/internal.css";
 import heroPic from "../assets/banner.jpeg";
 
-// Constants for phone numbers and WhatsApp configuration. Feel free to
-// customise these values to match your real contact information.
-const PHONE_DISPLAY = "+506 8565 0659";
-const PHONE_TEL = "50685650659";
-const WA_NUMBER = "50685650659";
-
-// WhatsApp icon. Drawn with simple shapes to avoid external dependencies.
 function WhatsIcon({ className }) {
   return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path
         d="M12 21a9 9 0 0 1-4.3-1.1L3 21l1.2-4.6A9 9 0 1 1 12 21Z"
         stroke="currentColor"
@@ -53,15 +25,9 @@ function WhatsIcon({ className }) {
   );
 }
 
-// Phone icon used on call buttons.
 function PhoneIcon({ className }) {
   return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path
         d="M8 3h3l1.5 5-2 1.2c1 2.3 2.8 4.2 5.3 5.3L17 13l4 1.5V18c0 1.1-.9 2-2 2h-1C9.7 20 4 14.3 4 7V6c0-1.1.9-2 2-2Z"
         stroke="currentColor"
@@ -72,308 +38,153 @@ function PhoneIcon({ className }) {
   );
 }
 
-// Tick icon used in lists.
-function CheckIcon({ className }) {
+function TopicCard({ topic }) {
   return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M20 6 9 17l-5-5"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-// A simple head silhouette icon. Used for several of the topic cards.
-function HeadIcon({ className }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
-      <circle cx="12" cy="7" r="4" fill="currentColor" />
-      <path
-        d="M8 12c0 3 8 3 8 0v5H8v-5Z"
-        fill="currentColor"
-      />
-    </svg>
-  );
-}
-
-// A simple heart icon. Used on some topic cards.
-function HeartIcon({ className }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M12 21s-7-4.5-7-10a5 5 0 0 1 10 0 5 5 0 0 1 10 0c0 5.5-7 10-7 10Z"
-        fill="currentColor"
-      />
-    </svg>
-  );
-}
-
-// A self‑esteem icon: a head with a small heart.
-function SelfIcon({ className }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
-      <circle cx="12" cy="7" r="4" fill="currentColor" />
-      <path
-        d="M8 12c0 3 8 3 8 0v5H8v-5Z"
-        fill="currentColor"
-      />
-      <path
-        d="M16.5 5.5a1.7 1.7 0 1 0-3.4 0c0 .9.7 1.6 1.7 2.4.9-.8 1.7-1.5 1.7-2.4Z"
-        fill="currentColor"
-      />
-    </svg>
-  );
-}
-
-// Data describing each therapeutic topic card. Each entry defines a
-// label and an associated icon component. Feel free to expand or modify
-// this list to cover other areas of your practice.
-const TOPICS = [
-  { id: "ansiedad", label: "Ansiedad", icon: HeadIcon },
-  { id: "imagen-corporal", label: "Imagen Corporal", icon: HeartIcon },
-  { id: "trauma-duelo", label: "Trauma y Duelo", icon: HeartIcon },
-  { id: "autoestima-limites", label: "Autoestima y Límites", icon: SelfIcon },
-  { id: "estres", label: "Estrés y Perfeccionismo", icon: HeartIcon },
-  { id: "depresion", label: "Depresión", icon: HeadIcon },
-];
-
-// A single card in the topics row. Displays an icon inside a coloured
-// circle and a label below. Colours alternate based on the card index
-// using CSS variables defined in your global stylesheet.
-function TopicCard({ label, Icon, index }) {
-  // Determine a background colour for the icon based on index
-  const colours = ["var(--teal)", "var(--magenta)", "var(--purple)"];
-  const bg = colours[index % colours.length];
-  return (
-    <div className="topicCard" role="button" tabIndex={0}>
-      <div
-        className="topicCard__iconWrapper"
-        style={{ backgroundColor: bg }}
-      >
-        <Icon className="topicCard__icon" />
+    <Link className="topicCard topicCard--link" to={`/${topic.slug}`}>
+      <div className="topicCard__iconWrapper">
+        <span className="topicCard__chip">{topic.primaryKeyword}</span>
       </div>
-      <span className="topicCard__label">{label}</span>
-    </div>
-  );
-}
-
-// A single location card. It shows a small photo, title, subtitle and a
-// button linking to Google Maps. For now we use placeholder images via CSS
-// backgrounds; supply your own images via the `image` prop.
-function LocationCard({ title, subtitle, mapsQuery, image }) {
-  // Build a Google Maps link using the API query. When the user clicks
-  // it they will be taken to a map with directions to the address.
-  const mapsLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-    mapsQuery
-  )}`;
-  return (
-    <div className="locationCard">
-      <div
-        className="locationCard__image"
-        style={{ backgroundImage: `url(${image})` }}
-      />
-      <div className="locationCard__info">
-        <div className="locationCard__title">{title}</div>
-        <div className="locationCard__subtitle">{subtitle}</div>
-        <a
-          className="btn btn-secondary btnMap"
-          href={mapsLink}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <PinIcon className="icon" /> Cómo llegar
-        </a>
-      </div>
-    </div>
-  );
-}
-
-// Pin icon used inside location cards.
-function PinIcon({ className }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M12 21s7-4.6 7-11a7 7 0 1 0-14 0c0 6.4 7 11 7 11Z"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinejoin="round"
-      />
-      <circle cx="12" cy="9" r="2.2" fill="currentColor" />
-    </svg>
+      <span className="topicCard__label">{topic.shortTitle}</span>
+      <small>{topic.subtitle}</small>
+    </Link>
   );
 }
 
 export default function Home() {
-  // Compute the WhatsApp link. Use the official wa.me URL scheme and
-  // include a default message for convenience.
   const waLink = useMemo(() => {
-    const text = encodeURIComponent(
-      "Hola, me gustaría agendar una sesión. ¿Qué horarios tenés disponibles?"
-    );
-    return `https://wa.me/${WA_NUMBER}?text=${text}`;
+    const text = encodeURIComponent(WHATSAPP_DEFAULT_TEXT);
+    return `https://wa.me/${CONTACT.waNumber}?text=${text}`;
   }, []);
 
+  usePageMeta(HOME_CONTENT.seoTitle, HOME_CONTENT.seoDescription, {
+    canonicalPath: "/",
+  });
+
   return (
-    <div className="page">
-      <main>
-        {/* Hero section */}
-        <section className="heroHome">
-          <div className="container heroHome__inner">
-            {/* Left side: heading and buttons */}
-            <div className="heroHome__copy">
-              <div className="heroHome__titleWrapper">
-                <h1 className="heroHome__title">
-                  Te acompaño a vivir en bienestar emocional
-                </h1>
-                <p className="heroHome__subtitle">
-                  Volver al Presente con Psicóloga Marcela Zamora
-                </p>
-              </div>
-              <div className="heroHome__cta">
-                <a
-                  className="btn btn-primary"
-                  href={waLink}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <WhatsIcon className="icon" /> Escribir por WhatsApp
-                </a>
-                <a
-                className="btn btn-secondary"
-                href="https://app.hulivida.com/citas/marcela-zamora-arrieta"
-                target="_blank"
-                rel="noopener noreferrer"
-                >
-                  <PhoneIcon className="icon" /> Agendar sesión
-                </a>
-              </div>
+    <main>
+      <section className="heroHome">
+        <div className="container heroHome__inner">
+          <div className="heroHome__copy">
+            <div className="heroHome__titleWrapper">
+              <h1 className="heroHome__title">{HOME_CONTENT.heroTitle}</h1>
+              <p className="heroHome__subtitle">{HOME_CONTENT.heroSubtitle}</p>
             </div>
-            {/* Right side: image of the therapist. Replace the URL with your own photo */}
-            <div className="heroHome__art">
-              <div
-                className="heroHome__image"
-                style={{
-                  backgroundImage:
-                    `url(${heroPic})`,
-                }}
-              />
+            <div className="heroHome__cta">
+              <a className="btn btn-primary" href={waLink} target="_blank" rel="noreferrer">
+                <WhatsIcon className="icon" /> Escribir por WhatsApp
+              </a>
+              <a className="btn btn-secondary" href={CONTACT.bookingUrl} target="_blank" rel="noreferrer">
+                <PhoneIcon className="icon" /> Agendar sesión
+              </a>
+              <Link className="btn btn-ghost" to="/servicios">
+                Ver servicios de psicología
+              </Link>
             </div>
           </div>
-        </section>
 
-        {/* Topics row */}
-        <section className="topics">
-          <div className="container topics__inner">
-            <div className="topics__list">
-              {TOPICS.map((topic, idx) => (
-                <TopicCard
-                  key={topic.id}
-                  label={topic.label}
-                  Icon={topic.icon}
-                  index={idx}
-                />
+          <div className="heroHome__art" aria-hidden="true">
+            <div className="heroHome__image" style={{ backgroundImage: `url(${heroPic})` }} />
+          </div>
+        </div>
+      </section>
+
+      <section className="section brandSection">
+        <div className="container infoGrid">
+          <article className="card sectionCard">
+            <h2>{HOME_CONTENT.valueTitle}</h2>
+            <p>{HOME_CONTENT.valueText}</p>
+            <div className="inlineLinks">
+              <Link to="/sobre-mi">Conocer a Marcela Zamora</Link>
+              <Link to="/contacto">Agendar terapia</Link>
+            </div>
+          </article>
+
+          <article className="card sectionCard">
+            <h2>Áreas de acompañamiento terapéutico</h2>
+            <p>{HOME_CONTENT.areasIntro}</p>
+            <ul>
+              {SERVICE_AREAS.map((service) => (
+                <li key={service.slug}>
+                  <Link to={`/${service.slug}`}>{service.title}</Link>
+                </li>
               ))}
-            </div>
-          </div>
-        </section>
+            </ul>
+          </article>
+        </div>
+      </section>
 
-        {/* Lists: How I work / What to expect */}
-        <section className="section lists">
-          <div className="container lists__inner">
-            <div className="listSection">
-              <h3>Cómo trabajo</h3>
-              <ul>
-                <li>
-                  <CheckIcon className="listIcon" />
-                  Escucha empática
-                </li>
-                <li>
-                  <CheckIcon className="listIcon" />
-                  Técnicas personalizadas
-                </li>
-                <li>
-                  <CheckIcon className="listIcon" />
-                  Espacio seguro y confidencial
-                </li>
-              </ul>
-            </div>
-            <div className="listSection">
-              <h3>Qué esperar en la primera sesión</h3>
-              <ul>
-                <li>
-                  <CheckIcon className="listIcon" />
-                  Conocernos y explorar tu historia
-                </li>
-                <li>
-                  <CheckIcon className="listIcon" />
-                  Establecer objetivos
-                </li>
-                <li>
-                  <CheckIcon className="listIcon" />
-                  Plan de acción inicial
-                </li>
-              </ul>
-            </div>
+      <section className="topics">
+        <div className="container topics__inner">
+          <div className="topics__list topics__list--cards">
+            {SERVICE_AREAS.map((topic) => (
+              <TopicCard key={topic.slug} topic={topic} />
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Locations */}
-        <section className="section locations">
-          <div className="container locations__inner">
-            <LocationCard
-              title="Barrio Corazón de Jesús, Heredia"
-              subtitle="Heredia, Heredia, Costa Rica"
-              mapsQuery="Barrio Corazón de Jesús, Heredia, Costa Rica"
-              // Replace the placeholder with a real photo of this location
-              image="https://images.pexels.com/photos/462331/pexels-photo-462331.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-            />
-            <LocationCard
-              title="Barrio González Lahman, San José"
-              subtitle="Catedral, San José, Costa Rica"
-              mapsQuery="Barrio González Lahman, San José, Costa Rica"
-              image="https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-            />
-          </div>
-        </section>
+      <section className="section lists">
+        <div className="container infoGrid">
+          <article className="card sectionCard">
+            <h2>Cómo trabajo en psicoterapia</h2>
+            <ul>
+              <li>Calidez primero: el vínculo terapéutico como base de seguridad.</li>
+              <li>Proceso basado en evidencia, con herramientas clínicas aplicables.</li>
+              <li>Objetivos claros para que cada sesión tenga dirección.</li>
+              <li>Cuidado integral de emociones, cuerpo y contexto de vida.</li>
+            </ul>
+          </article>
+          <article className="card sectionCard">
+            <h2>Qué podés esperar al empezar</h2>
+            <p>
+              En la primera sesión exploramos tu motivo de consulta y definimos
+              una hoja de ruta inicial. No necesitás llegar con todo claro: el
+              proceso se construye paso a paso.
+            </p>
+            <p>
+              Si venís por ansiedad, trauma, depresión o estrés, trabajamos desde
+              herramientas concretas para que recuperés presencia y capacidad de respuesta.
+            </p>
+          </article>
+        </div>
+      </section>
 
-        {/* FAQ */}
-        <section className="section faqWrapper">
-          <div className="container">
-            <h2 className="sectionTitle">Preguntas Frecuentes</h2>
-            <FAQ />
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </div>
+      <section className="section mutedSection">
+        <div className="container singleColumn">
+          <article className="card sectionCard">
+            <h2>{HOME_CONTENT.authorityTitle}</h2>
+            <ul>
+              {HOME_CONTENT.authorityPoints.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section className="section faqWrapper">
+        <div className="container">
+          <h2 className="sectionTitle">Preguntas frecuentes sobre terapia psicológica</h2>
+          <FAQ />
+        </div>
+      </section>
+
+      <section className="section mutedSection">
+        <div className="container singleColumn">
+          <article className="card sectionCard ctaCard">
+            <h2>{HOME_CONTENT.finalCtaTitle}</h2>
+            <p>{HOME_CONTENT.finalCtaText}</p>
+            <div className="innerHero__cta">
+              <a className="btn btn-primary" href={waLink} target="_blank" rel="noreferrer">
+                Escribir por WhatsApp
+              </a>
+              <Link className="btn btn-secondary" to="/contacto">
+                Ver contacto
+              </Link>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
   );
 }

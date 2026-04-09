@@ -1,26 +1,24 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import logo from "../assets/logo-marcela.png";
 import "../styles/contacto.css";
 
-// Componente opcional para los blobs decorativos (puedes usarlo en lugar del logo)
-function LogoMark() {
-  return (
-    <div className="logoMark" aria-hidden="true">
-      <span className="blob b1" />
-      <span className="blob b2" />
-    </div>
-  );
-}
+const mainLinks = [
+  { to: "/", label: "Inicio", end: true },
+  { to: "/servicios", label: "Servicios" },
+  { to: "/sobre-mi", label: "Sobre mí" },
+  { to: "/psi-cositas", label: "Psi-Cositas" },
+  { to: "/talleres", label: "Talleres" },
+  { to: "/contacto", label: "Contacto" },
+];
 
-// Componente Header
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <header className="topbar">
       <div className="container topbar__inner">
-        {/* Marca y logo */}
-        <div className="brand">
-          {/* Si prefieres los blobs decorativos en lugar del logo, cambia por <LogoMark /> */}
+        <NavLink className="brand" to="/" onClick={() => setIsOpen(false)}>
           <img
             className="brand__logo"
             src={logo}
@@ -30,27 +28,30 @@ export default function Header() {
             <div className="brand__name h3">Volver al Presente</div>
             <div className="brand__sub sub">Psicóloga Marcela Zamora</div>
           </div>
-        </div>
+        </NavLink>
 
-        {/* Navegación principal */}
-        <nav className="nav">
-          <Link className="nav__link" to="/">Inicio</Link>
-          <Link className="nav__link" to="/servicios">Servicios</Link>
-          <Link className="nav__link" to="/sobre-mi">Sobre mí</Link>
-          <Link className="nav__link" to="/psi-cositas">Psi-Cositas</Link>
-          <Link className="nav__link" to="/talleres">Talleres</Link>
-          <Link className="nav__link" to="/contacto">Contacto</Link>
+        <nav className={`nav ${isOpen ? "is-open" : ""}`}>
+          {mainLinks.map((item) => (
+            <NavLink
+              key={item.to}
+              className={({ isActive }) => `nav__link ${isActive ? "is-active" : ""}`}
+              to={item.to}
+              end={item.end}
+              onClick={() => setIsOpen(false)}
+            >
+              {item.label}
+            </NavLink>
+          ))}
         </nav>
 
-        {/* Acciones opcionales (iconos de búsqueda y menú) */}
         <div className="topbar__actions">
-          <button className="pill topIconBtn" aria-label="Buscar">
-            <svg className="icon" viewBox="0 0 24 24" fill="none">
-              <path d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z" stroke="currentColor" strokeWidth="2" />
-              <path d="M16.3 16.3 21 21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-          </button>
-          <button className="pill topIconBtn" aria-label="Menú">
+          <button
+            type="button"
+            className="pill topIconBtn"
+            aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={isOpen}
+            onClick={() => setIsOpen((prev) => !prev)}
+          >
             <svg className="icon" viewBox="0 0 24 24" fill="none">
               <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
             </svg>
