@@ -31,7 +31,7 @@ export default function Footer() {
             className="btn btn-secondary small"
             href={`https://wa.me/${CONTACT.waNumber}`}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noreferrer"
           >
             WhatsApp
           </a>
