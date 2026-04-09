@@ -13,6 +13,10 @@ export default function Footer() {
         </div>
 
         <div className="footer__center">
+          <NavLink className="footerLink" to="/contacto">
+            Contacto
+          </NavLink>
+          <span className="footerSep">•</span>
           <NavLink className="footerLink" to="/politica-de-privacidad">
             Política de Privacidad
           </NavLink>

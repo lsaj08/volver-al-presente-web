@@ -13,223 +13,354 @@ export const SERVICE_AREAS = [
     slug: "terapia-ansiedad",
     title: "Terapia para ansiedad",
     shortTitle: "Ansiedad",
-    subtitle: "Recuperá calma, claridad y herramientas para regular tu día a día.",
+    subtitle:
+      "Acompañamiento para ansiedad generalizada, ansiedad social y sobrepensamiento en Costa Rica.",
     intro:
-      "Trabajamos juntas para comprender cómo se manifiesta la ansiedad en tu vida y construir estrategias realistas para volver al presente con mayor seguridad.",
+      "La ansiedad no es debilidad: es una alarma interna que se activó para protegerte. El problema aparece cuando esa alarma queda encendida aun cuando no hay peligro inmediato y tu cuerpo vive en alerta constante.",
+    metaphor:
+      "Muchos pacientes lo describen como una alarma de humo que suena todo el tiempo: aunque no haya incendio, la mente sigue buscando señales de amenaza.",
     isForYou: [
-      "Sentís preocupación constante o dificultad para desconectar.",
-      "Tenés síntomas físicos como tensión, insomnio o taquicardia.",
-      "Evitás situaciones por miedo o sobreanálisis.",
+      "Vivís con preocupación constante o anticipación catastrófica.",
+      "Sentís ansiedad social, miedo al juicio o evitación de situaciones cotidianas.",
+      "Entrás en bucles de rumia, chequeo, dudas de salud o compulsiones para bajar angustia.",
+      "La ansiedad está afectando tu descanso, tus vínculos y tus decisiones.",
     ],
     impact:
-      "La ansiedad sostenida agota tu energía y afecta vínculos, descanso y concentración. Con acompañamiento adecuado, podés aprender a regularte sin exigirte perfección.",
+      "Cuando la ansiedad se vuelve crónica, se estrecha tu vida: dejás de disfrutar, evitás experiencias y tomás decisiones desde el miedo. La terapia para ansiedad busca recuperar libertad, regulación y confianza.",
     howWeWork: [
-      "Psicoeducación sobre ansiedad y sistema nervioso.",
-      "Técnicas de regulación emocional y anclaje corporal.",
-      "Plan personalizado para reducir evitación y recuperar confianza.",
+      "Psicoeducación: comprender cómo funciona la ansiedad generalizada y social.",
+      "Regulación emocional y corporal para bajar activación fisiológica.",
+      "Trabajo con sobrepensamiento, rumiación y conductas de evitación.",
+      "Exposición gradual y compasiva a situaciones relevantes.",
+      "Plan de herramientas para sostener avances fuera de sesión.",
     ],
     outcomes: [
-      "Recursos concretos para momentos de activación.",
-      "Mayor claridad para tomar decisiones.",
-      "Una rutina emocional más estable y compasiva.",
+      "Menos urgencia interna y más sensación de control.",
+      "Mayor claridad mental para decidir sin parálisis.",
+      "Más presencia en vínculos, trabajo y descanso.",
+      "Capacidad de responder en vez de reaccionar automáticamente.",
     ],
     faq: [
       {
-        q: "¿La ansiedad se puede tratar en terapia?",
-        a: "Sí. Con trabajo constante y herramientas adecuadas se puede reducir su intensidad e impacto en tu vida cotidiana.",
+        q: "¿Cómo tratar la ansiedad sin sentir que estoy fallando?",
+        a: "En terapia trabajamos desde comprensión, no desde culpa. Aprendés a identificar disparadores, regular el cuerpo y desmontar patrones de sobrealerta de forma gradual.",
       },
       {
-        q: "¿Cuánto tarda en verse avance?",
-        a: "Depende de cada proceso. Desde las primeras sesiones suelen aparecer pequeños cambios en regulación y comprensión.",
+        q: "¿Se puede trabajar ansiedad generalizada y ansiedad social en el mismo proceso?",
+        a: "Sí. Frecuentemente conviven. Diseñamos un plan que atiende tanto la preocupación constante como el miedo al juicio y la evitación social.",
+      },
+      {
+        q: "¿Cuánto tarda en mejorar la ansiedad?",
+        a: "No hay tiempos únicos, pero muchas personas notan alivio temprano al incorporar herramientas de regulación y hábitos terapéuticos sostenidos.",
       },
     ],
+    ctaLabel: "Quiero iniciar terapia para ansiedad",
+    seoTitle:
+      "Terapia para ansiedad en Costa Rica | Psicóloga Marcela Zamora",
+    seoDescription:
+      "Psicóloga para ansiedad en Costa Rica. Tratamiento de ansiedad generalizada, ansiedad social, rumia y evitación con enfoque basado en evidencia.",
+    primaryKeyword: "terapia para ansiedad",
+    secondaryKeywords: [
+      "ansiedad generalizada",
+      "ansiedad social",
+      "psicóloga ansiedad Costa Rica",
+      "cómo tratar la ansiedad",
+      "terapia ansiedad Costa Rica",
+    ],
+    relatedSlugs: ["estres-perfeccionismo", "terapia-depresion"],
   },
   {
     slug: "imagen-corporal-conducta-alimentaria",
     title: "Imagen corporal y conducta alimentaria",
     shortTitle: "Imagen corporal y alimentación",
     subtitle:
-      "Construí una relación más amable con tu cuerpo, tu alimentación y tu historia.",
+      "Terapia para relación con la comida, culpa corporal y conducta alimentaria.",
     intro:
-      "Este espacio busca acompañarte a salir de la culpa, la exigencia y el juicio corporal, integrando hábitos de cuidado sostenibles y respetuosos.",
+      "Cuando el espejo se vuelve juez y la comida parece enemiga, la vida cotidiana se llena de culpa y autoexigencia. Este espacio terapéutico busca ayudarte a reconstruir una relación más amable con tu cuerpo y tu alimentación.",
+    metaphor:
+      "A veces el juicio corporal se siente como vivir con un alien interno: una voz invasiva que critica, compara y nunca está satisfecha.",
     isForYou: [
-      "Vivís con autocrítica corporal frecuente.",
-      "Tu alimentación está marcada por control rígido o culpa.",
-      "Sentís que tu autoestima depende de tu apariencia.",
+      "Tu imagen corporal ocupa gran parte de tus pensamientos.",
+      "Pasás por ciclos de restricción, atracón y culpa.",
+      "Vivís pendiente de la balanza, la comparación y el control.",
+      "Tu autoestima queda atrapada en cómo te ves o en qué comiste.",
     ],
     impact:
-      "Cuando la relación con el cuerpo se vuelve una lucha, también se afecta el bienestar emocional y social. La terapia permite resignificar esta experiencia.",
+      "La lucha con la imagen corporal y la conducta alimentaria agota emocionalmente, afecta vínculos y limita tu bienestar. La terapia ayuda a salir de la lógica de castigo y recuperar una mirada más humana y sostenible.",
     howWeWork: [
-      "Exploración de creencias corporales y de alimentación.",
-      "Regulación emocional frente a disparadores.",
-      "Construcción de hábitos flexibles de autocuidado.",
+      "Exploración de creencias sobre cuerpo, valor personal y control.",
+      "Regulación emocional frente a culpa, ansiedad y comparación.",
+      "Reconstrucción de hábitos sin cultura de dieta ni rigidez extrema.",
+      "Fortalecimiento de autoestima fuera de la apariencia.",
+      "Coordinación interdisciplinaria con nutrición cuando sea necesario.",
+      "Acompañamiento a familias en procesos donde corresponde.",
     ],
     outcomes: [
-      "Más respeto por tus señales internas.",
-      "Disminución de culpa y exigencia extrema.",
-      "Una base de autoestima menos dependiente de la imagen.",
+      "Menos culpa al comer y menor autojuicio corporal.",
+      "Mayor conexión con señales internas de hambre/saciedad.",
+      "Relación más flexible y respetuosa con el cuerpo.",
+      "Más libertad para vivir sin vigilancia constante.",
     ],
     faq: [
       {
-        q: "¿Necesito diagnóstico para iniciar?",
-        a: "No. Podés empezar si sentís malestar con tu cuerpo o alimentación, aunque no exista un diagnóstico formal.",
+        q: "¿Necesito diagnóstico para trabajar imagen corporal o conducta alimentaria?",
+        a: "No. Si sentís malestar persistente con tu cuerpo, comida o autoimagen, ya hay motivos suficientes para pedir acompañamiento.",
       },
       {
-        q: "¿Se trabaja también autoestima?",
-        a: "Sí. Se aborda de forma integral porque imagen corporal, autovaloración y vínculos suelen estar conectados.",
+        q: "¿La terapia promueve dietas o control estricto?",
+        a: "No. El enfoque prioriza bienestar físico y emocional, alejándose de la cultura de dieta y del castigo corporal.",
+      },
+      {
+        q: "¿Se puede incluir a la familia en algunas etapas?",
+        a: "Sí, cuando es clínicamente útil, se puede orientar a la familia para sostener un entorno más seguro y comprensivo.",
       },
     ],
+    ctaLabel: "Quiero mejorar mi relación con el cuerpo y la comida",
+    seoTitle:
+      "Imagen corporal y conducta alimentaria | Psicóloga Marcela Zamora",
+    seoDescription:
+      "Terapia de imagen corporal y conducta alimentaria en Costa Rica. Acompañamiento para culpa, restricción, atracón y relación con la comida.",
+    primaryKeyword: "imagen corporal",
+    secondaryKeywords: [
+      "conducta alimentaria",
+      "relación con la comida",
+      "terapia imagen corporal",
+      "psicóloga conducta alimentaria",
+    ],
+    relatedSlugs: ["autocuidado-limites-autoestima", "terapia-depresion"],
   },
   {
     slug: "terapia-trauma",
-    title: "Trauma y experiencias difíciles",
-    shortTitle: "Trauma y duelo",
+    title: "Terapia para trauma y experiencias difíciles",
+    shortTitle: "Trauma y experiencias difíciles",
     subtitle:
-      "Un espacio seguro para procesar experiencias dolorosas a tu ritmo.",
+      "Acompañamiento para trauma psicológico, pérdidas y experiencias que dejaron huella.",
     intro:
-      "No se trata de revivir todo de golpe, sino de construir seguridad interna para integrar lo vivido y recuperar presencia en el hoy.",
+      "No siempre trauma significa un solo evento extremo; también puede ser una acumulación de pequeños golpes emocionales que fueron dejando marcas. El objetivo terapéutico es recuperar seguridad interna y capacidad de disfrute.",
+    metaphor:
+      "Trabajarlo se parece a una mudanza: primero estabilizamos la casa, luego abrimos cajas de a una, elegimos qué conservar y qué dejar atrás.",
     isForYou: [
-      "Te cuesta sentirte en calma después de experiencias difíciles.",
-      "Vivís con recuerdos intrusivos, hipervigilancia o bloqueo.",
-      "Sentís que el pasado sigue organizando tus decisiones actuales.",
+      "Te sentís en hipervigilancia o con activación constante.",
+      "Aparecen recuerdos intrusivos, bloqueos o reacciones intensas.",
+      "Viviste pérdidas, abuso, violencia, enfermedad o experiencias difíciles acumuladas.",
+      "Sentís que el pasado sigue definiendo cómo vivís el presente.",
     ],
     impact:
-      "Las experiencias traumáticas pueden afectar confianza, cuerpo y vínculos. Un proceso gradual y cuidado permite reducir reactividad y recuperar agencia.",
+      "El trauma psicológico puede afectar confianza, sueño, vínculos, autoestima y sentido de seguridad. Con un proceso gradual y seguro, es posible integrar la experiencia sin quedar atrapada en ella.",
     howWeWork: [
-      "Estabilización y creación de recursos de seguridad.",
-      "Procesamiento gradual de experiencias significativas.",
-      "Fortalecimiento de límites, red de apoyo y autocuidado.",
+      "Estabilización y recursos de regulación para generar seguridad.",
+      "Procesamiento gradual, sin forzar tiempos ni sobreexposición.",
+      "Trabajo con límites, autocuidado y red de apoyo.",
+      "Integración de herramientas basadas en evidencia, incluyendo Brainspotting cuando corresponde.",
+      "Reconstrucción de confianza en tu capacidad de respuesta.",
     ],
     outcomes: [
-      "Mayor sensación de seguridad y orientación.",
-      "Menor intensidad de recuerdos activadores.",
-      "Más capacidad de conexión con tu presente.",
+      "Menos reactividad frente a recuerdos o disparadores.",
+      "Mayor sensación de seguridad en el cuerpo y en tus vínculos.",
+      "Más libertad para construir proyectos en presente.",
+      "Recuperación progresiva del disfrute y la conexión.",
     ],
     faq: [
       {
-        q: "¿Tengo que contar todo en la primera sesión?",
-        a: "No. El proceso se construye con cuidado. La prioridad es que te sintás segura y acompañada.",
+        q: "¿Tengo que contar todo lo que viví en la primera sesión?",
+        a: "No. En terapia para trauma priorizamos seguridad y ritmo. Primero construimos recursos antes de profundizar en experiencias dolorosas.",
       },
       {
-        q: "¿También se aborda duelo?",
-        a: "Sí, se puede acompañar duelo por pérdidas, cambios vitales o rupturas significativas.",
+        q: "¿Solo se trabaja trauma por eventos graves?",
+        a: "No. También abordamos experiencias difíciles acumuladas, pérdidas y situaciones que dejaron impacto emocional sostenido.",
+      },
+      {
+        q: "¿Se puede trabajar duelo junto con trauma?",
+        a: "Sí. Duelo y trauma pueden coexistir, y el proceso terapéutico puede integrar ambos con cuidado clínico.",
       },
     ],
+    ctaLabel: "Quiero iniciar terapia para trauma",
+    seoTitle:
+      "Terapia para trauma en Costa Rica | Psicóloga Marcela Zamora",
+    seoDescription:
+      "Terapia para trauma psicológico y experiencias difíciles. Acompañamiento seguro y gradual para recuperar confianza, regulación y bienestar emocional.",
+    primaryKeyword: "terapia para trauma",
+    secondaryKeywords: [
+      "trauma psicológico",
+      "experiencias difíciles",
+      "terapia trauma Costa Rica",
+    ],
+    relatedSlugs: ["terapia-ansiedad", "terapia-depresion"],
   },
   {
     slug: "autocuidado-limites-autoestima",
     title: "Autocuidado, límites, autoestima y relaciones",
-    shortTitle: "Límites y autoestima",
+    shortTitle: "Autocuidado, límites y autoestima",
     subtitle:
-      "Fortalecé tu voz interna para vincularte desde el respeto y la claridad.",
+      "Fortalecé tu autoestima, aprendé límites sanos y construí relaciones más cuidadas.",
     intro:
-      "Cuando aprendés a cuidarte sin culpa, también mejoran tus relaciones. Este proceso integra autoestima, límites y comunicación emocional.",
+      "Este proceso terapéutico te ayuda a dejar de vivir para sostener expectativas externas y empezar a construir vínculos más claros, recíprocos y respetuosos con tus necesidades.",
+    metaphor:
+      "Imaginalo como un jardín: el autocuidado es el riego, la autoestima es el suelo, los límites son la cerca con puertas y tus relaciones son plantas vecinas que también necesitan espacio.",
     isForYou: [
-      "Te cuesta decir que no sin sentir culpa.",
-      "Sos muy exigente con vos y minimizás tus necesidades.",
-      "Repetís vínculos que te dejan agotada o confundida.",
+      "Te cuesta decir que no y terminás sobrecargada.",
+      "Sentís culpa cuando te priorizás.",
+      "Repetís vínculos que drenan tu energía.",
+      "Tu autoestima depende de aprobación o rendimiento.",
     ],
     impact:
-      "La ausencia de límites claros suele generar sobrecarga emocional. Trabajar autoestima y autocuidado permite relaciones más recíprocas y sanas.",
+      "Sin límites, aparecen malezas como la autoexigencia y la culpa. También llegan plagas: comentarios hirientes, dinámicas desiguales y desgaste emocional. La terapia te ayuda a cuidar ese jardín interno sin aislarte.",
     howWeWork: [
-      "Identificación de patrones relacionales repetidos.",
-      "Entrenamiento en límites y comunicación asertiva.",
+      "Identificación de patrones relacionales y creencias nucleares.",
+      "Entrenamiento en límites sanos y comunicación asertiva.",
       "Prácticas de autocuidado emocional sostenibles.",
+      "Fortalecimiento de autoestima realista y compasiva.",
+      "Revisión de señales de sequía (desconexión) o encharcamiento (sobrecarga).",
     ],
     outcomes: [
-      "Más claridad para priorizarte sin aislarte.",
-      "Relaciones con mayor equilibrio y respeto.",
-      "Autoestima más estable y realista.",
+      "Más claridad para priorizarte sin culpa.",
+      "Relaciones más sanas y equilibradas.",
+      "Mayor coherencia entre lo que sentís, decís y hacés.",
+      "Autoestima con raíces más estables.",
     ],
     faq: [
       {
-        q: "¿Puedo trabajar solo límites aunque esté bien en otras áreas?",
-        a: "Sí. El proceso se adapta a tu objetivo principal y puede enfocarse en situaciones puntuales.",
+        q: "¿Poner límites implica alejarme de todos?",
+        a: "No. Poner límites sanos no es aislarse: es relacionarte con más claridad, respeto mutuo y cuidado emocional.",
       },
       {
-        q: "¿Se practican herramientas concretas?",
-        a: "Sí, se diseñan ejercicios y guías aplicables a conversaciones y decisiones reales.",
+        q: "¿Cómo trabajar autoestima sin caer en frases vacías?",
+        a: "La autoestima se fortalece con experiencias concretas: decisiones coherentes, límites sostenidos y trato interno más compasivo.",
+      },
+      {
+        q: "¿Este proceso también ayuda en relaciones de pareja o familia?",
+        a: "Sí. Los recursos de límites, comunicación y autocuidado se aplican en pareja, familia, trabajo y amistades.",
       },
     ],
+    ctaLabel: "Quiero trabajar autoestima y límites",
+    seoTitle:
+      "Autoestima, límites y autocuidado emocional | Psicóloga Marcela Zamora",
+    seoDescription:
+      "Terapia para autoestima, límites sanos y relaciones en Costa Rica. Acompañamiento para autocuidado emocional y vínculos más saludables.",
+    primaryKeyword: "autoestima",
+    secondaryKeywords: [
+      "límites sanos",
+      "autocuidado emocional",
+      "relaciones sanas",
+      "terapia autoestima Costa Rica",
+    ],
+    relatedSlugs: ["estres-perfeccionismo", "imagen-corporal-conducta-alimentaria"],
   },
   {
     slug: "estres-perfeccionismo",
-    title: "Estrés, perfeccionismo y rumia",
+    title: "Estrés, perfeccionismo y rumia mental",
     shortTitle: "Estrés y perfeccionismo",
     subtitle:
-      "Dejar de sobrevivir en automático para recuperar bienestar y enfoque.",
+      "Acompañamiento para bajar sobrecarga, sobrepensamiento y autoexigencia.",
     intro:
-      "Acompañamiento para reducir autoexigencia, ordenar prioridades y crear un ritmo más humano y sostenible.",
+      "Si sentís que vivís produciendo, revisando y corriendo, pero nunca alcanza, esta área puede ayudarte. Trabajamos el estrés crónico, el perfeccionismo y la rumia para recuperar energía y dirección.",
+    metaphor:
+      "Muchas personas llegan sintiendo que manejan con el acelerador a fondo y el freno de mano puesto: avanzan, pero a un costo interno altísimo.",
     isForYou: [
-      "Sentís agotamiento constante aunque " +
-      "seguís rindiendo.",
-      "Te cuesta descansar sin culpa.",
-      "Sobrepensás decisiones y errores por largos periodos.",
+      "Sobrepensás decisiones y revisás mil veces por miedo a fallar.",
+      "Procrastinás porque nada parece suficientemente perfecto.",
+      "Te cuesta descansar sin culpa o desconectar la mente.",
+      "Terminás el día agotada, incluso cuando cumpliste con todo.",
     ],
     impact:
-      "El perfeccionismo sostenido erosiona energía y satisfacción. Con estrategias de regulación y organización emocional, se puede recuperar equilibrio.",
+      "El binomio estrés + perfeccionismo desgasta autoestima, salud y vínculos. La terapia permite construir un ritmo más sostenible, reducir la rumia y trabajar desde el principio de lo suficientemente bueno.",
     howWeWork: [
-      "Identificación de detonantes de estrés y ciclos de rumia.",
-      "Herramientas para foco, regulación y descanso efectivo.",
-      "Reencuadre de estándares internos rígidos.",
+      "Mapa de detonantes de estrés y ciclos de sobrepensamiento.",
+      "Priorización realista y toma de decisiones sin parálisis.",
+      "Rituales de cierre para cortar rumia al final del día.",
+      "Trabajo sobre autoexigencia, error y estándares rígidos.",
+      "Diseño de descansos reales y recuperación de energía.",
     ],
     outcomes: [
-      "Menos sobrecarga mental al final del día.",
-      "Mejor relación con productividad y descanso.",
-      "Mayor flexibilidad frente a errores y cambios.",
+      "Menos ruido mental y más foco.",
+      "Relación más amable con productividad y descanso.",
+      "Más capacidad de acción sin perfeccionismo paralizante.",
+      "Recuperación progresiva del bienestar emocional.",
     ],
     faq: [
       {
-        q: "¿Esto sirve si tengo poco tiempo?",
-        a: "Sí. Se priorizan herramientas prácticas que puedas aplicar en tu rutina actual.",
+        q: "¿Cómo dejar de sobrepensar sin perder responsabilidad?",
+        a: "No buscamos impulsividad, sino criterio. Aprendés a diferenciar análisis útil de rumia mental para decidir con mayor claridad.",
       },
       {
-        q: "¿Perfeccionismo y ansiedad se trabajan juntos?",
-        a: "Frecuentemente sí, porque suelen estar conectados y reforzarse mutuamente.",
+        q: "¿Perfeccionismo y procrastinación están relacionados?",
+        a: "Sí. El miedo a no hacerlo perfecto suele frenar la acción. En terapia trabajamos esa trampa y construimos avances sostenibles.",
+      },
+      {
+        q: "¿Se puede reducir estrés aunque el trabajo siga exigente?",
+        a: "Sí. No siempre podemos cambiar el contexto de inmediato, pero sí transformar cómo lo regulás, priorizás y atravesás.",
       },
     ],
+    ctaLabel: "Quiero trabajar estrés y sobrepensamiento",
+    seoTitle:
+      "Terapia para estrés y perfeccionismo | Psicóloga Marcela Zamora",
+    seoDescription:
+      "Psicoterapia para estrés, perfeccionismo y rumia mental en Costa Rica. Herramientas para reducir sobrepensamiento y recuperar equilibrio emocional.",
+    primaryKeyword: "estrés",
+    secondaryKeywords: [
+      "perfeccionismo",
+      "rumia mental",
+      "cómo dejar de sobrepensar",
+      "terapia estrés Costa Rica",
+    ],
+    relatedSlugs: ["terapia-ansiedad", "autocuidado-limites-autoestima"],
   },
   {
     slug: "terapia-depresion",
     title: "Terapia para depresión",
     shortTitle: "Depresión",
     subtitle:
-      "Acompañamiento cercano para recuperar sentido, energía y conexión.",
+      "Ayuda psicológica para depresión con enfoque cálido, ético y basado en evidencia.",
     intro:
-      "Cuando todo pesa, pedir ayuda es un acto de valentía. El proceso terapéutico busca brindarte sostén, comprensión y pasos posibles.",
+      "La depresión no es flojera ni falta de ganas. Es una experiencia emocional y física compleja que puede apagar energía, motivación y esperanza. En terapia, avanzamos con pasos posibles y acompañamiento sostenido.",
+    metaphor:
+      "Algunas personas la describen como vivir en modo ahorro extremo: batería al 1%, todo cuesta más y hasta lo simple se vuelve pesado.",
     isForYou: [
-      "Sentís desánimo persistente o vacío emocional.",
+      "Sentís desánimo persistente, vacío o desconexión.",
       "Perdiste interés en actividades que antes disfrutabas.",
-      "Te cuesta sostener rutinas y autocuidado básico.",
+      "Experimentás cansancio, culpa, lentitud o dificultad para concentrarte.",
+      "Te cuesta sostener rutinas básicas y sentís una gravedad extra en el día a día.",
     ],
     impact:
-      "La depresión puede afectar cuerpo, pensamiento y vínculos. Con acompañamiento profesional, es posible reconstruir recursos y dirección.",
+      "La depresión puede afectar descanso, vínculos, trabajo y sentido de vida. Pedir ayuda psicológica para depresión es una decisión valiente y clínicamente responsable.",
     howWeWork: [
-      "Evaluación inicial del malestar y contexto vital.",
-      "Activación conductual gradual y autocuidado.",
-      "Trabajo cognitivo-emocional desde un enfoque compasivo.",
+      "Evaluación cuidadosa del estado de ánimo y factores asociados.",
+      "Activación gradual: pequeños pasos para recuperar movimiento interno.",
+      "Herramientas cognitivas y emocionales para reducir culpa y desesperanza.",
+      "Construcción de un mapa diario de sostén y autocuidado.",
+      "Coordinación con medicina/psiquiatría cuando corresponde.",
     ],
     outcomes: [
-      "Mayor claridad sobre lo que te pasa.",
-      "Pequeños avances sostenidos en energía y motivación.",
-      "Un plan concreto para continuar tu proceso.",
+      "Más claridad sobre lo que te está pasando.",
+      "Recuperación progresiva de energía y sentido.",
+      "Mayor capacidad para pedir apoyo y sostener rutinas.",
+      "Un plan realista para continuar tu proceso de bienestar.",
     ],
     faq: [
       {
-        q: "¿La terapia puede complementar tratamiento médico?",
-        a: "Sí. La terapia psicológica puede complementar indicaciones médicas cuando corresponda.",
+        q: "¿La terapia para depresión reemplaza tratamiento médico?",
+        a: "No necesariamente. Según cada caso, la terapia puede complementar evaluación médica o psiquiátrica para un abordaje integral.",
       },
       {
-        q: "¿Qué pasa si me cuesta hablar?",
-        a: "No necesitás tener todo claro. Avanzamos a tu ritmo, con preguntas y recursos que faciliten expresar lo que sentís.",
+        q: "¿Qué pasa si no tengo energía ni para hablar mucho?",
+        a: "Está bien. Empezamos desde donde estás. El proceso se adapta a tu momento y prioriza sostén, seguridad y pasos graduales.",
+      },
+      {
+        q: "¿Cómo saber si necesito ayuda psicológica para depresión?",
+        a: "Si el desánimo, la desconexión o el agotamiento se sostienen en el tiempo y afectan tu vida diaria, consultar puede marcar una diferencia importante.",
       },
     ],
+    ctaLabel: "Quiero iniciar ayuda psicológica para depresión",
+    seoTitle:
+      "Terapia para depresión en Costa Rica | Psicóloga Marcela Zamora",
+    seoDescription:
+      "Ayuda psicológica para depresión en Costa Rica. Acompañamiento clínico cálido y basado en evidencia con activación gradual y plan terapéutico personalizado.",
+    primaryKeyword: "terapia para depresión",
+    secondaryKeywords: [
+      "depresión",
+      "psicóloga depresión Costa Rica",
+      "ayuda psicológica para depresión",
+    ],
+    relatedSlugs: ["terapia-ansiedad", "terapia-trauma"],
   },
-];
-
-export const BRAND_VALUES = [
-  "Presencia y escucha empática",
-  "Confidencialidad y respeto",
-  "Acompañamiento personalizado",
-  "Cuidado integral y humano",
 ];

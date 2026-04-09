@@ -4,8 +4,8 @@ import usePageMeta from "../hooks/usePageMeta.js";
 import { CONTACT, SERVICE_AREAS, WHATSAPP_DEFAULT_TEXT } from "../data/content.js";
 import "../styles/internal.css";
 
-function buildWhatsAppLink(serviceTitle) {
-  const text = encodeURIComponent(`${WHATSAPP_DEFAULT_TEXT} Me interesa ${serviceTitle}.`);
+function buildWhatsAppLink(message) {
+  const text = encodeURIComponent(message);
   return `https://wa.me/${CONTACT.waNumber}?text=${text}`;
 }
 
@@ -14,16 +14,15 @@ export default function ServiceDetailPage({ slug }) {
 
   const waLink = useMemo(() => {
     if (!service) return "#";
-    return buildWhatsAppLink(service.shortTitle.toLowerCase());
+    return buildWhatsAppLink(`${WHATSAPP_DEFAULT_TEXT} ${service.ctaLabel}.`);
   }, [service]);
 
   usePageMeta(
+    service ? service.seoTitle : "Servicio | Volver al Presente",
     service
-      ? `${service.shortTitle} | Volver al Presente`
-      : "Servicio | Volver al Presente",
-    service
-      ? `${service.subtitle} Psicóloga Marcela Zamora.`
-      : "Acompañamiento psicológico en Volver al Presente."
+      ? service.seoDescription
+      : "Acompañamiento psicológico en Volver al Presente.",
+    { canonicalPath: service ? `/${service.slug}` : "/servicios" }
   );
 
   if (!service) {
@@ -37,6 +36,10 @@ export default function ServiceDetailPage({ slug }) {
       </main>
     );
   }
+
+  const relatedServices = SERVICE_AREAS.filter((item) =>
+    service.relatedSlugs?.includes(item.slug)
+  );
 
   return (
     <main>

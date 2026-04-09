@@ -56,8 +56,9 @@ export default function Contacto() {
   }, []);
 
   usePageMeta(
-    "Contacto | Volver al Presente",
-    "Contactá a la Psicóloga Marcela Zamora por WhatsApp o agenda externa para iniciar tu proceso terapéutico."
+    "Agendar terapia en Costa Rica | Contacto Psicóloga Marcela Zamora",
+    "Contacto para agendar cita psicológica en Costa Rica con Marcela Zamora. WhatsApp y agenda online para iniciar terapia.",
+    { canonicalPath: "/contacto" }
   );
 
   return (
@@ -65,9 +66,13 @@ export default function Contacto() {
       <section className="hero">
         <div className="container hero__inner">
           <div className="hero__copy">
-            <div className="hero__kicker sub">Contacto / Agendar</div>
-            <h1 className="h1 hero__title">¿Damos el primer paso?</h1>
-            <p className="hero__lead">Elegí el canal que te resulte más cómodo para comenzar.</p>
+            <div className="hero__kicker sub">Contacto / Agendar terapia</div>
+            <h1 className="h1 hero__title">Tu primer paso puede ser un mensaje simple</h1>
+            <p className="hero__lead">
+              Si llegaste con ansiedad, dudas o vergüenza, está bien. Podés empezar
+              escribiendo “quiero iniciar terapia” y te acompaño a definir el mejor
+              camino.
+            </p>
 
             <div className="hero__cta">
               <a className="btn btn-primary" href={waLink} target="_blank" rel="noreferrer">
@@ -99,13 +104,13 @@ export default function Contacto() {
       <section className="section">
         <div className="container grid2">
           <div className="stack">
-            <h2 className="h2 sectionTitle">Dónde te encuentro</h2>
+            <h2 className="h2 sectionTitle">Ubicaciones y modalidades</h2>
 
             <div className="cards2">
               <div className="card locationCard">
                 <div className="locationCard__info">
-                  <div className="locationTitle">Barrio Corazón de Jesús</div>
-                  <div className="locationSub">Heredia, Heredia, Costa Rica</div>
+                  <div className="locationTitle">Atención presencial en Heredia</div>
+                  <div className="locationSub">Barrio Corazón de Jesús, Heredia, Costa Rica</div>
                   <div className="locationActions">
                     <a
                       className="btn btn-ghost small"
