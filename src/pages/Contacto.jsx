@@ -67,7 +67,7 @@ export default function Contacto() {
         <div className="container hero__inner">
           <div className="hero__copy">
             <div className="hero__kicker sub">Contacto / Agendar terapia</div>
-            <h1 className="h1 hero__title">Tu primer paso puede empezar con un "hola"</h1>
+            <h1 className="h1 hero__title">Tu primer paso puede ser un mensaje simple</h1>
             <p className="hero__lead">
               Si llegaste con ansiedad, dudas o vergüenza, está bien. Podés empezar
               escribiendo “quiero iniciar terapia” y te acompaño a definir el mejor
@@ -75,11 +75,11 @@ export default function Contacto() {
             </p>
 
             <div className="hero__cta">
-              <a className="btn btn-primary" href={waLink} target="_blank" rel="noopener noreferrer">
+              <a className="btn btn-primary" href={waLink} target="_blank" rel="noreferrer">
                 <WhatsIcon /> Escribir por WhatsApp
               </a>
 
-              <a className="btn btn-secondary" href={CONTACT.bookingUrl} target="_blank" rel="noopener noreferrer">
+              <a className="btn btn-secondary" href={CONTACT.bookingUrl} target="_blank" rel="noreferrer">
                 <PhoneIcon /> Agendar sesión
               </a>
             </div>
@@ -106,18 +106,6 @@ export default function Contacto() {
           <div className="stack">
             <h2 className="h2 sectionTitle">Ubicaciones y modalidades</h2>
 
-
-            <article className="card onlineCard">
-              <h3>Atención online / Modalidad virtual</h3>
-              <p>
-                Si preferís terapia desde casa, también podés llevar tu proceso en
-                modalidad virtual. Es una opción con la misma calidad clínica,
-                ideal cuando necesitás flexibilidad de horarios o vivís lejos.
-              </p>
-              <a className="btn btn-secondary" href={CONTACT.bookingUrl} target="_blank" rel="noopener noreferrer">
-                Agendar modalidad virtual
-              </a>
-            </article>
             <div className="cards2">
               <div className="card locationCard">
                 <div className="locationCard__info">
@@ -141,8 +129,8 @@ export default function Contacto() {
 
               <div className="card locationCard">
                 <div className="locationCard__info">
-                  <div className="locationTitle">Atención presencial en San José</div>
-                  <div className="locationSub">Barrio González Lahmann, Catedral, San José</div>
+                  <div className="locationTitle">Barrio González Lahmann</div>
+                  <div className="locationSub">Catedral, San José, Costa Rica</div>
                   <div className="locationActions">
                     <a
                       className="btn btn-ghost small"
@@ -161,32 +149,28 @@ export default function Contacto() {
             </div>
 
             <div className="card faqCard">
-              <div className="h3">Preguntas frecuentes antes de agendar</div>
+              <div className="h3">Preguntas Frecuentes</div>
               <div className="hr" />
               <FAQ />
             </div>
           </div>
 
           <div className="stack">
-            <h2 className="h2 sectionTitle">Canales de contacto reales</h2>
+            <h2 className="h2 sectionTitle">Canales de contacto</h2>
 
             <div className="card formCard">
               <p className="muted">
-                Actualmente este sitio no tiene formulario conectado a backend.
-                Para responderte rápido, priorizamos WhatsApp y agenda online.
+                Por ahora no hay formulario conectado a backend. Para una respuesta más rápida,
+                escribime por WhatsApp o agendá directamente tu sesión.
               </p>
-              <p className="muted">
-                Si no sabés qué escribir, podés mandar: “Hola, quiero iniciar
-                terapia y me gustaría orientación”.
-              </p>
-              <a className="btn btn-primary formBtn" href={waLink} target="_blank" rel="noopener noreferrer">
+              <a className="btn btn-primary formBtn" href={waLink} target="_blank" rel="noreferrer">
                 <WhatsIcon /> Escribir por WhatsApp
               </a>
               <a
                 className="btn btn-secondary formBtn"
                 href={CONTACT.bookingUrl}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noreferrer"
               >
                 <PhoneIcon /> Ir a agenda online
               </a>
@@ -195,7 +179,7 @@ export default function Contacto() {
         </div>
       </section>
 
-      <a className="waFloat" href={waLink} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+      <a className="waFloat" href={waLink} target="_blank" rel="noreferrer" aria-label="WhatsApp">
         <WhatsIcon />
       </a>
     </main>

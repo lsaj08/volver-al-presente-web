@@ -8,104 +8,13 @@ export const CONTACT = {
 export const WHATSAPP_DEFAULT_TEXT =
   "Hola, me gustaría agendar una sesión. ¿Qué horarios tenés disponibles?";
 
-export const BRAND_VALUES = [
-  "Calidez y humanidad",
-  "Innovación, ciencia y excelencia",
-  "Conexión y comunidad",
-  "Volver al Presente",
-  "Ética y transparencia",
-];
-
-export const HOME_CONTENT = {
-  seoTitle:
-    "Psicóloga en Costa Rica | Psicoterapia y bienestar emocional - Marcela Zamora",
-  seoDescription:
-    "Psicoterapia en Costa Rica con la Psicóloga Marcela Zamora. Acompañamiento para ansiedad, trauma, depresión, autoestima, límites e imagen corporal.",
-  heroTitle:
-    "Volver al Presente: psicoterapia cálida y profesional para reconectar con vos",
-  heroSubtitle:
-    "Soy Marcela Zamora, psicóloga en Costa Rica. Acompaño procesos de ansiedad, trauma, depresión, imagen corporal, autoestima y estrés desde una mirada cercana, humana y basada en evidencia.",
-  valueTitle: "¿Qué significa Volver al Presente?",
-  valueText:
-    "Volver al Presente nace de una idea simple y profunda: el único lugar donde algo cambia de verdad es aquí y ahora. No se trata de negar el dolor, sino de construir una capacidad de respuesta más amorosa y firme para atravesar la vida, incluso cuando la marea se mueve.",
-  authorityTitle: "Confianza clínica y acompañamiento humano",
-  authorityPoints: [
-    "Más de 12 años de experiencia acompañando procesos de salud mental y bienestar emocional.",
-    "Enfoque de terapia psicológica basada en evidencia, con objetivos claros y recursos prácticos.",
-    "Trabajo ético, confidencial y centrado en que te sintás en un espacio seguro.",
-  ],
-  areasIntro:
-    "Trabajo especialmente en terapia para ansiedad, trauma y experiencias difíciles, depresión, autoestima y límites, estrés y perfeccionismo, e imagen corporal y conducta alimentaria.",
-  bodyFoodTitle: "Cuando la relación con la comida o el cuerpo pesa demasiado",
-  bodyFoodText:
-    "Si notás culpa al comer, comparación constante o autoexigencia frente al espejo, también hay un camino terapéutico para vos. Este tema se aborda con sensibilidad, sin juicios y sin cultura de dieta.",
-  finalCtaTitle: "Si lo estás pensando hace tiempo, este puede ser un buen momento para empezar",
-  finalCtaText:
-    "Podemos coordinar por WhatsApp o agendar tu sesión online/presencial. Si te cuesta pedir ayuda, podés empezar con un mensaje corto; yo te acompaño a dar el siguiente paso con calma.",
-};
-
-export const ABOUT_CONTENT = {
-  seoTitle:
-    "Psicóloga Marcela Zamora | Terapia basada en evidencia en Costa Rica",
-  seoDescription:
-    "Conocé a la Psicóloga Marcela Zamora: más de 12 años de experiencia, enfoque basado en evidencia, calidez humana y acompañamiento centrado en el presente.",
-  intro:
-    "¡Hola! soy Marcela Zamora, qué lindo encontrarnos en este espacio. Soy psicóloga en Costa Rica y desde hace más de 12 años acompaño personas en procesos de ansiedad, trauma, depresión, imagen corporal, autoestima, estrés y duelo. Creo profundamente que todas las personas pueden volver a sentirse en casa dentro de sí mismas.",
-  whyTitle: "¿Por qué nace Volver al Presente?",
-  whyParagraphs: [
-    "Volver al Presente nació cuando empecé a notar que muchos malestares no venían solo de lo que pasó, sino de la dificultad para habitar y disfrutar lo que sí estaba ocurriendo. Durante años también pensé que el bienestar estaba allá adelante, en una versión futura de la vida. Con el tiempo confirmé algo esencial: el único lugar donde algo cambia de verdad es aquí y ahora.",
-    "Para mí, bienestar emocional no es ausencia de dolor ni control total. La vida es esa danza entre aguas tranquilas y aguas turbulentas; el trabajo terapéutico consiste en construir presencia, herramientas y sostén para navegar ambas con mayor claridad y cuidado.",
-  ],
-  approachTitle: "Cómo trabajo en psicoterapia",
-  approachParagraph:
-    "Mi forma de trabajar integra calidez humana con rigurosidad clínica. Cuidamos el vínculo terapéutico, definimos objetivos claros y utilizamos estrategias basadas en evidencia para que cada sesión te ayude a comprender, regular y transformar.",
-  approachBullets: [
-    "Calidez primero: un espacio donde te sintás segura y respetada.",
-    "Basada en evidencia: herramientas clínicas ajustadas a tu caso.",
-    "Objetivos claros: trabajamos con foco y seguimiento de avances.",
-    "Cuidado integral: mente, cuerpo, vínculos y contexto.",
-    "Ética y respeto: confidencialidad y responsabilidad profesional.",
-  ],
-  firstSessionTitle: "Qué podés esperar en la primera sesión",
-  firstSessionParagraph:
-    "La primera sesión es para entender qué estás viviendo hoy y qué necesitás. No tenés que llegar con respuestas perfectas. Vamos construyendo juntas una hoja de ruta inicial para que salgas con más claridad, contención y próximos pasos realistas.",
-  mission:
-    "Brindar acompañamiento psicológico cálido, ético y basado en evidencia para favorecer bienestar emocional y calidad de vida.",
-  vision:
-    "Ser un espacio terapéutico referente en Costa Rica por su cercanía humana, solidez clínica y compromiso con procesos de cambio sostenibles.",
-  values: [
-    "Calidez humana",
-    "Rigor clínico",
-    "Ética profesional",
-    "Respeto por la singularidad",
-    "Compromiso con el proceso",
-  ],
-  trainingTitle: "Formación profesional",
-  trainingItems: [
-    "Licenciada en Psicología — Universidad de Costa Rica.",
-    "Código profesional 10195.",
-    "Master en Terapia Breve Estratégica — Centro di Terapia Strategica.",
-    "Brainspotting fase 1 y 2 — Serendipitá Ecuador.",
-    "Especialización en Psicoterapia Basada en Evidencia — Ductum Argentina.",
-  ],
-  credentialsTitle: "Habilitaciones",
-  credentialsItems: [
-    "Pruebas de idoneidad mental para solicitantes de adopción.",
-    "Evaluación de idoneidad mental para laborar en centros de atención integral infantil públicos, privados y mixtos.",
-  ],
-  midCtaText:
-    "Si querés conocer cuál servicio se ajusta mejor a tu situación, podés revisar las áreas de acompañamiento o escribirme directamente.",
-  finalCtaText:
-    "Si sentís que llegó el momento de empezar, será un honor acompañarte. Podemos coordinar por WhatsApp o por agenda online, con una primera conversación clara, cálida y sin juicios.",
-};
-
 export const SERVICE_AREAS = [
   {
     slug: "terapia-ansiedad",
     title: "Terapia para ansiedad",
     shortTitle: "Ansiedad",
     subtitle:
-      "Acompañamiento para ansiedad generalizada, ansiedad social y sobrepensamiento.",
+      "Acompañamiento para ansiedad generalizada, ansiedad social y sobrepensamiento en Costa Rica.",
     intro:
       "La ansiedad no es debilidad: es una alarma interna que se activó para protegerte. El problema aparece cuando esa alarma queda encendida aun cuando no hay peligro inmediato y tu cuerpo vive en alerta constante.",
     metaphor:
@@ -454,4 +363,12 @@ export const SERVICE_AREAS = [
     ],
     relatedSlugs: ["terapia-ansiedad", "terapia-trauma"],
   },
+];
+
+export const BRAND_VALUES = [
+  "Calidez y humanidad",
+  "Innovación, ciencia y excelencia",
+  "Conexión y comunidad",
+  "Volver al Presente",
+  "Ética y transparencia",
 ];
