@@ -1,16 +1,47 @@
 import React, { useState } from "react";
 
+function CheckIcon() {
+  return (
+    <svg className="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M5 12.5 9.2 17 19 7.5"
+        stroke="currentColor"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function ChevronIcon({ isOpen }) {
+  return (
+    <svg
+      className={`chev ${isOpen ? "is-open" : ""}`}
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        d="m7 10 5 5 5-5"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 function Item({ q, a, isOpen, onToggle }) {
   return (
     <div className="faqItem">
-      <button className="faqQ" onClick={onToggle} aria-expanded={isOpen}>
+      <button type="button" className="faqQ" onClick={onToggle} aria-expanded={isOpen}>
         <span className="faqDot" aria-hidden="true">
-          ✓
+          <CheckIcon />
         </span>
         <span>{q}</span>
-        <span className={`chev ${isOpen ? "is-open" : ""}`} aria-hidden="true">
-          ▾
-        </span>
+        <ChevronIcon isOpen={isOpen} />
       </button>
       {isOpen && <div className="faqA">{a}</div>}
     </div>
@@ -27,7 +58,7 @@ export default function FAQ() {
     },
     {
       q: "¿La terapia es virtual, presencial o ambas?",
-      a: "Se ofrece modalidad virtual y presencial en Costa Rica (según disponibilidad). En el primer contacto te indico qué opciones están habilitadas.",
+      a: "Se ofrece modalidad online y presencial. En el primer contacto te indico qué opciones están habilitadas y cuál puede ajustarse mejor a tu momento.",
     },
     {
       q: "¿Cuánto dura una sesión psicológica?",
@@ -35,7 +66,7 @@ export default function FAQ() {
     },
     {
       q: "¿En qué situaciones conviene consultar?",
-      a: "Si hay ansiedad, estrés, tristeza persistente, trauma, conflictos de autoestima, límites o relación con la comida/cuerpo, consultar puede ayudarte a recuperar claridad y recursos.",
+      a: "Si hay ansiedad, estrés, tristeza persistente, trauma, conflictos de autoestima, límites o relación con la comida y el cuerpo, consultar puede ayudarte a recuperar claridad y recursos.",
     },
     {
       q: "¿Cuánto tiempo dura un proceso terapéutico?",

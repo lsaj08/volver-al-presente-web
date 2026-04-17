@@ -94,8 +94,17 @@ export default function Home() {
         <div className="container heroHome__inner">
           <div className="heroHome__copy">
             <div className="heroHome__titleWrapper">
-              <h1 className="heroHome__title">Te acompaño a volver al presente con bienestar emocional</h1>
+              <span className="heroHome__eyebrow sub">Psicoterapia cálida y basada en evidencia</span>
+              <h1 className="heroHome__brand">Volver al Presente</h1>
+              <p className="heroHome__title">
+                Un espacio terapéutico para volver a tu centro con más calma, claridad y bienestar
+                emocional.
+              </p>
               <p className="heroHome__subtitle">Psicóloga Marcela Zamora</p>
+              <p className="heroHome__note">
+                Atención online y presencial para procesos de ansiedad, autoestima, trauma,
+                depresión y relación con la comida o el cuerpo.
+              </p>
             </div>
             <div className="heroHome__cta">
               <a className="btn btn-primary" href={waLink} target="_blank" rel="noreferrer">
@@ -123,13 +132,46 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section recognitionSection">
+        <div className="container">
+          <article className="card recognitionCard">
+            <div className="recognitionCard__copy">
+              <span className="recognitionCard__eyebrow sub">Tal vez te estás preguntando...</span>
+              <h2>¿Te está pesando la relación con la comida, con tu cuerpo o con tu mundo emocional?</h2>
+              <p>
+                A veces aparece como ansiedad. Otras veces se siente como culpa al comer,
+                desconexión, autoexigencia o una incomodidad constante con vos misma. No tenés que
+                tenerlo todo claro para pedir ayuda.
+              </p>
+            </div>
+
+            <ul className="recognitionCard__list">
+              <li>Te cuesta habitar tu cuerpo con calma o dejar de compararte.</li>
+              <li>La comida se mezcla con culpa, control o demasiadas reglas.</li>
+              <li>Vivís sobrepensando, tensándote o sintiendo que nunca es suficiente.</li>
+              <li>Querés entender lo que te pasa con más compasión y menos juicio.</li>
+            </ul>
+
+            <div className="recognitionCard__actions">
+              <Link className="btn btn-secondary" to="/imagen-corporal-conducta-alimentaria">
+                Ver acompañamiento en comida y cuerpo
+              </Link>
+              <Link className="btn btn-ghost" to="/contacto">
+                Encontrar una modalidad para empezar
+              </Link>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <section className="section brandSection">
         <div className="container infoGrid">
           <article className="card sectionCard">
             <h2>Una terapia centrada en vos</h2>
             <p>
-              En Volver al Presente vas a encontrar un espacio profesional y humano para comprender
-              lo que estás viviendo, ordenar emociones y avanzar con herramientas prácticas.
+              Volver al Presente no se trata de exigirte estar bien rápido, sino de acompañarte a
+              entender lo que estás viviendo, regular lo que hoy pesa y construir recursos que sí
+              te sirvan en la vida cotidiana.
             </p>
             <Link className="btn btn-secondary" to="/sobre-mi">
               Conocer enfoque terapéutico
@@ -152,17 +194,17 @@ export default function Home() {
           <div className="listSection">
             <h3>Cómo trabajo</h3>
             <ul>
-              <li>Escucha empática y confidencial.</li>
-              <li>Objetivos claros y proceso personalizado.</li>
-              <li>Herramientas aplicables a tu vida diaria.</li>
+              <li>Escucha empática, confidencial y sin juicios.</li>
+              <li>Objetivos claros, ritmo humano y proceso personalizado.</li>
+              <li>Herramientas aplicables a tu vida diaria y a tus vínculos.</li>
             </ul>
           </div>
           <div className="listSection">
             <h3>Qué esperar en la primera sesión</h3>
             <ul>
-              <li>Explorar tu motivo de consulta y contexto.</li>
-              <li>Definir prioridades y primeros pasos.</li>
-              <li>Salir con mayor claridad y contención.</li>
+              <li>Explorar tu motivo de consulta, contexto y necesidades.</li>
+              <li>Definir prioridades terapéuticas y primeros pasos posibles.</li>
+              <li>Salir con más claridad, contención y dirección.</li>
             </ul>
           </div>
         </div>

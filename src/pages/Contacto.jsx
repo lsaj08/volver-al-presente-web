@@ -69,9 +69,8 @@ export default function Contacto() {
             <div className="hero__kicker sub">Contacto / Agendar terapia</div>
             <h1 className="h1 hero__title">Tu primer paso puede ser un mensaje simple</h1>
             <p className="hero__lead">
-              Si llegaste con ansiedad, dudas o vergüenza, está bien. Podés empezar
-              escribiendo “quiero iniciar terapia” y te acompaño a definir el mejor
-              camino.
+              Si llegaste con ansiedad, dudas o vergüenza, está bien. Podés iniciar en modalidad
+              online o presencial, escribiendo algo tan sencillo como “quiero empezar terapia”.
             </p>
 
             <div className="hero__cta">
@@ -104,7 +103,33 @@ export default function Contacto() {
       <section className="section">
         <div className="container grid2">
           <div className="stack">
-            <h2 className="h2 sectionTitle">Ubicaciones y modalidades</h2>
+            <h2 className="h2 sectionTitle">Elegí la modalidad que mejor se adapte a vos</h2>
+
+            <div className="card virtualCard">
+              <div className="virtualCard__art" aria-hidden="true">
+                <div className="screen" />
+                <div className="bubble b1" />
+                <div className="bubble b2" />
+              </div>
+              <div className="virtualCard__content">
+                <span className="contactBadge">Modalidad online</span>
+                <div className="locationTitle">Atención online desde donde estés</div>
+                <p className="virtualCard__text">
+                  Podés llevar tu proceso terapéutico desde casa o desde el lugar donde te sintás
+                  más cómoda. Solo necesitás privacidad, conexión estable y un espacio tranquilo.
+                </p>
+                <div className="locationActions">
+                  <a className="btn btn-primary small" href={CONTACT.bookingUrl} target="_blank" rel="noreferrer">
+                    <PhoneIcon /> Agendar online
+                  </a>
+                  <a className="btn btn-secondary small" href={waLink} target="_blank" rel="noreferrer">
+                    <WhatsIcon /> Consultar por WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="sectionLabel">Atención presencial</div>
 
             <div className="cards2">
               <div className="card locationCard">
@@ -129,8 +154,8 @@ export default function Contacto() {
 
               <div className="card locationCard">
                 <div className="locationCard__info">
-                  <div className="locationTitle">Barrio González Lahmann</div>
-                  <div className="locationSub">Catedral, San José, Costa Rica</div>
+                  <div className="locationTitle">Atención presencial en San José</div>
+                  <div className="locationSub">Barrio González Lahmann, Catedral, San José, Costa Rica</div>
                   <div className="locationActions">
                     <a
                       className="btn btn-ghost small"
@@ -160,8 +185,8 @@ export default function Contacto() {
 
             <div className="card formCard">
               <p className="muted">
-                Por ahora no hay formulario conectado a backend. Para una respuesta más rápida,
-                escribime por WhatsApp o agendá directamente tu sesión.
+                La forma más rápida de iniciar es por WhatsApp o agenda online. Si no sabés qué
+                modalidad elegir, podés escribirme y vemos juntas cuál se ajusta mejor a tu momento.
               </p>
               <a className="btn btn-primary formBtn" href={waLink} target="_blank" rel="noreferrer">
                 <WhatsIcon /> Escribir por WhatsApp
@@ -174,6 +199,18 @@ export default function Contacto() {
               >
                 <PhoneIcon /> Ir a agenda online
               </a>
+              <a className="btn btn-ghost formBtn" href={`tel:${CONTACT.phoneTel}`}>
+                <PhoneIcon /> {CONTACT.phoneDisplay}
+              </a>
+            </div>
+
+            <div className="card miniCTA">
+              <h3 className="miniCTA__title">¿No sabés si te conviene online o presencial?</h3>
+              <p className="muted">
+                Ambas modalidades permiten un proceso terapéutico cuidado. La opción online puede
+                ser ideal si buscás mayor flexibilidad, mientras que la presencial queda disponible
+                si preferís encontrarte en consultorio.
+              </p>
             </div>
           </div>
         </div>

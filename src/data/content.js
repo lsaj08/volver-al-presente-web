@@ -14,11 +14,11 @@ export const SERVICE_AREAS = [
     title: "Terapia para ansiedad",
     shortTitle: "Ansiedad",
     subtitle:
-      "Acompañamiento para ansiedad generalizada, ansiedad social y sobrepensamiento en Costa Rica.",
+      "Acompañamiento para ansiedad generalizada, ansiedad social y sobrepensamiento.",
     intro:
       "La ansiedad no es debilidad: es una alarma interna que se activó para protegerte. El problema aparece cuando esa alarma queda encendida aun cuando no hay peligro inmediato y tu cuerpo vive en alerta constante.",
     metaphor:
-      "Muchos pacientes lo describen como una alarma de humo que suena todo el tiempo: aunque no haya incendio, la mente sigue buscando señales de amenaza.",
+      "Muchas personas lo describen como una alarma de humo que suena todo el tiempo: aunque no haya incendio, la mente sigue buscando señales de amenaza.",
     isForYou: [
       "Vivís con preocupación constante o anticipación catastrófica.",
       "Sentís ansiedad social, miedo al juicio o evitación de situaciones cotidianas.",
@@ -55,8 +55,7 @@ export const SERVICE_AREAS = [
       },
     ],
     ctaLabel: "Quiero iniciar terapia para ansiedad",
-    seoTitle:
-      "Terapia para ansiedad en Costa Rica | Psicóloga Marcela Zamora",
+    seoTitle: "Terapia para ansiedad en Costa Rica | Psicóloga Marcela Zamora",
     seoDescription:
       "Psicóloga para ansiedad en Costa Rica. Tratamiento de ansiedad generalizada, ansiedad social, rumia y evitación con enfoque basado en evidencia.",
     primaryKeyword: "terapia para ansiedad",
@@ -78,7 +77,7 @@ export const SERVICE_AREAS = [
     intro:
       "Cuando el espejo se vuelve juez y la comida parece enemiga, la vida cotidiana se llena de culpa y autoexigencia. Este espacio terapéutico busca ayudarte a reconstruir una relación más amable con tu cuerpo y tu alimentación.",
     metaphor:
-      "A veces el juicio corporal se siente como vivir con un alien interno: una voz invasiva que critica, compara y nunca está satisfecha.",
+      "A veces el juicio corporal se siente como vivir con una voz interna invasiva que critica, compara y nunca está satisfecha.",
     isForYou: [
       "Tu imagen corporal ocupa gran parte de tus pensamientos.",
       "Pasás por ciclos de restricción, atracón y culpa.",
@@ -97,7 +96,7 @@ export const SERVICE_AREAS = [
     ],
     outcomes: [
       "Menos culpa al comer y menor autojuicio corporal.",
-      "Mayor conexión con señales internas de hambre/saciedad.",
+      "Mayor conexión con señales internas de hambre y saciedad.",
       "Relación más flexible y respetuosa con el cuerpo.",
       "Más libertad para vivir sin vigilancia constante.",
     ],
@@ -116,8 +115,7 @@ export const SERVICE_AREAS = [
       },
     ],
     ctaLabel: "Quiero mejorar mi relación con el cuerpo y la comida",
-    seoTitle:
-      "Imagen corporal y conducta alimentaria | Psicóloga Marcela Zamora",
+    seoTitle: "Imagen corporal y conducta alimentaria | Psicóloga Marcela Zamora",
     seoDescription:
       "Terapia de imagen corporal y conducta alimentaria en Costa Rica. Acompañamiento para culpa, restricción, atracón y relación con la comida.",
     primaryKeyword: "imagen corporal",
@@ -175,8 +173,7 @@ export const SERVICE_AREAS = [
       },
     ],
     ctaLabel: "Quiero iniciar terapia para trauma",
-    seoTitle:
-      "Terapia para trauma en Costa Rica | Psicóloga Marcela Zamora",
+    seoTitle: "Terapia para trauma en Costa Rica | Psicóloga Marcela Zamora",
     seoDescription:
       "Terapia para trauma psicológico y experiencias difíciles. Acompañamiento seguro y gradual para recuperar confianza, regulación y bienestar emocional.",
     primaryKeyword: "terapia para trauma",
@@ -233,8 +230,7 @@ export const SERVICE_AREAS = [
       },
     ],
     ctaLabel: "Quiero trabajar autoestima y límites",
-    seoTitle:
-      "Autoestima, límites y autocuidado emocional | Psicóloga Marcela Zamora",
+    seoTitle: "Autoestima, límites y autocuidado emocional | Psicóloga Marcela Zamora",
     seoDescription:
       "Terapia para autoestima, límites sanos y relaciones en Costa Rica. Acompañamiento para autocuidado emocional y vínculos más saludables.",
     primaryKeyword: "autoestima",
@@ -263,7 +259,7 @@ export const SERVICE_AREAS = [
       "Terminás el día agotada, incluso cuando cumpliste con todo.",
     ],
     impact:
-      "El binomio estrés + perfeccionismo desgasta autoestima, salud y vínculos. La terapia permite construir un ritmo más sostenible, reducir la rumia y trabajar desde el principio de lo suficientemente bueno.",
+      "El binomio estrés y perfeccionismo desgasta autoestima, salud y vínculos. La terapia permite construir un ritmo más sostenible, reducir la rumia y trabajar desde el principio de lo suficientemente bueno.",
     howWeWork: [
       "Mapa de detonantes de estrés y ciclos de sobrepensamiento.",
       "Priorización realista y toma de decisiones sin parálisis.",
@@ -292,8 +288,7 @@ export const SERVICE_AREAS = [
       },
     ],
     ctaLabel: "Quiero trabajar estrés y sobrepensamiento",
-    seoTitle:
-      "Terapia para estrés y perfeccionismo | Psicóloga Marcela Zamora",
+    seoTitle: "Terapia para estrés y perfeccionismo | Psicóloga Marcela Zamora",
     seoDescription:
       "Psicoterapia para estrés, perfeccionismo y rumia mental en Costa Rica. Herramientas para reducir sobrepensamiento y recuperar equilibrio emocional.",
     primaryKeyword: "estrés",
@@ -328,7 +323,7 @@ export const SERVICE_AREAS = [
       "Activación gradual: pequeños pasos para recuperar movimiento interno.",
       "Herramientas cognitivas y emocionales para reducir culpa y desesperanza.",
       "Construcción de un mapa diario de sostén y autocuidado.",
-      "Coordinación con medicina/psiquiatría cuando corresponde.",
+      "Coordinación con medicina y psiquiatría cuando corresponde.",
     ],
     outcomes: [
       "Más claridad sobre lo que te está pasando.",
@@ -351,8 +346,7 @@ export const SERVICE_AREAS = [
       },
     ],
     ctaLabel: "Quiero iniciar ayuda psicológica para depresión",
-    seoTitle:
-      "Terapia para depresión en Costa Rica | Psicóloga Marcela Zamora",
+    seoTitle: "Terapia para depresión en Costa Rica | Psicóloga Marcela Zamora",
     seoDescription:
       "Ayuda psicológica para depresión en Costa Rica. Acompañamiento clínico cálido y basado en evidencia con activación gradual y plan terapéutico personalizado.",
     primaryKeyword: "terapia para depresión",

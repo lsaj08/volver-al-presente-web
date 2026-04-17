@@ -37,10 +37,6 @@ export default function ServiceDetailPage({ slug }) {
     );
   }
 
-  const relatedServices = SERVICE_AREAS.filter((item) =>
-    service.relatedSlugs?.includes(item.slug)
-  );
-
   return (
     <main>
       <section className="innerHero">

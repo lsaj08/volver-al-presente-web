@@ -22,7 +22,7 @@ export default function Header() {
           <img
             className="brand__logo"
             src={logo}
-            alt="Volver al Presente — Psicóloga Marcela Zamora"
+            alt="Volver al Presente - Psicóloga Marcela Zamora"
           />
           <div className="brand__text">
             <div className="brand__name h3">Volver al Presente</div>
@@ -30,7 +30,7 @@ export default function Header() {
           </div>
         </NavLink>
 
-        <nav className={`nav ${isOpen ? "is-open" : ""}`}>
+        <nav id="site-navigation" className={`nav ${isOpen ? "is-open" : ""}`}>
           {mainLinks.map((item) => (
             <NavLink
               key={item.to}
@@ -49,10 +49,11 @@ export default function Header() {
             type="button"
             className="pill topIconBtn"
             aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-controls="site-navigation"
             aria-expanded={isOpen}
             onClick={() => setIsOpen((prev) => !prev)}
           >
-            <svg className="icon" viewBox="0 0 24 24" fill="none">
+            <svg className="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
             </svg>
           </button>

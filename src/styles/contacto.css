@@ -20,7 +20,9 @@
   align-items: center;
   gap: 12px;
   min-width: 260px;
+  text-decoration: none;
 }
+.brand__text{ display: grid; gap: 2px; }
 .logoMark{
   position: relative;
   width: 34px;
@@ -50,11 +52,14 @@
   gap: 16px;
 }
 .nav__link{
+  display: inline-flex;
+  align-items: center;
   font-family: "Montserrat", system-ui, sans-serif;
   font-size: 13px;
   color: rgba(42,34,48,.78);
   padding: 10px 6px;
   border-bottom: 2px solid transparent;
+  line-height: 1.1;
 }
 .nav__link:hover{ color: rgba(42,34,48,.95); }
 .nav__link.is-active{
@@ -66,6 +71,7 @@
 .topIconBtn{
   color: rgba(42,34,48,.72);
   cursor: pointer;
+  justify-content: center;
 }
 
 /* Hero */
@@ -105,6 +111,7 @@
   margin: 0 0 18px;
   color: var(--muted);
   font-size: 16px;
+  line-height: 1.65;
 }
 .hero__cta{
   display: flex;
@@ -220,11 +227,13 @@
   font-family: "Montserrat", system-ui, sans-serif;
   font-weight: 700;
   color: rgba(42,34,48,.9);
+  line-height: 1.3;
 }
 .locationSub{
   margin-top: 4px;
   color: var(--muted);
   font-size: 13px;
+  line-height: 1.5;
 }
 .locationActions{
   display: flex;
@@ -234,9 +243,12 @@
   flex-wrap: wrap;
 }
 .locationPhone{
+  display: inline-flex;
+  align-items: center;
   font-family: "Montserrat", system-ui, sans-serif;
   font-size: 13px;
   color: rgba(42,34,48,.75);
+  line-height: 1.2;
 }
 .locationCard__map{
   display: grid;
@@ -292,20 +304,51 @@
 
 /* Virtual card */
 .virtualCard{
-  padding: 16px;
+  padding: 18px;
   display: grid;
-  grid-template-columns: 90px 1fr;
-  gap: 12px;
-  align-items: center;
+  grid-template-columns: 104px 1fr;
+  gap: 16px;
+  align-items: stretch;
 }
 .virtualCard__art{
-  width: 90px;
-  height: 64px;
+  width: 100%;
+  min-height: 94px;
   border-radius: 16px;
   background: rgba(38,183,192,.10);
   border: 1px solid rgba(38,183,192,.18);
   position: relative;
   overflow: hidden;
+}
+.virtualCard__content{
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+.virtualCard__text{
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.contactBadge{
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(106,18,117,.08);
+  color: var(--purple);
+  border: 1px solid rgba(106,18,117,.12);
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: 12px;
+  line-height: 1.2;
+}
+.sectionLabel{
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: rgba(42,34,48,.58);
 }
 .virtualCard__art .screen{
   position: absolute;
@@ -335,7 +378,7 @@
 .faqQ{
   width: 100%;
   display: grid;
-  grid-template-columns: 26px 1fr 18px;
+  grid-template-columns: 26px 1fr 20px;
   gap: 10px;
   align-items: center;
   padding: 12px 12px;
@@ -344,6 +387,7 @@
   cursor: pointer;
   text-align: left;
   color: rgba(42,34,48,.9);
+  line-height: 1.35;
 }
 .faqDot{
   width: 22px; height: 22px;
@@ -355,16 +399,29 @@
   font-weight: 800;
   font-size: 12px;
 }
-.chev{ opacity: .7; transition: transform .15s ease; }
+.faqDot .icon{
+  width: 13px;
+  height: 13px;
+  flex: 0 0 13px;
+}
+.chev{
+  width: 18px;
+  height: 18px;
+  opacity: .7;
+  transition: transform .15s ease;
+  justify-self: end;
+}
 .chev.is-open{ transform: rotate(180deg); }
 .faqA{
   padding: 0 12px 12px 48px;
   color: rgba(42,34,48,.75);
   font-size: 13px;
+  line-height: 1.6;
 }
 
 /* Form */
 .formCard{ padding: 16px; display: grid; gap: 12px; }
+.formCard .btn{ justify-content: center; }
 .field{ display: grid; gap: 6px; }
 .label{
   font-family: "Montserrat", system-ui, sans-serif;
@@ -389,6 +446,7 @@ input:focus, textarea:focus{
 /* Mini CTA */
 .miniCTA{ padding: 16px; }
 .miniCTA__title{ margin: 0 0 6px; }
+.miniCTA p{ margin: 0; line-height: 1.6; }
 
 /* Footer */
 .footer{
@@ -475,9 +533,10 @@ input:focus, textarea:focus{
   height: 50px;
   object-fit: contain;
   display: block;
+  flex-shrink: 0;
 }
 /* Header navigation improvements */
-.topbar__actions .topIconBtn { display: none; }
+.topbar__actions .topIconBtn { display: none; align-items: center; justify-content: center; }
 
 @media (max-width: 980px){
   .topbar__actions .topIconBtn { display: inline-flex; }
@@ -497,4 +556,5 @@ input:focus, textarea:focus{
   .nav.is-open{ display: grid; gap: 2px; }
   .nav__link{ padding: 10px 12px; border-radius: 10px; }
   .nav__link.is-active{ background: rgba(106,18,117,.08); border-bottom-color: transparent; }
+  .virtualCard{ grid-template-columns: 1fr; }
 }

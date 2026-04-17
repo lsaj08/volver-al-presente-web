@@ -57,6 +57,7 @@ button, input, textarea{ font: inherit; }
   border: 1px solid var(--line);
   background: rgba(255,255,255,.75);
   backdrop-filter: blur(10px);
+  line-height: 1.2;
 }
 
 .btn{
@@ -71,6 +72,7 @@ button, input, textarea{ font: inherit; }
   transition: transform .08s ease, box-shadow .12s ease, opacity .12s ease;
   user-select: none;
   font-weight: 600;
+  line-height: 1.2;
 }
 .btn:active{ transform: translateY(1px); }
 
@@ -97,7 +99,9 @@ button, input, textarea{ font: inherit; }
 .icon{
   width: 18px;
   height: 18px;
-  display: inline-block;
+  display: block;
+  flex: 0 0 18px;
+  vertical-align: middle;
 }
 
 .hr{
