@@ -1,8 +1,12 @@
 export const colors = {
+  primary: "#189595",
+  secondary: "#a72261",
+  accent: "#7f1ca9",
+  deepPurple: "#6a1275",
+  turquoise: "#26b7c0",
   teal: "#189595",
   magenta: "#a72261",
   purple: "#7f1ca9",
-  deepPurple: "#6a1275",
   aqua: "#26b7c0",
   background: "#fffaf7",
   surface: "#ffffff",
