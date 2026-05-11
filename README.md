@@ -1,16 +1,63 @@
-# React + Vite
+# Volver al Presente Mobile
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación React Native mobile-first para la marca profesional de Marcela Zamora, psicóloga. La app está organizada con Expo, React Navigation y una arquitectura limpia para seguir trabajando con Codex sin arrastrar dependencias web.
 
-Currently, two official plugins are available:
+## Stack oficial
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Expo
+- React Native
+- React Navigation
+- JavaScript con componentes funcionales
+- `StyleSheet` y objetos de estilo compatibles con React Native
 
-## React Compiler
+No se usa Vite, Next.js, React DOM, React Router DOM, HTML ni CSS web.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Instalación
 
-## Expanding the ESLint configuration
+```bash
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Correr el proyecto
+
+```bash
+npm run start
+npm run android
+npm run ios
+```
+
+`npm run ios` requiere macOS con Xcode o un entorno Expo compatible.
+
+## Validación
+
+```bash
+npm run lint
+```
+
+Antes de hacer commit, revisá que:
+
+- No existan imports desde `react-dom`, `react-router-dom` o archivos `.css`.
+- No se usen etiquetas HTML como `div`, `span`, `p`, `h1`, `button` o `img`.
+- Los estilos nuevos usen `StyleSheet` o theme centralizado.
+- Los textos largos vivan en `src/data` cuando sea razonable.
+- La navegación siga usando React Navigation.
+
+## Estructura
+
+```text
+src/
+  assets/
+  components/
+    cards/
+    layout/
+    ui/
+  data/
+  navigation/
+  screens/
+  theme/
+  utils/
+```
+
+## Notas de migración
+
+El proyecto original era una app web con Vite, React DOM, React Router DOM, CSS y páginas DOM. Se migró a Expo porque el repositorio no tenía carpetas nativas Android/iOS y Expo permite mantener una app React Native pura, portable y fácil de ejecutar sin agregar complejidad nativa innecesaria.
