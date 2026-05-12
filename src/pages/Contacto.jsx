@@ -70,7 +70,7 @@ export default function Contacto() {
             <h1 className="h1 hero__title">Tu primer paso puede ser un mensaje simple</h1>
             <p className="hero__lead">
               Si llegaste con ansiedad, dudas o vergüenza, está bien. Podés iniciar en modalidad
-              online o presencial, escribiendo algo tan sencillo como “quiero empezar terapia”.
+              online o Presencial, escribiendo algo tan sencillo como “quiero empezar terapia”.
             </p>
 
             <div className="hero__cta">
@@ -129,12 +129,12 @@ export default function Contacto() {
               </div>
             </div>
 
-            <div className="sectionLabel">Atención presencial</div>
+            <div className="sectionLabel">Atención Presencial</div>
 
             <div className="cards2">
               <div className="card locationCard">
                 <div className="locationCard__info">
-                  <div className="locationTitle">Atención presencial en Heredia</div>
+                  <div className="locationTitle">Atención Presencial en Heredia</div>
                   <div className="locationSub">Barrio Corazón de Jesús, Heredia, Costa Rica</div>
                   <div className="locationActions">
                     <a
@@ -154,7 +154,7 @@ export default function Contacto() {
 
               <div className="card locationCard">
                 <div className="locationCard__info">
-                  <div className="locationTitle">Atención presencial en San José</div>
+                  <div className="locationTitle">Atención Presencial en San José</div>
                   <div className="locationSub">Barrio González Lahmann, Catedral, San José, Costa Rica</div>
                   <div className="locationActions">
                     <a
@@ -205,10 +205,10 @@ export default function Contacto() {
             </div>
 
             <div className="card miniCTA">
-              <h3 className="miniCTA__title">¿No sabés si te conviene online o presencial?</h3>
+              <h3 className="miniCTA__title">¿No sabés si te conviene online o Presencial?</h3>
               <p className="muted">
                 Ambas modalidades permiten un proceso terapéutico cuidado. La opción online puede
-                ser ideal si buscás mayor flexibilidad, mientras que la presencial queda disponible
+                ser ideal si buscás mayor flexibilidad, mientras que la Presencial queda disponible
                 si preferís encontrarte en consultorio.
               </p>
             </div>

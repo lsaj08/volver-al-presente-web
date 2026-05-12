@@ -5,11 +5,13 @@ export const CONTACT = {
   bookingUrl: "https://app.hulivida.com/citas/marcela-zamora-arrieta",
 };
 
+export const CANVA_CATALOG_URL = "PENDIENTE_AGREGAR_LINK_DE_CANVA";
+
 export const WHATSAPP_DEFAULT_TEXT =
   "Hola, me gustaría agendar una sesión. ¿Qué horarios tenés disponibles?";
 
 export const ABOUT_CONTENT = {
-  title: "¡Hola! soy Marcela Zamora, que lindo encontrarnos en este espacio.",
+  title: "¡Hola! soy Marcela Zamora, qué lindo encontrarnos en este espacio.",
   paragraphs: [
     "Soy psicóloga con más de 12 años de experiencia acompañando a personas a buscar su bienestar y poder disfrutar de su presente.",
     "Mi trabajo nace de una convicción sencilla: todas las personas pueden volver a sentirse en casa dentro de sí mismas. Por eso, en cada sesión creo un espacio seguro, cercano y sin juicios, donde puedas Volver al Presente y recuperar claridad, calma y dirección.",

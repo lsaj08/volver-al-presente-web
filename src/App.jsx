@@ -6,6 +6,7 @@ import Contacto from "./pages/Contacto.jsx";
 import Servicios from "./pages/Servicios.jsx";
 import SobreMi from "./pages/SobreMi.jsx";
 import PsiCositas from "./pages/PsiCositas.jsx";
+import Recursos from "./pages/Recursos.jsx";
 import Talleres from "./pages/Talleres.jsx";
 import TerapiaAnsiedad from "./pages/TerapiaAnsiedad.jsx";
 import ImagenCorporalConductaAlimentaria from "./pages/ImagenCorporalConductaAlimentaria.jsx";
@@ -25,6 +26,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/servicios" element={<Servicios />} />
         <Route path="/sobre-mi" element={<SobreMi />} />
+        <Route path="/recursos" element={<Recursos />} />
         <Route path="/psi-cositas" element={<PsiCositas />} />
         <Route path="/talleres" element={<Talleres />} />
         <Route path="/contacto" element={<Contacto />} />

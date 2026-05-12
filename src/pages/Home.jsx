@@ -104,7 +104,7 @@ export default function Home() {
               </p>
               <p className="heroHome__subtitle">Psicóloga Marcela Zamora</p>
               <p className="heroHome__note">
-                Atención online y presencial para procesos de ansiedad, autoestima, trauma,
+                Atención online y Presencial para procesos de ansiedad, autoestima, trauma,
                 depresión y relación con la comida o el cuerpo.
               </p>
             </div>

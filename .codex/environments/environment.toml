@@ -10,13 +10,5 @@ name = "Run"
 icon = "run"
 command = '''
 npm install
-npm run
-'''
-
-[[actions]]
-name = "VAP"
-icon = "tool"
-command = '''
-npm install
-npm run start
+npm run dev
 '''

@@ -7,7 +7,8 @@ const mainLinks = [
   { to: "/", label: "Inicio", end: true },
   { to: "/servicios", label: "Servicios" },
   { to: "/sobre-mi", label: "Sobre mí" },
-  { to: "/psi-cositas", label: "Psi-Cositas" },
+  { to: "/recursos", label: "Recursos" },
+  { to: "/psi-cositas", label: "Psicositas" },
   { to: "/talleres", label: "Talleres" },
   { to: "/contacto", label: "Contacto" },
 ];

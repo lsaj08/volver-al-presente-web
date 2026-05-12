@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import usePageMeta from "../hooks/usePageMeta.js";
+import marcelaPhoto from "../assets/banner.jpeg";
 import {
   ABOUT_CONTENT,
   APPROACH_POINTS,
@@ -29,27 +30,30 @@ export default function SobreMi() {
   return (
     <main>
       <section className="innerHero">
-        <div className="container innerHero__content">
-          <span className="sub">Sobre mí</span>
-          <h1>{ABOUT_CONTENT.title}</h1>
-          {ABOUT_CONTENT.paragraphs.map((paragraph) => (
-            <p className="aboutLead" key={paragraph}>
-              {paragraph}
-            </p>
-          ))}
-          <div className="innerHero__cta">
-            <a className="btn btn-primary" href={waLink} target="_blank" rel="noreferrer">
-              Escribir por WhatsApp
-            </a>
-            <a
-              className="btn btn-secondary"
-              href={CONTACT.bookingUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Agendar sesión
-            </a>
+        <div className="container aboutHero">
+          <div className="innerHero__content">
+            <span className="sub">Sobre mí</span>
+            <h1>{ABOUT_CONTENT.title}</h1>
+            {ABOUT_CONTENT.paragraphs.map((paragraph) => (
+              <p className="aboutLead" key={paragraph}>
+                {paragraph}
+              </p>
+            ))}
+            <div className="innerHero__cta">
+              <a className="btn btn-primary" href={waLink} target="_blank" rel="noreferrer">
+                Escribir por WhatsApp
+              </a>
+              <a
+                className="btn btn-secondary"
+                href={CONTACT.bookingUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Agendar sesión
+              </a>
+            </div>
           </div>
+          <img className="aboutHero__photo" src={marcelaPhoto} alt="Psicóloga Marcela Zamora" />
         </div>
       </section>
 

@@ -5,23 +5,16 @@ import "../styles/internal.css";
 
 const WORKSHOPS = [
   {
-    title: "Ansiedad y regulación emocional",
-    objective: "Aprender herramientas prácticas para identificar señales de ansiedad y regular activación.",
-    modality: "Virtual o presencial (según convocatoria)",
-    duration: "Formato breve de 2 a 3 horas",
-    audience: "Personas adultas que buscan recursos iniciales de gestión emocional.",
-  },
-  {
-    title: "Autocuidado y límites saludables",
-    objective: "Fortalecer hábitos de autocuidado y comunicación asertiva en vínculos cotidianos.",
-    modality: "Virtual o presencial (según convocatoria)",
+    title: "Taller de Límites",
+    objective: "Fortalecer herramientas para poner límites con claridad, respeto y menos culpa.",
+    modality: "Virtual o Presencial (según convocatoria)",
     duration: "Formato breve de 2 a 3 horas",
     audience: "Personas, equipos o grupos interesados en bienestar relacional.",
   },
   {
-    title: "Relación con el cuerpo y la comida",
-    objective: "Promover una mirada más amable del cuerpo y estrategias de autocuidado sin exigencia extrema.",
-    modality: "Virtual o presencial (según convocatoria)",
+    title: "BIP (Body Image Positive)",
+    objective: "Promover una relación más amable con el cuerpo y estrategias de autocuidado sin exigencia extrema.",
+    modality: "Virtual o Presencial (según convocatoria)",
     duration: "Formato breve de 2 a 3 horas",
     audience: "Personas que desean trabajar imagen corporal y hábitos con enfoque compasivo.",
   },
@@ -35,7 +28,7 @@ export default function Talleres() {
 
   usePageMeta(
     "Talleres | Volver al Presente",
-    "Catálogo provisional de talleres de bienestar emocional: ansiedad, autocuidado y relación con el cuerpo."
+    "Talleres de bienestar emocional: límites e imagen corporal positiva."
   );
 
   return (
