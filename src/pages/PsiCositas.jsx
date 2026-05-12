@@ -1,6 +1,6 @@
 import React from "react";
 import usePageMeta from "../hooks/usePageMeta.js";
-import { CANVA_CATALOG_URL } from "../data/content.js";
+import { EXTERNAL_LINKS, isPlaceholderUrl } from "../data/externalLinks.js";
 import "../styles/internal.css";
 
 export default function PsiCositas() {
@@ -20,11 +20,16 @@ export default function PsiCositas() {
             al bienestar emocional.
           </p>
           <div className="innerHero__cta">
-            <a className="btn btn-primary" href={CANVA_CATALOG_URL} target="_blank" rel="noreferrer">
+            <a
+              className="btn btn-primary"
+              href={EXTERNAL_LINKS.canvaCatalog}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Ver catálogo en Canva
             </a>
           </div>
-          {CANVA_CATALOG_URL.includes("PENDIENTE") && (
+          {isPlaceholderUrl(EXTERNAL_LINKS.canvaCatalog) && (
             <p className="muted">
               Pendiente: agregar el enlace final del catálogo de Canva en <code>CANVA_CATALOG_URL</code>.
             </p>

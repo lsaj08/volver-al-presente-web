@@ -23,6 +23,8 @@ export default function App() {
     <BrowserRouter>
       <Header />
       <Routes>
+        {/* Rutas principales del sitio Vite/React.
+            Agregar nuevas páginas aquí y su enlace visible en Header.jsx cuando corresponda. */}
         <Route path="/" element={<Home />} />
         <Route path="/servicios" element={<Servicios />} />
         <Route path="/sobre-mi" element={<SobreMi />} />

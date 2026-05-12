@@ -1,13 +1,9 @@
 import React, { useMemo } from "react";
 import { Link } from "react-router-dom";
 import usePageMeta from "../hooks/usePageMeta.js";
-import { CONTACT, SERVICE_AREAS, WHATSAPP_DEFAULT_TEXT } from "../data/content.js";
+import { SERVICE_AREAS, WHATSAPP_DEFAULT_TEXT } from "../data/content.js";
+import { buildWhatsAppLink, EXTERNAL_LINKS } from "../data/externalLinks.js";
 import "../styles/internal.css";
-
-function buildWhatsAppLink(message) {
-  const text = encodeURIComponent(message);
-  return `https://wa.me/${CONTACT.waNumber}?text=${text}`;
-}
 
 export default function ServiceDetailPage({ slug }) {
   const service = SERVICE_AREAS.find((item) => item.slug === slug);
@@ -45,14 +41,14 @@ export default function ServiceDetailPage({ slug }) {
           <h1>{service.title}</h1>
           <p>{service.subtitle}</p>
           <div className="innerHero__cta">
-            <a className="btn btn-primary" href={waLink} target="_blank" rel="noreferrer">
+            <a className="btn btn-primary" href={waLink} target="_blank" rel="noopener noreferrer">
               Escribir por WhatsApp
             </a>
             <a
               className="btn btn-secondary"
-              href={CONTACT.bookingUrl}
+              href={EXTERNAL_LINKS.booking}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               Agendar sesión
             </a>
@@ -86,7 +82,7 @@ export default function ServiceDetailPage({ slug }) {
           </article>
 
           <div className="centerCta">
-            <a className="btn btn-primary" href={waLink} target="_blank" rel="noreferrer">
+            <a className="btn btn-primary" href={waLink} target="_blank" rel="noopener noreferrer">
               Coordinar por WhatsApp
             </a>
           </div>
@@ -136,14 +132,14 @@ export default function ServiceDetailPage({ slug }) {
               mejor modalidad para iniciar.
             </p>
             <div className="innerHero__cta">
-              <a className="btn btn-primary" href={waLink} target="_blank" rel="noreferrer">
+              <a className="btn btn-primary" href={waLink} target="_blank" rel="noopener noreferrer">
                 Escribir por WhatsApp
               </a>
               <a
                 className="btn btn-secondary"
-                href={CONTACT.bookingUrl}
+                href={EXTERNAL_LINKS.booking}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
               >
                 Agendar sesión
               </a>

@@ -5,11 +5,11 @@ import FAQ from "../components/FAQ.jsx";
 import {
   APPROACH_POINTS,
   BRAND_VALUES,
-  CONTACT,
   FIRST_SESSION_POINTS,
   SERVICE_AREAS,
   WHATSAPP_DEFAULT_TEXT,
 } from "../data/content.js";
+import { buildWhatsAppLink, EXTERNAL_LINKS } from "../data/externalLinks.js";
 import "../styles/home.css";
 import "../styles/internal.css";
 import heroPic from "../assets/banner.jpeg";
@@ -83,10 +83,7 @@ function TopicCard({ topic, index }) {
 }
 
 export default function Home() {
-  const waLink = useMemo(() => {
-    const text = encodeURIComponent(WHATSAPP_DEFAULT_TEXT);
-    return `https://wa.me/${CONTACT.waNumber}?text=${text}`;
-  }, []);
+  const waLink = useMemo(() => buildWhatsAppLink(WHATSAPP_DEFAULT_TEXT), []);
 
   usePageMeta(
     "Volver al Presente | Psicóloga Marcela Zamora",
@@ -112,10 +109,10 @@ export default function Home() {
               </p>
             </div>
             <div className="heroHome__cta">
-              <a className="btn btn-primary" href={waLink} target="_blank" rel="noreferrer">
+              <a className="btn btn-primary" href={waLink} target="_blank" rel="noopener noreferrer">
                 <WhatsIcon className="icon" /> Escribir por WhatsApp
               </a>
-              <a className="btn btn-secondary" href={CONTACT.bookingUrl} target="_blank" rel="noreferrer">
+              <a className="btn btn-secondary" href={EXTERNAL_LINKS.booking} target="_blank" rel="noopener noreferrer">
                 <PhoneIcon className="icon" /> Agendar sesión
               </a>
             </div>
@@ -129,6 +126,8 @@ export default function Home() {
 
       <section className="topics">
         <div className="container topics__inner">
+          {/* Áreas de acompañamiento mostradas en Inicio.
+              El contenido viene de data/content.js para evitar duplicar textos. */}
           <div className="topics__list">
             {SERVICE_AREAS.map((topic, idx) => (
               <TopicCard key={topic.slug} topic={topic} index={idx} />

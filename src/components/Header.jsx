@@ -32,6 +32,8 @@ export default function Header() {
         </NavLink>
 
         <nav id="site-navigation" className={`nav ${isOpen ? "is-open" : ""}`}>
+          {/* Navegación principal.
+              Mantener etiquetas y rutas sincronizadas con App.jsx. */}
           {mainLinks.map((item) => (
             <NavLink
               key={item.to}

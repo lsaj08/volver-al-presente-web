@@ -1,14 +1,15 @@
 import React, { useMemo } from "react";
 import { Link } from "react-router-dom";
 import usePageMeta from "../hooks/usePageMeta.js";
-import { CONTACT, SERVICE_AREAS, WHATSAPP_DEFAULT_TEXT } from "../data/content.js";
+import { SERVICE_AREAS, WHATSAPP_DEFAULT_TEXT } from "../data/content.js";
+import { buildWhatsAppLink } from "../data/externalLinks.js";
 import "../styles/internal.css";
 
 export default function Servicios() {
-  const waLink = useMemo(() => {
-    const text = encodeURIComponent(`${WHATSAPP_DEFAULT_TEXT} Quiero información sobre servicios.`);
-    return `https://wa.me/${CONTACT.waNumber}?text=${text}`;
-  }, []);
+  const waLink = useMemo(
+    () => buildWhatsAppLink(`${WHATSAPP_DEFAULT_TEXT} Quiero información sobre servicios.`),
+    []
+  );
 
   usePageMeta(
     "Servicios | Volver al Presente",
@@ -31,6 +32,8 @@ export default function Servicios() {
 
       <section className="section">
         <div className="container cardGrid">
+          {/* Lista de servicios oficiales.
+              Las tarjetas se alimentan desde data/content.js para mantener una sola fuente. */}
           {SERVICE_AREAS.map((service) => (
             <article className="card serviceCard" key={service.slug}>
               <h2>{service.shortTitle}</h2>
@@ -51,7 +54,7 @@ export default function Servicios() {
               Podemos conversar primero por WhatsApp para identificar cuál de estas
               áreas se ajusta mejor a lo que estás viviendo hoy.
             </p>
-            <a className="btn btn-primary" href={waLink} target="_blank" rel="noreferrer">
+            <a className="btn btn-primary" href={waLink} target="_blank" rel="noopener noreferrer">
               Escribir por WhatsApp
             </a>
           </article>

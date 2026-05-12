@@ -48,39 +48,41 @@ function Item({ q, a, isOpen, onToggle }) {
   );
 }
 
+// Preguntas frecuentes generales del sitio.
+// Se mantienen fuera del render para evitar recrear la lista en cada interacción.
+const FAQ_ITEMS = [
+  {
+    q: "¿Cómo agendar terapia con Marcela Zamora?",
+    a: "Podés escribir por WhatsApp o reservar en agenda online. Si tenés dudas sobre qué servicio elegir, podés iniciar con un mensaje breve y lo orientamos juntas.",
+  },
+  {
+    q: "¿La terapia es virtual, Presencial o ambas?",
+    a: "Se ofrece modalidad online y Presencial. En el primer contacto te indico qué opciones están habilitadas y cuál puede ajustarse mejor a tu momento.",
+  },
+  {
+    q: "¿Cuánto dura una sesión psicológica?",
+    a: "Generalmente la sesión dura alrededor de 50 minutos. La frecuencia se acuerda según tus objetivos y momento terapéutico.",
+  },
+  {
+    q: "¿En qué situaciones conviene consultar?",
+    a: "Si hay ansiedad, estrés, tristeza persistente, trauma, conflictos de autoestima, límites o relación con la comida y el cuerpo, consultar puede ayudarte a recuperar claridad y recursos.",
+  },
+  {
+    q: "¿Cuánto tiempo dura un proceso terapéutico?",
+    a: "No hay una duración única. Depende de tu motivo de consulta, objetivos y ritmo. Se revisan avances periódicamente para que el proceso tenga dirección.",
+  },
+  {
+    q: "¿Cómo saber si este espacio es para mí?",
+    a: "Si buscás un espacio cálido, ético y basado en evidencia para entender lo que te pasa y trabajar cambios concretos, es un buen punto de partida.",
+  },
+];
+
 export default function FAQ() {
   const [open, setOpen] = useState(0);
 
-  const items = [
-    {
-      q: "¿Cómo agendar terapia con Marcela Zamora?",
-      a: "Podés escribir por WhatsApp o reservar en agenda online. Si tenés dudas sobre qué servicio elegir, podés iniciar con un mensaje breve y lo orientamos juntas.",
-    },
-    {
-      q: "¿La terapia es virtual, Presencial o ambas?",
-      a: "Se ofrece modalidad online y Presencial. En el primer contacto te indico qué opciones están habilitadas y cuál puede ajustarse mejor a tu momento.",
-    },
-    {
-      q: "¿Cuánto dura una sesión psicológica?",
-      a: "Generalmente la sesión dura alrededor de 50 minutos. La frecuencia se acuerda según tus objetivos y momento terapéutico.",
-    },
-    {
-      q: "¿En qué situaciones conviene consultar?",
-      a: "Si hay ansiedad, estrés, tristeza persistente, trauma, conflictos de autoestima, límites o relación con la comida y el cuerpo, consultar puede ayudarte a recuperar claridad y recursos.",
-    },
-    {
-      q: "¿Cuánto tiempo dura un proceso terapéutico?",
-      a: "No hay una duración única. Depende de tu motivo de consulta, objetivos y ritmo. Se revisan avances periódicamente para que el proceso tenga dirección.",
-    },
-    {
-      q: "¿Cómo saber si este espacio es para mí?",
-      a: "Si buscás un espacio cálido, ético y basado en evidencia para entender lo que te pasa y trabajar cambios concretos, es un buen punto de partida.",
-    },
-  ];
-
   return (
     <div className="faq">
-      {items.map((it, idx) => (
+      {FAQ_ITEMS.map((it, idx) => (
         <Item
           key={it.q}
           q={it.q}

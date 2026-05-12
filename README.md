@@ -6,6 +6,7 @@ Sitio web profesional de Marcela Zamora, psicóloga. El proyecto conserva su sta
 
 - React
 - Vite
+- React DOM
 - React Router DOM
 - CSS propio en `src/styles`
 
@@ -28,6 +29,7 @@ npm run dev
 ```bash
 npm run lint
 npm run build
+npm audit
 ```
 
 ## Editar contenido
@@ -39,8 +41,27 @@ La fuente principal de contenido es el archivo Word original:
 El contenido reutilizable vive en:
 
 - `src/data/content.js`: contacto, textos de Sobre mí, forma de trabajo, primera sesión, misión, visión, valores y servicios.
+- `src/data/externalLinks.js`: enlaces externos, WhatsApp, agenda, teléfono y mapas.
 - `src/pages/SobreMi.jsx`: estructura visual existente de la página Sobre mí, consumiendo contenido desde `content.js`.
 - `src/components/ServiceDetailPage.jsx`: estructura visual existente para detalle de servicios, consumiendo `SERVICE_AREAS`.
+
+## Editar rutas y pestañas
+
+- Rutas principales: `src/App.jsx`.
+- Menú visible: `src/components/Header.jsx`.
+- Recursos digitales: `src/pages/Recursos.jsx`.
+- Psicositas físicas o catálogo: `src/pages/PsiCositas.jsx`.
+- Talleres visibles: `src/pages/Talleres.jsx`.
+
+## Variables públicas
+
+El catálogo de Canva puede configurarse con una variable pública de Vite:
+
+```bash
+VITE_CANVA_CATALOG_URL=https://...
+```
+
+No incluir secretos, tokens ni claves privadas en variables `VITE_`, porque se exponen al navegador.
 
 ## Reglas de mantenimiento
 
@@ -48,3 +69,4 @@ El contenido reutilizable vive en:
 - No reemplazar Vite si es el stack web activo.
 - No convertir el proyecto a React Native/Expo sin una decisión técnica explícita.
 - Actualizar contenido desde el Word sin cambiar el tono clínico ni la propuesta de valor.
+- Mantener enlaces externos con `rel="noopener noreferrer"` cuando abran en nueva pestaña.

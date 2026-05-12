@@ -1,8 +1,11 @@
 import React, { useMemo } from "react";
 import usePageMeta from "../hooks/usePageMeta.js";
-import { CONTACT, WHATSAPP_DEFAULT_TEXT } from "../data/content.js";
+import { WHATSAPP_DEFAULT_TEXT } from "../data/content.js";
+import { buildWhatsAppLink } from "../data/externalLinks.js";
 import "../styles/internal.css";
 
+// Talleres visibles actualmente.
+// Si se agregan talleres futuros, mantener aquí solo los que deban mostrarse en la UI.
 const WORKSHOPS = [
   {
     title: "Taller de Límites",
@@ -21,10 +24,10 @@ const WORKSHOPS = [
 ];
 
 export default function Talleres() {
-  const waLink = useMemo(() => {
-    const text = encodeURIComponent(`${WHATSAPP_DEFAULT_TEXT} Quiero información sobre talleres.`);
-    return `https://wa.me/${CONTACT.waNumber}?text=${text}`;
-  }, []);
+  const waLink = useMemo(
+    () => buildWhatsAppLink(`${WHATSAPP_DEFAULT_TEXT} Quiero información sobre talleres.`),
+    []
+  );
 
   usePageMeta(
     "Talleres | Volver al Presente",
@@ -67,7 +70,7 @@ export default function Talleres() {
               Escribime por WhatsApp para conocer disponibilidad, formato y
               enfoque según las necesidades de tu grupo.
             </p>
-            <a className="btn btn-primary" href={waLink} target="_blank" rel="noreferrer">
+            <a className="btn btn-primary" href={waLink} target="_blank" rel="noopener noreferrer">
               Consultar por WhatsApp
             </a>
           </article>

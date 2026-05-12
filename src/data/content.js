@@ -1,3 +1,5 @@
+// Contenido oficial del sitio.
+// Los textos principales se retomaron del documento Word original del proyecto.
 export const CONTACT = {
   phoneDisplay: "+506 8565 0659",
   phoneTel: "+50685650659",
@@ -10,6 +12,7 @@ export const CANVA_CATALOG_URL = "PENDIENTE_AGREGAR_LINK_DE_CANVA";
 export const WHATSAPP_DEFAULT_TEXT =
   "Hola, me gustaría agendar una sesión. ¿Qué horarios tenés disponibles?";
 
+// Texto base de la sección Sobre mí.
 export const ABOUT_CONTENT = {
   title: "¡Hola! soy Marcela Zamora, qué lindo encontrarnos en este espacio.",
   paragraphs: [
@@ -89,6 +92,8 @@ export const ENABLEMENTS = [
   "Habilitación para evaluación de idoneidad mental para laborar en centros de atención integral infantil públicos, privados y mixtos.",
 ];
 
+// Áreas de acompañamiento y detalle de servicios.
+// Evitar duplicar estos textos directamente en páginas o componentes.
 export const SERVICE_AREAS = [
   {
     slug: "terapia-ansiedad",

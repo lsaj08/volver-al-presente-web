@@ -111,6 +111,8 @@
   border-bottom: 1px solid var(--line);
 }
 
+/* Tarjetas de áreas de acompañamiento.
+   El círculo del ícono queda anclado arriba para que todas las cards alineen visualmente. */
 .topics__list {
   display: flex;
   gap: 14px;

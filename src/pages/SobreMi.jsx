@@ -5,7 +5,6 @@ import {
   ABOUT_CONTENT,
   APPROACH_POINTS,
   BRAND_VALUES_DETAIL,
-  CONTACT,
   ENABLEMENTS,
   FIRST_SESSION_POINTS,
   MISSION,
@@ -14,13 +13,14 @@ import {
   VOLVER_AL_PRESENTE,
   WHATSAPP_DEFAULT_TEXT,
 } from "../data/content.js";
+import { buildWhatsAppLink, EXTERNAL_LINKS } from "../data/externalLinks.js";
 import "../styles/internal.css";
 
 export default function SobreMi() {
-  const waLink = useMemo(() => {
-    const text = encodeURIComponent(`${WHATSAPP_DEFAULT_TEXT} Quiero conocer más sobre tu enfoque terapéutico.`);
-    return `https://wa.me/${CONTACT.waNumber}?text=${text}`;
-  }, []);
+  const waLink = useMemo(
+    () => buildWhatsAppLink(`${WHATSAPP_DEFAULT_TEXT} Quiero conocer más sobre tu enfoque terapéutico.`),
+    []
+  );
 
   usePageMeta(
     "Sobre mí | Volver al Presente",
@@ -40,14 +40,14 @@ export default function SobreMi() {
               </p>
             ))}
             <div className="innerHero__cta">
-              <a className="btn btn-primary" href={waLink} target="_blank" rel="noreferrer">
+              <a className="btn btn-primary" href={waLink} target="_blank" rel="noopener noreferrer">
                 Escribir por WhatsApp
               </a>
               <a
                 className="btn btn-secondary"
-                href={CONTACT.bookingUrl}
+                href={EXTERNAL_LINKS.booking}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
               >
                 Agendar sesión
               </a>
@@ -161,14 +161,14 @@ export default function SobreMi() {
               primera sesión o escríbeme por WhatsApp; será un gusto acompañarte.
             </p>
             <div className="innerHero__cta">
-              <a className="btn btn-primary" href={waLink} target="_blank" rel="noreferrer">
+              <a className="btn btn-primary" href={waLink} target="_blank" rel="noopener noreferrer">
                 Escribir por WhatsApp
               </a>
               <a
                 className="btn btn-secondary"
-                href={CONTACT.bookingUrl}
+                href={EXTERNAL_LINKS.booking}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
               >
                 Agendar sesión
               </a>

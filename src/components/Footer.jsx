@@ -1,13 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { CONTACT } from "../data/content.js";
+import { buildWhatsAppLink, EXTERNAL_LINKS } from "../data/externalLinks.js";
 
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="container footer__inner">
         <div className="footer__left">
-          <a className="footerTel" href={`tel:${CONTACT.phoneTel}`}>
+          <a className="footerTel" href={EXTERNAL_LINKS.phone}>
             {CONTACT.phoneDisplay}
           </a>
         </div>
@@ -29,9 +30,9 @@ export default function Footer() {
         <div className="footer__right">
           <a
             className="btn btn-secondary small"
-            href={`https://wa.me/${CONTACT.waNumber}`}
+            href={buildWhatsAppLink()}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             WhatsApp
           </a>

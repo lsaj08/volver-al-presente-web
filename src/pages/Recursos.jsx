@@ -1,8 +1,11 @@
 import React, { useMemo } from "react";
 import usePageMeta from "../hooks/usePageMeta.js";
-import { CONTACT, WHATSAPP_DEFAULT_TEXT } from "../data/content.js";
+import { WHATSAPP_DEFAULT_TEXT } from "../data/content.js";
+import { buildWhatsAppLink } from "../data/externalLinks.js";
 import "../styles/internal.css";
 
+// Recursos digitales visibles en la pestaña Recursos.
+// Mantener estos textos breves para no mezclar esta sección con Psicositas físicas.
 const RESOURCES = [
   {
     title: "Respiración breve para momentos de ansiedad",
@@ -87,10 +90,10 @@ function buildPlaceholderImage({ tag, format, palette }) {
 }
 
 export default function Recursos() {
-  const waLink = useMemo(() => {
-    const text = encodeURIComponent(`${WHATSAPP_DEFAULT_TEXT} Quiero más información de Recursos.`);
-    return `https://wa.me/${CONTACT.waNumber}?text=${text}`;
-  }, []);
+  const waLink = useMemo(
+    () => buildWhatsAppLink(`${WHATSAPP_DEFAULT_TEXT} Quiero más información de Recursos.`),
+    []
+  );
 
   usePageMeta(
     "Recursos | Volver al Presente",
@@ -142,7 +145,7 @@ export default function Recursos() {
               Si necesitás apoyo más profundo para lo que estás viviendo, podés escribirme y
               coordinamos una primera sesión.
             </p>
-            <a className="btn btn-primary" href={waLink} target="_blank" rel="noreferrer">
+            <a className="btn btn-primary" href={waLink} target="_blank" rel="noopener noreferrer">
               Escribir por WhatsApp
             </a>
           </article>

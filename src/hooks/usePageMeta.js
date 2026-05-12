@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 
+// Utilidades SEO para páginas internas.
+// Actualizan etiquetas existentes o las crean sin depender de librerías externas.
 function upsertMeta(name, content, attribute = "name") {
   if (!content) return;
   let tag = document.querySelector(`meta[${attribute}="${name}"]`);

@@ -2,6 +2,7 @@ import React, { useMemo } from "react";
 import FAQ from "../components/FAQ.jsx";
 import usePageMeta from "../hooks/usePageMeta.js";
 import { CONTACT, WHATSAPP_DEFAULT_TEXT } from "../data/content.js";
+import { buildWhatsAppLink, EXTERNAL_LINKS } from "../data/externalLinks.js";
 import "../styles/contacto.css";
 
 function WhatsIcon() {
@@ -50,10 +51,7 @@ function PinIcon() {
 }
 
 export default function Contacto() {
-  const waLink = useMemo(() => {
-    const text = encodeURIComponent(WHATSAPP_DEFAULT_TEXT);
-    return `https://wa.me/${CONTACT.waNumber}?text=${text}`;
-  }, []);
+  const waLink = useMemo(() => buildWhatsAppLink(WHATSAPP_DEFAULT_TEXT), []);
 
   usePageMeta(
     "Agendar terapia en Costa Rica | Contacto Psicóloga Marcela Zamora",
@@ -74,11 +72,11 @@ export default function Contacto() {
             </p>
 
             <div className="hero__cta">
-              <a className="btn btn-primary" href={waLink} target="_blank" rel="noreferrer">
+              <a className="btn btn-primary" href={waLink} target="_blank" rel="noopener noreferrer">
                 <WhatsIcon /> Escribir por WhatsApp
               </a>
 
-              <a className="btn btn-secondary" href={CONTACT.bookingUrl} target="_blank" rel="noreferrer">
+              <a className="btn btn-secondary" href={EXTERNAL_LINKS.booking} target="_blank" rel="noopener noreferrer">
                 <PhoneIcon /> Agendar sesión
               </a>
             </div>
@@ -119,10 +117,10 @@ export default function Contacto() {
                   más cómoda. Solo necesitás privacidad, conexión estable y un espacio tranquilo.
                 </p>
                 <div className="locationActions">
-                  <a className="btn btn-primary small" href={CONTACT.bookingUrl} target="_blank" rel="noreferrer">
+                  <a className="btn btn-primary small" href={EXTERNAL_LINKS.booking} target="_blank" rel="noopener noreferrer">
                     <PhoneIcon /> Agendar online
                   </a>
-                  <a className="btn btn-secondary small" href={waLink} target="_blank" rel="noreferrer">
+                  <a className="btn btn-secondary small" href={waLink} target="_blank" rel="noopener noreferrer">
                     <WhatsIcon /> Consultar por WhatsApp
                   </a>
                 </div>
@@ -139,13 +137,13 @@ export default function Contacto() {
                   <div className="locationActions">
                     <a
                       className="btn btn-ghost small"
-                      href="https://www.google.com/maps/search/?api=1&query=Barrio%20Coraz%C3%B3n%20de%20Jes%C3%BAs%2C%20Heredia%2C%20Costa%20Rica"
+                      href={EXTERNAL_LINKS.maps.heredia}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <PinIcon /> Cómo llegar
                     </a>
-                    <a className="locationPhone" href={`tel:${CONTACT.phoneTel}`}>
+                    <a className="locationPhone" href={EXTERNAL_LINKS.phone}>
                       {CONTACT.phoneDisplay}
                     </a>
                   </div>
@@ -159,13 +157,13 @@ export default function Contacto() {
                   <div className="locationActions">
                     <a
                       className="btn btn-ghost small"
-                      href="https://www.google.com/maps/search/?api=1&query=Barrio%20Gonz%C3%A1lez%20Lahmann%2C%20San%20Jos%C3%A9%2C%20Costa%20Rica"
+                      href={EXTERNAL_LINKS.maps.sanJose}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <PinIcon /> Cómo llegar
                     </a>
-                    <a className="locationPhone" href={`tel:${CONTACT.phoneTel}`}>
+                    <a className="locationPhone" href={EXTERNAL_LINKS.phone}>
                       {CONTACT.phoneDisplay}
                     </a>
                   </div>
@@ -188,18 +186,18 @@ export default function Contacto() {
                 La forma más rápida de iniciar es por WhatsApp o agenda online. Si no sabés qué
                 modalidad elegir, podés escribirme y vemos juntas cuál se ajusta mejor a tu momento.
               </p>
-              <a className="btn btn-primary formBtn" href={waLink} target="_blank" rel="noreferrer">
+              <a className="btn btn-primary formBtn" href={waLink} target="_blank" rel="noopener noreferrer">
                 <WhatsIcon /> Escribir por WhatsApp
               </a>
               <a
                 className="btn btn-secondary formBtn"
-                href={CONTACT.bookingUrl}
+                href={EXTERNAL_LINKS.booking}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
               >
                 <PhoneIcon /> Ir a agenda online
               </a>
-              <a className="btn btn-ghost formBtn" href={`tel:${CONTACT.phoneTel}`}>
+              <a className="btn btn-ghost formBtn" href={EXTERNAL_LINKS.phone}>
                 <PhoneIcon /> {CONTACT.phoneDisplay}
               </a>
             </div>
@@ -216,7 +214,7 @@ export default function Contacto() {
         </div>
       </section>
 
-      <a className="waFloat" href={waLink} target="_blank" rel="noreferrer" aria-label="WhatsApp">
+      <a className="waFloat" href={waLink} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
         <WhatsIcon />
       </a>
     </main>
