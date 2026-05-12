@@ -1,63 +1,99 @@
-# Volver al Presente Mobile
+# Volver al Presente
 
-Aplicación React Native mobile-first para la marca profesional de Marcela Zamora, psicóloga. La app está organizada con Expo, React Navigation y una arquitectura limpia para seguir trabajando con Codex sin arrastrar dependencias web.
+Aplicación React Native multiplataforma para la marca profesional de Marcela Zamora, psicóloga. Usa una sola base de componentes React Native para web, Android e iOS, con Expo y React Navigation.
 
 ## Stack oficial
 
 - Expo
 - React Native
+- React Native Web
 - React Navigation
+- Expo Fonts
 - JavaScript con componentes funcionales
-- `StyleSheet` y objetos de estilo compatibles con React Native
+- `StyleSheet`, `useWindowDimensions` y tokens de diseño centralizados
 
-No se usa Vite, Next.js, React DOM, React Router DOM, HTML ni CSS web.
+No hay app web separada con Vite, Next.js o React Router DOM.
 
-## Instalación
+## Instalar
 
 ```bash
 npm install
 ```
 
-## Correr el proyecto
+## Correr
 
 ```bash
 npm run start
+npm run web
 npm run android
 npm run ios
 ```
 
 `npm run ios` requiere macOS con Xcode o un entorno Expo compatible.
 
-## Validación
+## Validar
 
 ```bash
 npm run lint
+npx expo install --check
+npx expo export --platform web --output-dir .expo-export-web-test
+npx expo export --platform android --output-dir .expo-export-android-test
 ```
-
-Antes de hacer commit, revisá que:
-
-- No existan imports desde `react-dom`, `react-router-dom` o archivos `.css`.
-- No se usen etiquetas HTML como `div`, `span`, `p`, `h1`, `button` o `img`.
-- Los estilos nuevos usen `StyleSheet` o theme centralizado.
-- Los textos largos vivan en `src/data` cuando sea razonable.
-- La navegación siga usando React Navigation.
 
 ## Estructura
 
 ```text
 src/
+  App.js
   assets/
   components/
     cards/
     layout/
     ui/
   data/
+    faqs.js
+    navigation.js
+    services.js
+    siteContent.js
+  hooks/
   navigation/
   screens/
   theme/
   utils/
 ```
 
-## Notas de migración
+## Editar contenido
 
-El proyecto original era una app web con Vite, React DOM, React Router DOM, CSS y páginas DOM. Se migró a Expo porque el repositorio no tenía carpetas nativas Android/iOS y Expo permite mantener una app React Native pura, portable y fácil de ejecutar sin agregar complejidad nativa innecesaria.
+El contenido principal viene del Word original `Información para Página Web.docx`. Los textos editables viven en:
+
+- `src/data/siteContent.js`: inicio, sobre mí, forma de trabajo, misión, visión, valores, talleres y Psi-Cositas.
+- `src/data/services.js`: servicios, metáforas, criterios, trabajo terapéutico, FAQs y CTAs.
+- `src/data/faqs.js`: preguntas generales.
+- `src/data/navigation.js`: navegación principal.
+
+No agregues textos clínicos nuevos si ya existen en el documento Word. Si se resume, conservar sentido, tono y propuesta de valor.
+
+## Editar diseño
+
+- Colores: `src/theme/colors.js`
+- Tipografías: `src/theme/typography.js`
+- Espaciado: `src/theme/spacing.js`
+- Breakpoints: `src/theme/breakpoints.js`
+- Responsive: `src/hooks/useResponsive.js`
+
+## Navegación
+
+La navegación usa React Navigation:
+
+- Tabs principales: Inicio, Servicios, Psi-Cositas y Talleres.
+- Stack para detalle de servicio.
+- Linking web para `/`, `/servicios`, `/psi-cositas`, `/talleres` y `/servicios/:slug`.
+
+## Checklist antes de commit
+
+- `npm run lint` pasa.
+- `npx expo install --check` pasa.
+- No hay `react-router-dom`, Vite, Next.js ni CSS global como base visual.
+- No hay etiquetas HTML en pantallas/componentes.
+- Los CTAs usan `Linking` mediante `src/utils/links.js`.
+- Las pantallas se ven razonables en móvil y web.

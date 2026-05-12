@@ -1,35 +1,49 @@
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 import ResourceCard from "../components/cards/ResourceCard";
 import Screen from "../components/layout/Screen";
 import Button from "../components/ui/Button";
 import SectionHeader from "../components/ui/SectionHeader";
 import { psiCositas } from "../data/siteContent";
+import useResponsive from "../hooks/useResponsive";
 import { spacing } from "../theme/spacing";
-import { buildWhatsAppUrl, openUrl } from "../utils/contact";
+import { externalLinks, openExternalUrl } from "../utils/links";
 
-export default function PsiCositasScreen() {
+export default function PsiCositasScreen({ navigation, route }) {
+  const { columns } = useResponsive();
+
   return (
-    <Screen>
+    <Screen navigation={navigation} routeName={route.name}>
       <SectionHeader
         eyebrow="Psi-Cositas"
         title="Recursos breves para tu bienestar emocional"
-        body="Una pequeña biblioteca de contenidos cortos y prácticos para acompañarte en el día a día."
+        body="Una biblioteca pequeña de contenidos prácticos que puede crecer sin romper la arquitectura de la app."
       />
-      <View style={styles.list}>
+      <View style={gridStyle(columns)}>
         {psiCositas.map((item) => (
-          <ResourceCard key={item.title} item={item} />
+          <View key={item.title} style={cardColumnStyle(columns)}>
+            <ResourceCard item={item} />
+          </View>
         ))}
       </View>
       <Button
         label="Pedir acompañamiento personalizado"
-        onPress={() => openUrl(buildWhatsAppUrl("Quiero más información de Psi-Cositas."))}
+        onPress={() => openExternalUrl(externalLinks.whatsapp("Quiero más información de Psi-Cositas."))}
       />
     </Screen>
   );
 }
 
-const styles = StyleSheet.create({
-  list: {
+function gridStyle() {
+  return {
+    flexDirection: "row",
+    flexWrap: "wrap",
     gap: spacing.lg,
-  },
-});
+  };
+}
+
+function cardColumnStyle(columns) {
+  return {
+    flexBasis: columns === 1 ? "100%" : columns === 2 ? "47%" : "31%",
+    flexGrow: 1,
+  };
+}

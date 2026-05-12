@@ -2,12 +2,12 @@
 
 ## Responsabilidad
 
-Crear componentes reutilizables para la UI de React Native.
+Crear componentes reutilizables compatibles con web, Android e iOS.
 
 ## Reglas
 
-- Usar únicamente componentes nativos como `View`, `Text`, `Pressable`, `Image`, `ScrollView` y `FlatList`.
-- No usar HTML, `className`, CSS ni props de navegador.
-- Mantener estilos con `StyleSheet.create`.
-- Reutilizar `src/theme` para colores, tipografías y spacing.
-- Separar componentes por intención: `ui`, `layout`, `cards`.
+- Usar `View`, `Text`, `Pressable`, `Image`, `ScrollView` y componentes React Native.
+- No usar HTML ni `className` como estrategia base.
+- Usar `StyleSheet.create`.
+- Consumir colores, fuentes y spacing desde `src/theme`.
+- No incluir textos clínicos largos si pueden vivir en `src/data`.

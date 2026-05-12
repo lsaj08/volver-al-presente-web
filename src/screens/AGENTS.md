@@ -2,12 +2,12 @@
 
 ## Responsabilidad
 
-Crear y mantener pantallas completas de la app.
+Componer pantallas completas a partir de secciones, cards y componentes reutilizables.
 
 ## Reglas
 
-- Componer pantallas usando componentes de `src/components`.
-- No repetir patrones visuales si ya existe un componente reutilizable.
-- Mantener contenido largo en `src/data`.
-- No usar navegación web ni enlaces de React Router.
-- Usar `Screen` como contenedor base salvo que una pantalla necesite una estructura nativa diferente.
+- Cuidar responsive layout con `useResponsive`.
+- Mantener textos largos en `src/data`.
+- No duplicar pantallas para web y móvil salvo necesidad documentada.
+- Validar que la pantalla sea usable en ancho móvil y web.
+- Usar CTAs centralizados desde `src/utils/links.js`.

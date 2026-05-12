@@ -1,108 +1,109 @@
 # AGENTS.md
 
-## Descripción del proyecto
+## Propósito
 
-Volver al Presente Mobile es una aplicación React Native para la marca profesional de Marcela Zamora, psicóloga. Debe sentirse cálida, profesional, cercana y mobile-first.
+Volver al Presente es una app/web React Native multiplataforma para Marcela Zamora, psicóloga. Debe funcionar con una sola base para web, Android e iOS, manteniendo un tono cálido, profesional, humano y basado en evidencia.
 
 ## Stack oficial permitido
 
 - Expo
 - React Native
+- React Native Web
 - React Navigation
-- JavaScript con componentes funcionales
-- `StyleSheet` y objetos de estilo de React Native
-- Fuentes Montserrat y Atma mediante Expo Font
+- Expo Fonts
+- `StyleSheet`, `Platform`, `useWindowDimensions`
+- `Linking` para WhatsApp, agenda, teléfono y enlaces externos
 
-## Tecnologías que NO deben usarse
+## Plataformas soportadas
 
-- React DOM
+- Web
+- Android
+- iOS
+
+## Regla principal
+
+Una sola base React Native multiplataforma. No crear una app web separada ni duplicar pantallas salvo necesidad técnica clara y documentada.
+
+## Tecnologías prohibidas
+
+- Vite como app principal
+- Next.js como app principal
 - React Router DOM
-- Vite
-- Next.js
-- HTML o etiquetas DOM
-- CSS, CSS Modules o Tailwind web
-- `window`, `document` o `localStorage`
+- `BrowserRouter`, `Routes`, rutas web de React Router
+- HTML como base de componentes: `div`, `span`, `p`, `h1`, `button`, `img`
+- CSS global como estrategia visual principal
+- `className` como base de estilos
+- `document`, `window` o `localStorage` directos
 
-## Estructura del proyecto
+## Estructura
 
 ```text
 src/
-  App.js
-  assets/
   components/
-    cards/
-    layout/
-    ui/
   data/
+  hooks/
   navigation/
   screens/
   theme/
   utils/
 ```
 
-## Convenciones de nombres
+## Componentes
 
-- Pantallas: `HomeScreen.js`, `ServicesScreen.js`.
-- Componentes reutilizables: PascalCase.
-- Archivos de datos: camelCase descriptivo.
-- Constantes de tema: camelCase exportado desde `src/theme`.
+- Usar `View`, `Text`, `Image`, `Pressable`, `ScrollView`, `FlatList`, `SafeAreaView`.
+- Crear piezas reutilizables en `src/components`.
+- Mantener pantallas completas en `src/screens`.
+- No quemar textos largos en componentes si pueden vivir en `src/data`.
 
-## Convenciones de componentes
-
-- Usar componentes de React Native: `View`, `Text`, `Image`, `Pressable`, `ScrollView`, `FlatList`, `SafeAreaView`.
-- No usar `div`, `span`, `p`, `h1`, `button`, `img` ni atributos web como `className`.
-- Mantener componentes pequeños y reutilizables.
-- Poner pantallas completas en `src/screens` y piezas reutilizables en `src/components`.
-
-## Convenciones de estilos
+## Estilos
 
 - Usar `StyleSheet.create`.
-- Centralizar colores en `src/theme/colors.js`.
-- Centralizar tipografías en `src/theme/typography.js`.
-- Centralizar espaciado en `src/theme/spacing.js`.
-- No hardcodear colores de marca si ya existen en el theme.
+- Usar tokens de `src/theme`.
+- No hardcodear colores oficiales fuera del theme.
+- Cards con radio de 8 px salvo razón clara.
 
-## Convenciones para navegación
+## Navegación
 
-- Usar React Navigation desde `src/navigation`.
-- No usar rutas web ni `react-router-dom`.
-- Para agregar una pantalla principal, crearla en `src/screens` y registrarla en `src/navigation/AppNavigator.js`.
+- Usar React Navigation.
+- Mantener rutas web mediante `linking` en `src/navigation/AppNavigator.js`.
+- No usar `react-router-dom`.
+- Para agregar un servicio, actualizar `src/data/services.js`; la ruta de detalle sale del `slug`.
 
-## Convenciones para contenido
+## Contenido
 
-- Mantener textos editables y listados en `src/data`.
-- Evitar textos largos quemados directamente en componentes cuando puedan vivir como datos.
-- Respetar un tono cálido, profesional, claro y clínicamente responsable.
+- Fuente principal: `Información para Página Web.docx`.
+- No inventar textos clínicos si el texto ya existe en el Word.
+- Se puede resumir para tarjetas, pero sin cambiar sentido clínico ni tono.
+- Mantener CTAs orientados a WhatsApp o agenda.
 
-## Cómo correr el proyecto
+## Responsive
+
+- Usar `src/hooks/useResponsive.js`.
+- En web, permitir layouts más amplios con grillas.
+- En móvil, priorizar scroll, legibilidad y botones cómodos.
+
+## Correr
 
 ```bash
 npm install
-npm run start
+npm run web
 npm run android
 npm run ios
 ```
 
-## Cómo validar cambios
+## Validar
 
 ```bash
 npm run lint
+npx expo install --check
 ```
 
-## Checklist antes de hacer commit
+## Checklist antes de commit
 
-- No hay imports desde `react-dom`, `react-router-dom` o Vite.
-- No hay archivos `.css` usados por la app.
-- No hay etiquetas HTML.
-- La navegación sigue en React Navigation.
-- Los estilos usan theme y `StyleSheet`.
-- Los textos largos están en `src/data` cuando aplica.
-- `npm run lint` pasa.
-
-## Reglas para mantener React Native puro
-
-- Cualquier nueva dependencia debe ser compatible con Android e iOS.
-- Si se necesita almacenamiento local, usar AsyncStorage u otra librería React Native compatible.
-- Si se necesita abrir enlaces, usar `Linking`.
-- No inventar backend ni cambiar el propósito de la app.
-- No dejar código muerto, imports rotos o pantallas duplicadas.
+- Una sola base React Native.
+- Web, Android e iOS siguen soportados.
+- No hay HTML ni CSS web como base.
+- No hay React Router DOM.
+- Los CTAs usan `src/utils/links.js`.
+- El contenido largo vive en `src/data`.
+- El responsive se revisó en móvil y web.

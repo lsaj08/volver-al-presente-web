@@ -2,12 +2,12 @@
 
 ## Responsabilidad
 
-Mantener la identidad visual centralizada.
+Centralizar la identidad visual.
 
 ## Reglas
 
 - Colores oficiales en `colors.js`.
-- Fuentes oficiales en `typography.js`.
-- Espaciado reutilizable en `spacing.js`.
-- Sombras y elevaciones compartidas en `shadows.js`.
-- Evitar hardcodear valores de marca en pantallas o componentes.
+- Montserrat para títulos y Atma para subtítulos en `typography.js`.
+- Espaciado en `spacing.js`.
+- Breakpoints en `breakpoints.js`.
+- No hardcodear tokens de marca en pantallas si ya existen aquí.

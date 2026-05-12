@@ -1,12 +1,13 @@
-# Content Agents
+# Data Agents
 
 ## Responsabilidad
 
-Mantener textos, listados y contenido editable de la app.
+Mantener contenido editable y clínicamente responsable.
 
 ## Reglas
 
-- Respetar tono cálido, profesional, claro y cercano.
-- Evitar duplicar contenido entre pantallas.
-- No introducir claims clínicos exagerados o promesas de resultados.
-- Mantener teléfonos, URLs y textos de contacto en datos o utilidades compartidas.
+- La fuente principal es `Información para Página Web.docx`.
+- No inventar textos clínicos si el Word ya contiene el contenido.
+- Separar contenido por dominio: `siteContent`, `services`, `faqs`, `navigation`.
+- Mantener tono cálido, profesional, claro y basado en evidencia.
+- Cada servicio debe conservar título, subtítulo, metáfora, criterios, impacto, trabajo, resultados, FAQs y CTA.

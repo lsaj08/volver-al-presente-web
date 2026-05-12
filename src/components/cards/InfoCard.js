@@ -4,9 +4,9 @@ import { shadows } from "../../theme/shadows";
 import { spacing } from "../../theme/spacing";
 import { typography } from "../../theme/typography";
 
-export default function InfoCard({ title, body, children, accentColor = colors.teal }) {
+export default function InfoCard({ title, body, children, accentColor = colors.teal, style }) {
   return (
-    <View style={styles.card}>
+    <View style={[styles.card, style]}>
       <View style={[styles.accent, { backgroundColor: accentColor }]} />
       <Text style={styles.title}>{title}</Text>
       {body ? <Text style={styles.body}>{body}</Text> : null}

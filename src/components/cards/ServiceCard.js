@@ -1,25 +1,30 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import { colors } from "../../theme/colors";
 import { shadows } from "../../theme/shadows";
 import { spacing } from "../../theme/spacing";
 import { typography } from "../../theme/typography";
 
-export default function ServiceCard({ service, accentColor }) {
+export default function ServiceCard({ service, accentColor, onPress }) {
   return (
-    <View style={styles.card}>
+    <Pressable
+      accessibilityRole={onPress ? "button" : undefined}
+      onPress={onPress}
+      style={({ pressed }) => [styles.card, pressed && onPress && styles.pressed]}
+    >
       <View style={[styles.badge, { backgroundColor: accentColor }]}>
         <Text style={styles.badgeText}>{service.shortTitle.slice(0, 2)}</Text>
       </View>
       <Text style={styles.title}>{service.title}</Text>
       <Text style={styles.subtitle}>{service.subtitle}</Text>
       <View style={styles.list}>
-        {service.howWeWork.slice(0, 3).map((item) => (
+        {service.outcomes.slice(0, 3).map((item) => (
           <Text key={item} style={styles.listItem}>
             • {item}
           </Text>
         ))}
       </View>
-    </View>
+      {onPress ? <Text style={styles.link}>Ver detalle</Text> : null}
+    </Pressable>
   );
 }
 
@@ -65,5 +70,13 @@ const styles = StyleSheet.create({
     fontFamily: typography.body,
     fontSize: 16,
     lineHeight: 23,
+  },
+  link: {
+    color: colors.secondary,
+    fontFamily: typography.titleMedium,
+    fontSize: 14,
+  },
+  pressed: {
+    opacity: 0.86,
   },
 });

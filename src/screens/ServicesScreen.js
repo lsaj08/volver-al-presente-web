@@ -1,42 +1,56 @@
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 import ServiceCard from "../components/cards/ServiceCard";
 import Screen from "../components/layout/Screen";
 import Button from "../components/ui/Button";
 import SectionHeader from "../components/ui/SectionHeader";
-import { SERVICE_AREAS } from "../data/content";
+import { services } from "../data/services";
+import useResponsive from "../hooks/useResponsive";
 import { colors } from "../theme/colors";
 import { spacing } from "../theme/spacing";
-import { buildWhatsAppUrl, openUrl } from "../utils/contact";
+import { externalLinks, openExternalUrl } from "../utils/links";
 
-export default function ServicesScreen() {
+export default function ServicesScreen({ navigation, route }) {
+  const { columns } = useResponsive();
+
   return (
-    <Screen>
+    <Screen navigation={navigation} routeName={route.name}>
       <SectionHeader
         eyebrow="Servicios"
         title="Áreas de acompañamiento terapéutico"
-        body="Estas son las principales áreas en las que te puedo acompañar desde una mirada profesional, humana y centrada en tu bienestar emocional."
+        body="Cada servicio retoma el enfoque del documento base: claridad, metáforas accesibles, cuidado clínico y pasos concretos."
       />
-      <View style={styles.list}>
-        {SERVICE_AREAS.map((service, index) => (
-          <ServiceCard
-            key={service.slug}
-            service={service}
-            accentColor={palette[index % palette.length]}
-          />
+      <View style={gridStyle(columns)}>
+        {services.map((service, index) => (
+          <View key={service.slug} style={cardColumnStyle(columns)}>
+            <ServiceCard
+              service={service}
+              accentColor={palette[index % palette.length]}
+              onPress={() => navigation.navigate("ServiceDetail", { slug: service.slug })}
+            />
+          </View>
         ))}
       </View>
       <Button
         label="Consultar por WhatsApp"
-        onPress={() => openUrl(buildWhatsAppUrl("Quiero información sobre servicios."))}
+        onPress={() => openExternalUrl(externalLinks.whatsapp("Quiero información sobre servicios."))}
       />
     </Screen>
   );
 }
 
-const palette = [colors.teal, colors.magenta, colors.purple, colors.deepPurple, colors.aqua];
+const palette = [colors.primary, colors.secondary, colors.accent, colors.deepPurple, colors.turquoise];
 
-const styles = StyleSheet.create({
-  list: {
+function gridStyle() {
+  return {
+    flexDirection: "row",
+    flexWrap: "wrap",
     gap: spacing.lg,
-  },
-});
+  };
+}
+
+function cardColumnStyle(columns) {
+  return {
+    flexBasis: columns === 1 ? "100%" : columns === 2 ? "47%" : "31%",
+    flexGrow: 1,
+  };
+}

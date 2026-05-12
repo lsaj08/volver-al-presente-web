@@ -2,11 +2,12 @@
 
 ## Responsabilidad
 
-Mantener la navegación React Native de la app.
+Mantener navegación compatible con web, Android e iOS.
 
 ## Reglas
 
 - Usar React Navigation.
-- No usar `react-router-dom`, rutas web ni componentes Link de navegador.
-- Registrar nuevas pantallas en `AppNavigator.js`.
-- Mantener etiquetas de navegación cortas y aptas para mobile.
+- Mantener `linking` para rutas web.
+- No usar `react-router-dom`.
+- Para nuevas pantallas principales, agregar tab y path en `AppNavigator.js`.
+- Para nuevos servicios, preferir `src/data/services.js` y la pantalla `ServiceDetailScreen`.
