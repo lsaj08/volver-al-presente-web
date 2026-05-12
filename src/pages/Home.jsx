@@ -48,8 +48,11 @@ function PhoneIcon({ className }) {
 function HeadIcon({ className }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <circle cx="12" cy="7" r="4" fill="currentColor" />
-      <path d="M8 12c0 3 8 3 8 0v5H8v-5Z" fill="currentColor" />
+      <circle cx="12" cy="8" r="4" fill="currentColor" />
+      <path
+        d="M6.5 19c.8-3.5 3-5.5 5.5-5.5s4.7 2 5.5 5.5H6.5Z"
+        fill="currentColor"
+      />
     </svg>
   );
 }
@@ -58,7 +61,7 @@ function HeartIcon({ className }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path
-        d="M12 21s-7-4.5-7-10a5 5 0 0 1 10 0 5 5 0 0 1 10 0c0 5.5-7 10-7 10Z"
+        d="M12 20.5S5 16.1 5 10.8A4.8 4.8 0 0 1 12 6.5a4.8 4.8 0 0 1 7 4.3c0 5.3-7 9.7-7 9.7Z"
         fill="currentColor"
       />
     </svg>
