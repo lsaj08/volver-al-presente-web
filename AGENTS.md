@@ -2,108 +2,79 @@
 
 ## Propósito
 
-Volver al Presente es una app/web React Native multiplataforma para Marcela Zamora, psicóloga. Debe funcionar con una sola base para web, Android e iOS, manteniendo un tono cálido, profesional, humano y basado en evidencia.
+Este repositorio contiene el sitio web profesional de Marcela Zamora, psicóloga. La prioridad es mantener estabilidad, conservar el estilo visual existente y actualizar contenido desde el documento Word original del proyecto.
 
-## Stack oficial permitido
+## Stack real del proyecto
 
-- Expo
-- React Native
-- React Native Web
-- React Navigation
-- Expo Fonts
-- `StyleSheet`, `Platform`, `useWindowDimensions`
-- `Linking` para WhatsApp, agenda, teléfono y enlaces externos
+- React
+- Vite
+- React Router DOM
+- CSS propio en `src/styles`
 
-## Plataformas soportadas
-
-- Web
-- Android
-- iOS
+Vite forma parte del funcionamiento web actual y no debe eliminarse sin una razón técnica concreta y aprobada.
 
 ## Regla principal
 
-Una sola base React Native multiplataforma. No crear una app web separada ni duplicar pantallas salvo necesidad técnica clara y documentada.
+No rediseñar. No cambiar identidad visual, layout, spacing, colores, tipografías, botones, cards ni navegación visual salvo solicitud explícita.
 
-## Tecnologías prohibidas
+## Fuente principal de contenido
 
-- Vite como app principal
-- Next.js como app principal
-- React Router DOM
-- `BrowserRouter`, `Routes`, rutas web de React Router
-- HTML como base de componentes: `div`, `span`, `p`, `h1`, `button`, `img`
-- CSS global como estrategia visual principal
-- `className` como base de estilos
-- `document`, `window` o `localStorage` directos
+El contenido principal viene de `Información para Página Web.docx`.
 
-## Estructura
+Usar ese Word para:
+
+- Sobre mí
+- Volver al Presente
+- Forma de trabajo
+- Primera sesión
+- Misión y visión
+- Valores
+- Servicios
+- FAQs
+- CTAs
+- Metadescripciones sugeridas
+
+No inventar textos clínicos si ya existen en el Word. Se permite resumir para tarjetas o bloques visuales, manteniendo sentido, tono e intención clínica.
+
+## Estructura relevante
 
 ```text
 src/
+  App.jsx
   components/
-  data/
+  data/content.js
   hooks/
-  navigation/
-  screens/
-  theme/
-  utils/
+  pages/
+  styles/
 ```
 
-## Componentes
+## Convenciones
 
-- Usar `View`, `Text`, `Image`, `Pressable`, `ScrollView`, `FlatList`, `SafeAreaView`.
-- Crear piezas reutilizables en `src/components`.
-- Mantener pantallas completas en `src/screens`.
-- No quemar textos largos en componentes si pueden vivir en `src/data`.
+- Mantener componentes React web existentes.
+- Mantener CSS existente.
+- Mantener React Router DOM para navegación web.
+- No introducir Expo, React Native o React Native Web como reemplazo del stack actual sin solicitud explícita.
+- No eliminar compatibilidad web.
+- Si en el futuro existe una parte móvil real, no eliminarla sin revisar su propósito.
 
-## Estilos
-
-- Usar `StyleSheet.create`.
-- Usar tokens de `src/theme`.
-- No hardcodear colores oficiales fuera del theme.
-- Cards con radio de 8 px salvo razón clara.
-
-## Navegación
-
-- Usar React Navigation.
-- Mantener rutas web mediante `linking` en `src/navigation/AppNavigator.js`.
-- No usar `react-router-dom`.
-- Para agregar un servicio, actualizar `src/data/services.js`; la ruta de detalle sale del `slug`.
-
-## Contenido
-
-- Fuente principal: `Información para Página Web.docx`.
-- No inventar textos clínicos si el texto ya existe en el Word.
-- Se puede resumir para tarjetas, pero sin cambiar sentido clínico ni tono.
-- Mantener CTAs orientados a WhatsApp o agenda.
-
-## Responsive
-
-- Usar `src/hooks/useResponsive.js`.
-- En web, permitir layouts más amplios con grillas.
-- En móvil, priorizar scroll, legibilidad y botones cómodos.
-
-## Correr
+## Cómo correr
 
 ```bash
 npm install
-npm run web
-npm run android
-npm run ios
+npm run dev
 ```
 
 ## Validar
 
 ```bash
 npm run lint
-npx expo install --check
+npm run build
 ```
 
 ## Checklist antes de commit
 
-- Una sola base React Native.
-- Web, Android e iOS siguen soportados.
-- No hay HTML ni CSS web como base.
-- No hay React Router DOM.
-- Los CTAs usan `src/utils/links.js`.
-- El contenido largo vive en `src/data`.
-- El responsive se revisó en móvil y web.
+- El sitio corre con Vite.
+- No hubo rediseños visuales no solicitados.
+- Los cambios de contenido respetan el Word original.
+- No se agregaron dependencias pesadas innecesarias.
+- No se eliminaron archivos de estilo existentes.

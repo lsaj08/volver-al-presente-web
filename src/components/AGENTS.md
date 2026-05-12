@@ -1,13 +1,6 @@
-# Component Agents
+# Components Guidance
 
-## Responsabilidad
-
-Crear componentes reutilizables compatibles con web, Android e iOS.
-
-## Reglas
-
-- Usar `View`, `Text`, `Pressable`, `Image`, `ScrollView` y componentes React Native.
-- No usar HTML ni `className` como estrategia base.
-- Usar `StyleSheet.create`.
-- Consumir colores, fuentes y spacing desde `src/theme`.
-- No incluir textos clínicos largos si pueden vivir en `src/data`.
+- Mantener los componentes visuales existentes.
+- No rediseñar botones, cards, header, footer ni FAQ sin solicitud explícita.
+- Usar React web y las clases CSS existentes.
+- No migrar componentes a React Native si el objetivo es solo corregir contenido.

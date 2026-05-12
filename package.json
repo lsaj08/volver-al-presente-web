@@ -1,37 +1,28 @@
 {
-  "name": "volver-al-presente",
+  "name": "volver-al-presente-web",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.0.0",
   "type": "module",
-  "main": "index.js",
   "scripts": {
-    "start": "expo start",
-    "web": "expo start --web",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "lint": "eslint ."
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@expo-google-fonts/atma": "^0.4.1",
-    "@expo-google-fonts/montserrat": "^0.4.2",
-    "@react-navigation/bottom-tabs": "^7.16.0",
-    "@react-navigation/native": "^7.2.4",
-    "@react-navigation/native-stack": "^7.15.0",
-    "expo": "^55.0.23",
-    "expo-font": "^55.0.7",
-    "expo-status-bar": "^55.0.6",
-    "react": "19.2.0",
+    "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-native": "0.83.6",
-    "react-native-safe-area-context": "~5.6.2",
-    "react-native-screens": "~4.23.0",
-    "react-native-web": "^0.21.2"
+    "react-router-dom": "^6.30.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
     "eslint": "^9.39.1",
-    "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
-    "globals": "^16.5.0"
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "vite": "^7.3.1"
   }
 }

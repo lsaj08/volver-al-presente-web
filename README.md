@@ -1,18 +1,15 @@
-# Volver al Presente
+# Volver al Presente Web
 
-Aplicación React Native multiplataforma para la marca profesional de Marcela Zamora, psicóloga. Usa una sola base de componentes React Native para web, Android e iOS, con Expo y React Navigation.
+Sitio web profesional de Marcela Zamora, psicóloga. El proyecto conserva su stack web original con React, Vite y React Router DOM, y mantiene la identidad visual existente mediante los estilos CSS del proyecto.
 
-## Stack oficial
+## Stack real
 
-- Expo
-- React Native
-- React Native Web
-- React Navigation
-- Expo Fonts
-- JavaScript con componentes funcionales
-- `StyleSheet`, `useWindowDimensions` y tokens de diseño centralizados
+- React
+- Vite
+- React Router DOM
+- CSS propio en `src/styles`
 
-No hay app web separada con Vite, Next.js o React Router DOM.
+No se debe migrar ni rediseñar la interfaz sin una solicitud explícita. El objetivo principal de mantenimiento es conservar estabilidad, estilo original y contenido fiel al documento Word base.
 
 ## Instalar
 
@@ -20,80 +17,34 @@ No hay app web separada con Vite, Next.js o React Router DOM.
 npm install
 ```
 
-## Correr
+## Correr en web
 
 ```bash
-npm run start
-npm run web
-npm run android
-npm run ios
+npm run dev
 ```
 
-`npm run ios` requiere macOS con Xcode o un entorno Expo compatible.
-
-## Validar
+## Build y validación
 
 ```bash
 npm run lint
-npx expo install --check
-npx expo export --platform web --output-dir .expo-export-web-test
-npx expo export --platform android --output-dir .expo-export-android-test
-```
-
-## Estructura
-
-```text
-src/
-  App.js
-  assets/
-  components/
-    cards/
-    layout/
-    ui/
-  data/
-    faqs.js
-    navigation.js
-    services.js
-    siteContent.js
-  hooks/
-  navigation/
-  screens/
-  theme/
-  utils/
+npm run build
 ```
 
 ## Editar contenido
 
-El contenido principal viene del Word original `Información para Página Web.docx`. Los textos editables viven en:
+La fuente principal de contenido es el archivo Word original:
 
-- `src/data/siteContent.js`: inicio, sobre mí, forma de trabajo, misión, visión, valores, talleres y Psi-Cositas.
-- `src/data/services.js`: servicios, metáforas, criterios, trabajo terapéutico, FAQs y CTAs.
-- `src/data/faqs.js`: preguntas generales.
-- `src/data/navigation.js`: navegación principal.
+`Información para Página Web.docx`
 
-No agregues textos clínicos nuevos si ya existen en el documento Word. Si se resume, conservar sentido, tono y propuesta de valor.
+El contenido reutilizable vive en:
 
-## Editar diseño
+- `src/data/content.js`: contacto, textos de Sobre mí, forma de trabajo, primera sesión, misión, visión, valores y servicios.
+- `src/pages/SobreMi.jsx`: estructura visual existente de la página Sobre mí, consumiendo contenido desde `content.js`.
+- `src/components/ServiceDetailPage.jsx`: estructura visual existente para detalle de servicios, consumiendo `SERVICE_AREAS`.
 
-- Colores: `src/theme/colors.js`
-- Tipografías: `src/theme/typography.js`
-- Espaciado: `src/theme/spacing.js`
-- Breakpoints: `src/theme/breakpoints.js`
-- Responsive: `src/hooks/useResponsive.js`
+## Reglas de mantenimiento
 
-## Navegación
-
-La navegación usa React Navigation:
-
-- Tabs principales: Inicio, Servicios, Psi-Cositas y Talleres.
-- Stack para detalle de servicio.
-- Linking web para `/`, `/servicios`, `/psi-cositas`, `/talleres` y `/servicios/:slug`.
-
-## Checklist antes de commit
-
-- `npm run lint` pasa.
-- `npx expo install --check` pasa.
-- No hay `react-router-dom`, Vite, Next.js ni CSS global como base visual.
-- No hay etiquetas HTML en pantallas/componentes.
-- Los CTAs usan `Linking` mediante `src/utils/links.js`.
-- Las pantallas se ven razonables en móvil y web.
+- No cambiar colores, tipografías, spacing, botones, cards ni layout salvo que se pida explícitamente.
+- No reemplazar Vite si es el stack web activo.
+- No convertir el proyecto a React Native/Expo sin una decisión técnica explícita.
+- Actualizar contenido desde el Word sin cambiar el tono clínico ni la propuesta de valor.

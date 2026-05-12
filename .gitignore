@@ -8,8 +8,6 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-.expo
-.expo-export-*
 dist
 dist-ssr
 *.local
