@@ -178,6 +178,7 @@ export default function Contacto() {
                     <span>Barrio Corazón de Jesús, Heredia, Costa Rica</span>
                     <span>Tree Cowork</span>
                   </div>
+                  <div className="locationSub">¿Cómo llegar?</div>
                   <div className="locationActions">
                     <a
                       className="btn btn-ghost small"
@@ -217,6 +218,7 @@ export default function Contacto() {
                     <span>Barrio González Lahmann, Catedral, San José, Costa Rica</span>
                     <span>Tree Armonioso</span>
                   </div>
+                  <div className="locationSub">¿Cómo llegar?</div>
                   <div className="locationActions">
                     <a
                       className="btn btn-ghost small"
