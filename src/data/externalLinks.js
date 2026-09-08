@@ -4,7 +4,11 @@ import { CANVA_CATALOG_URL, CONTACT, WHATSAPP_DEFAULT_TEXT } from "./content.js"
 // Se centralizan para evitar URLs repetidas y asegurar que los mensajes dinámicos se codifiquen.
 export const EXTERNAL_LINKS = {
   booking: CONTACT.bookingUrl,
-  herediaBookingWidget: "https://api.psicoceo.com/widget/booking/IJxymokUAyRDjO6Y6dqs",
+  bookingWidgets: {
+    online: "https://api.psicoceo.com/widget/booking/rCB1nrytTHxwk9G9Rrvf",
+    heredia: "https://api.psicoceo.com/widget/booking/IJxymokUAyRDjO6Y6dqs",
+    sanJose: "https://api.psicoceo.com/widget/booking/nVePfb8Wdjz9JIAvkXO7",
+  },
   herediaBookingWidgetScript: "https://api.psicoceo.com/js/form_embed.js",
   canvaCatalog: import.meta.env.VITE_CANVA_CATALOG_URL || CANVA_CATALOG_URL,
   phone: `tel:${CONTACT.phoneTel}`,

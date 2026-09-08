@@ -52,14 +52,14 @@ function PinIcon() {
 
 export default function Contacto() {
   const waLink = useMemo(() => buildWhatsAppLink(WHATSAPP_DEFAULT_TEXT), []);
-  const [herediaBookingOpen, setHerediaBookingOpen] = useState(false);
+  const [activeBooking, setActiveBooking] = useState(null);
   const closeBookingButton = useRef(null);
 
   useEffect(() => {
-    if (!herediaBookingOpen) return undefined;
+    if (!activeBooking) return undefined;
 
     const closeOnEscape = (event) => {
-      if (event.key === "Escape") setHerediaBookingOpen(false);
+      if (event.key === "Escape") setActiveBooking(null);
     };
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -70,7 +70,7 @@ export default function Contacto() {
       document.body.style.overflow = previousOverflow;
       document.removeEventListener("keydown", closeOnEscape);
     };
-  }, [herediaBookingOpen]);
+  }, [activeBooking]);
 
   usePageMeta(
     "Agendar terapia en Costa Rica | Contacto Psicóloga Marcela Zamora",
@@ -136,9 +136,16 @@ export default function Contacto() {
                   más cómoda. Solo necesitás privacidad, conexión estable y un espacio tranquilo.
                 </p>
                 <div className="locationActions">
-                  <a className="btn btn-primary small" href={EXTERNAL_LINKS.booking} target="_blank" rel="noopener noreferrer">
-                    <PhoneIcon /> Agendar online
-                  </a>
+                  <button
+                    className="btn btn-primary small"
+                    type="button"
+                    onClick={() => setActiveBooking({
+                      title: "Agendar sesión online",
+                      url: EXTERNAL_LINKS.bookingWidgets.online,
+                    })}
+                  >
+                    <PhoneIcon /> Agendar
+                  </button>
                   <a className="btn btn-secondary small" href={waLink} target="_blank" rel="noopener noreferrer">
                     <WhatsIcon /> Consultar por WhatsApp
                   </a>
@@ -152,7 +159,10 @@ export default function Contacto() {
               <div className="card locationCard">
                 <div className="locationCard__info">
                   <div className="locationTitle">Atención Presencial en Heredia</div>
-                  <div className="locationSub">Barrio Corazón de Jesús, Heredia, Costa Rica · Tree Cowork</div>
+                  <div className="locationSub">
+                    <span>Barrio Corazón de Jesús, Heredia, Costa Rica</span>
+                    <span>Tree Cowork</span>
+                  </div>
                   <div className="locationActions">
                     <a
                       className="btn btn-ghost small"
@@ -165,9 +175,11 @@ export default function Contacto() {
                     <button
                       className="btn btn-primary small"
                       type="button"
-                      aria-expanded={herediaBookingOpen}
-                      aria-controls="heredia-booking-widget"
-                      onClick={() => setHerediaBookingOpen((open) => !open)}
+                      aria-expanded={activeBooking?.url === EXTERNAL_LINKS.bookingWidgets.heredia}
+                      onClick={() => setActiveBooking({
+                        title: "Agendar atención presencial en Tree Cowork, Heredia",
+                        url: EXTERNAL_LINKS.bookingWidgets.heredia,
+                      })}
                     >
                       <PhoneIcon /> Agendar
                     </button>
@@ -178,7 +190,10 @@ export default function Contacto() {
               <div className="card locationCard">
                 <div className="locationCard__info">
                   <div className="locationTitle">Atención Presencial en San José</div>
-                  <div className="locationSub">Barrio González Lahmann, Catedral, San José, Costa Rica · Tree Armonioso</div>
+                  <div className="locationSub">
+                    <span>Barrio González Lahmann, Catedral, San José, Costa Rica</span>
+                    <span>Tree Armonioso</span>
+                  </div>
                   <div className="locationActions">
                     <a
                       className="btn btn-ghost small"
@@ -188,9 +203,17 @@ export default function Contacto() {
                     >
                       <PinIcon /> Cómo llegar
                     </a>
-                    <a className="locationPhone" href={EXTERNAL_LINKS.phone}>
-                      {CONTACT.phoneDisplay}
-                    </a>
+                    <button
+                      className="btn btn-primary small"
+                      type="button"
+                      aria-expanded={activeBooking?.url === EXTERNAL_LINKS.bookingWidgets.sanJose}
+                      onClick={() => setActiveBooking({
+                        title: "Agendar atención presencial en Tree Armonioso, San José",
+                        url: EXTERNAL_LINKS.bookingWidgets.sanJose,
+                      })}
+                    >
+                      <PhoneIcon /> Agendar
+                    </button>
                   </div>
                 </div>
               </div>
@@ -239,36 +262,36 @@ export default function Contacto() {
         </div>
       </section>
 
-      {herediaBookingOpen && (
+      {activeBooking && (
         <div
           className="bookingModal"
           role="presentation"
           onMouseDown={(event) => {
-            if (event.target === event.currentTarget) setHerediaBookingOpen(false);
+            if (event.target === event.currentTarget) setActiveBooking(null);
           }}
         >
           <div
             className="bookingModal__dialog"
             role="dialog"
             aria-modal="true"
-            aria-label="Agendar atención presencial en Tree Cowork, Heredia"
+            aria-label={activeBooking.title}
           >
             <button
               ref={closeBookingButton}
               className="bookingModal__close"
               type="button"
               aria-label="Cerrar agenda"
-              onClick={() => setHerediaBookingOpen(false)}
+              onClick={() => setActiveBooking(null)}
             >
               ×
             </button>
             <iframe
-              src={EXTERNAL_LINKS.herediaBookingWidget}
-              title="Agendar atención presencial en Tree Cowork, Heredia"
+              src={activeBooking.url}
+              title={activeBooking.title}
               allow="payment"
               className="bookingModal__iframe"
               scrolling="auto"
-              id="IJxymokUAyRDjO6Y6dqs_1788825993648"
+              id="booking-widget-frame"
             />
             <script src={EXTERNAL_LINKS.herediaBookingWidgetScript} type="text/javascript" />
           </div>

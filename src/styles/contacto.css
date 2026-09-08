@@ -518,6 +518,7 @@ input:focus, textarea:focus{
   padding: 18px;
   background: rgba(42,34,48,.62);
 }
+.locationSub span{ display: block; }
 .bookingModal__dialog{
   position: relative;
   width: min(1100px, 100%);
