@@ -8,6 +8,8 @@ Implementación local iniciada por solicitud del usuario. No se ha publicado.
 
 Actualización SEO y ubicaciones: las páginas conocidas se prerenderizan durante el build para entregar contenido y metadatos desde la primera respuesta. Se actualizaron las ubicaciones a Tree Cowork (Heredia) y Tree Armonioso (San José). La tarjeta de Heredia tiene un botón Agendar que abre el widget PsicoCEO proporcionado.
 
+Actualización de ubicaciones: las tarjetas muestran barrio y espacio de atención. La agenda de Heredia se presenta en un modal amplio con cierre visible, cierre con Escape y bloqueo temporal del scroll de fondo.
+
 Para Google Ads quedan preparados títulos, descripciones, URLs canónicas, sitemap, imagen social, datos estructurados, páginas de destino por servicio y llamadas claras a WhatsApp/agenda. La aprobación, nivel de calidad y conversiones de una campaña no pueden verificarse desde este repositorio: requieren la cuenta publicitaria, palabras clave, anuncios y etiquetas de conversión reales. No se agregaron identificadores de Ads inventados.
 
 | Área | Estado actual |
