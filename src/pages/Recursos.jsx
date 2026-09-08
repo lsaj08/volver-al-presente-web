@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import usePageMeta from "../hooks/usePageMeta.js";
-import { WHATSAPP_DEFAULT_TEXT } from "../data/content.js";
+import { SITE_MESSAGES, WHATSAPP_DEFAULT_TEXT } from "../data/content.js";
 import { buildWhatsAppLink } from "../data/externalLinks.js";
 import "../styles/internal.css";
 
@@ -97,7 +97,7 @@ export default function Recursos() {
 
   usePageMeta(
     "Recursos | Volver al Presente",
-    "Recursos breves de bienestar emocional sobre ansiedad, autocuidado, límites, imagen corporal y estrés."
+    "Conocé los recursos de bienestar emocional que estamos preparando sobre ansiedad, autocuidado, límites, imagen corporal y estrés."
   );
 
   return (
@@ -107,9 +107,7 @@ export default function Recursos() {
           <span className="sub">Recursos</span>
           <h1>Recursos breves para tu bienestar emocional</h1>
           <p>
-            Esta sección reúne contenidos cortos y prácticos para acompañarte en el día a día.
-            Quise que se sintiera más como una pequeña biblioteca editorial que como una lista de
-            tarjetas sueltas, para que pueda crecer con nuevos artículos y recursos.
+            {SITE_MESSAGES.resourcesIntro}
           </p>
         </div>
       </section>
@@ -131,6 +129,7 @@ export default function Recursos() {
                 </div>
                 <h2>{item.title}</h2>
                 <p>{item.summary}</p>
+                <p className="muted">{SITE_MESSAGES.resourcePending}</p>
               </div>
             </article>
           ))}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useId, useState } from "react";
 
 function CheckIcon() {
   return (
@@ -34,16 +34,17 @@ function ChevronIcon({ isOpen }) {
 }
 
 function Item({ q, a, isOpen, onToggle }) {
+  const id = useId();
   return (
     <div className="faqItem">
-      <button type="button" className="faqQ" onClick={onToggle} aria-expanded={isOpen}>
+      <button id={`${id}-question`} type="button" className="faqQ" onClick={onToggle} aria-expanded={isOpen} aria-controls={`${id}-answer`}>
         <span className="faqDot" aria-hidden="true">
           <CheckIcon />
         </span>
         <span>{q}</span>
         <ChevronIcon isOpen={isOpen} />
       </button>
-      {isOpen && <div className="faqA">{a}</div>}
+      <div id={`${id}-answer`} className="faqA" role="region" aria-labelledby={`${id}-question`} hidden={!isOpen}>{a}</div>
     </div>
   );
 }

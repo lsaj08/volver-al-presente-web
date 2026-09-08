@@ -23,7 +23,7 @@ export default function SobreMi() {
   );
 
   usePageMeta(
-    "Sobre mí | Volver al Presente",
+    "Marcela Zamora, psicóloga | Volver al Presente",
     "Conocé a la Psicóloga Marcela Zamora, su enfoque terapéutico, misión, visión, valores y experiencia profesional."
   );
 

@@ -9,6 +9,20 @@ export const CONTACT = {
 
 export const CANVA_CATALOG_URL = "PENDIENTE_AGREGAR_LINK_DE_CANVA";
 
+export const SITE_URL = "https://psicomarcelazamora.com";
+
+// Estados de disponibilidad y navegación; no sustituyen el contenido clínico.
+export const SITE_MESSAGES = {
+  catalogPending: "El catálogo estará disponible próximamente. Podés consultar por WhatsApp sobre los materiales.",
+  catalogContact: "Consultar materiales por WhatsApp",
+  resourcesIntro: "Estamos preparando estos recursos. Por ahora no están disponibles para leer o descargar.",
+  resourcePending: "Próximamente",
+  notFoundTitle: "Página no encontrada",
+  notFoundDescription: "La página que buscás no existe o cambió de dirección.",
+  backHome: "Volver al inicio",
+  privacyTracking: "Este sitio utiliza PsicoCEO para registrar visitas y tiempo de navegación mediante identificadores de sesión. Al usar WhatsApp o la agenda de HuliVida, la información que compartís se procesa en esos servicios.",
+};
+
 export const WHATSAPP_DEFAULT_TEXT =
   "Hola, me gustaría agendar una sesión. ¿Qué horarios tenés disponibles?";
 
@@ -138,7 +152,7 @@ export const SERVICE_AREAS = [
       },
     ],
     ctaLabel: "Quiero empezar a manejar mi ansiedad",
-    seoTitle: "Ansiedad | Volver al Presente",
+    seoTitle: "Terapia para ansiedad en Costa Rica | Marcela Zamora",
     seoDescription:
       "Terapia para ansiedad. Herramientas para bajar la alarma interna, recuperar calma y retomar actividades con más seguridad.",
     primaryKeyword: "terapia para ansiedad",
@@ -190,7 +204,7 @@ export const SERVICE_AREAS = [
       },
     ],
     ctaLabel: "Quiero una relación más amable con mi cuerpo y la comida",
-    seoTitle: "Imagen corporal y conducta alimentaria | Volver al Presente",
+    seoTitle: "Imagen corporal y conducta alimentaria | Marcela Zamora",
     seoDescription:
       "Imagen corporal y relación con la comida. Terapia compasiva y basada en evidencia para salir del ciclo de culpa y recuperar bienestar.",
     primaryKeyword: "imagen corporal",
@@ -239,7 +253,7 @@ export const SERVICE_AREAS = [
       },
     ],
     ctaLabel: "Quiero trabajar lo que viví con cuidado y dirección",
-    seoTitle: "Trauma y experiencias difíciles | Volver al Presente",
+    seoTitle: "Terapia para trauma en Costa Rica | Marcela Zamora",
     seoDescription:
       "Terapia para trauma. Seguridad, regulación y procesamiento gradual para volver a sentir calma, confianza y presencia.",
     primaryKeyword: "terapia para trauma",
@@ -289,7 +303,7 @@ export const SERVICE_AREAS = [
       },
     ],
     ctaLabel: "Quiero poner límites y cuidarme mejor",
-    seoTitle: "Autocuidado, límites y autoestima | Volver al Presente",
+    seoTitle: "Terapia de autoestima y límites | Marcela Zamora",
     seoDescription:
       "Autocuidado, límites y autoestima. Terapia práctica y humana para expresarte, poner límites y cuidar tus relaciones.",
     primaryKeyword: "autoestima",
@@ -338,7 +352,7 @@ export const SERVICE_AREAS = [
       },
     ],
     ctaLabel: "Quiero menos exigencia y más calma",
-    seoTitle: "Estrés, perfeccionismo y rumia | Volver al Presente",
+    seoTitle: "Terapia para estrés y perfeccionismo | Marcela Zamora",
     seoDescription:
       "Estrés, perfeccionismo y rumia. Terapia práctica para ordenar tu mente, priorizar y descansar sin culpa.",
     primaryKeyword: "estrés",
@@ -389,7 +403,7 @@ export const SERVICE_AREAS = [
       },
     ],
     ctaLabel: "Quiero empezar a sentirme mejor",
-    seoTitle: "Depresión | Volver al Presente",
+    seoTitle: "Terapia para depresión en Costa Rica | Marcela Zamora",
     seoDescription:
       "Depresión. Terapia con calidez y evidencia para recuperar energía, sentido y acompañamiento real.",
     primaryKeyword: "terapia para depresión",

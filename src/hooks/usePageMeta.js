@@ -1,4 +1,7 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { canonicalUrl, SOCIAL_IMAGE, SITE_SCHEMA } from "../data/seo.js";
+import { PageMetaContext } from "./PageMetaContext.js";
 
 // Utilidades SEO para páginas internas.
 // Actualizan etiquetas existentes o las crean sin depender de librerías externas.
@@ -25,22 +28,49 @@ function upsertCanonical(url) {
 }
 
 export default function usePageMeta(title, description, options = {}) {
+  const { pathname } = useLocation();
+  const collectMeta = useContext(PageMetaContext);
+  const {
+    canonicalPath = pathname,
+    ogTitle = title,
+    ogDescription = description,
+    ogType = "website",
+    noIndex = false,
+  } = options;
+  const canonical = canonicalUrl(canonicalPath);
+  const robots = noIndex ? "noindex, follow" : "index, follow, max-image-preview:large";
+
+  if (import.meta.env.SSR && collectMeta) {
+    collectMeta({ title, description, canonical, ogTitle, ogDescription, ogType, robots });
+  }
+
   useEffect(() => {
     document.title = title;
 
     upsertMeta("description", description);
-    upsertMeta("og:title", options.ogTitle || title, "property");
-    upsertMeta("og:description", options.ogDescription || description, "property");
-    upsertMeta("og:type", options.ogType || "website", "property");
+    upsertMeta("og:title", ogTitle, "property");
+    upsertMeta("og:description", ogDescription, "property");
+    upsertMeta("og:type", ogType, "property");
+    upsertMeta("robots", robots);
+    upsertMeta("og:site_name", "Volver al Presente", "property");
+    upsertMeta("og:locale", "es_CR", "property");
+    upsertMeta("og:image", SOCIAL_IMAGE, "property");
+    upsertMeta("og:image:alt", "Psicóloga Marcela Zamora", "property");
+    upsertMeta("twitter:card", "summary_large_image");
+    upsertMeta("twitter:title", ogTitle);
+    upsertMeta("twitter:description", ogDescription);
+    upsertMeta("twitter:image", SOCIAL_IMAGE);
 
-    const baseUrl = options.baseUrl || "https://volveralpresente.cr";
-    const canonical = options.canonicalPath
-      ? `${baseUrl}${options.canonicalPath}`
-      : null;
-
-    if (canonical) {
-      upsertCanonical(canonical);
-      upsertMeta("og:url", canonical, "property");
+    let schema = document.getElementById("site-schema");
+    if (!schema) {
+      schema = document.createElement("script");
+      schema.id = "site-schema";
+      schema.type = "application/ld+json";
+      document.head.appendChild(schema);
     }
-  }, [title, description, options]);
+    schema.textContent = JSON.stringify(SITE_SCHEMA);
+
+    upsertCanonical(canonical);
+    upsertMeta("og:url", canonical, "property");
+  }, [title, description, canonical, ogTitle, ogDescription, ogType, robots]);
 }

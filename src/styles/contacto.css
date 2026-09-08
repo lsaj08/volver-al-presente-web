@@ -469,6 +469,8 @@ input:focus, textarea:focus{
 }
 .footer__center{
   display: flex;
+  /* Permite que los enlaces legales se ajusten a móviles estrechos. */
+  flex-wrap: wrap;
   gap: 10px;
   align-items: center;
   color: rgba(42,34,48,.65);
@@ -519,6 +521,8 @@ input:focus, textarea:focus{
 
 @media (max-width: 520px){
   .topbar__inner{ height: 68px; }
+  /* La marca sin texto cede espacio al menú en pantallas estrechas. */
+  .brand{ min-width: 0; }
   .brand__text{ display: none; }
   .hero{ padding-top: 26px; }
   .hero__title{ font-size: 34px; }

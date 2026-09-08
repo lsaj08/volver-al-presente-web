@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useEffect, useRef, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import logo from "../assets/logo-marcela.png";
 import "../styles/contacto.css";
 
@@ -14,15 +14,38 @@ const mainLinks = [
 ];
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
+  const { key } = useLocation();
+  const [openKey, setOpenKey] = useState(null);
+  const isOpen = openKey === key;
+  const menuButton = useRef(null);
+  const navigation = useRef(null);
+  const closeMenu = () => setOpenKey(null);
+
+  useEffect(() => {
+    if (isOpen) navigation.current?.querySelector("a")?.focus();
+  }, [isOpen]);
 
   return (
-    <header className="topbar">
+    <header
+      className="topbar"
+      onKeyDown={(event) => {
+        if (event.key === "Escape" && isOpen) {
+          event.preventDefault();
+          closeMenu();
+          menuButton.current?.focus();
+        }
+      }}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) closeMenu();
+      }}
+    >
       <div className="container topbar__inner">
-        <NavLink className="brand" to="/" onClick={() => setIsOpen(false)}>
+        <NavLink className="brand" to="/" onClick={closeMenu}>
           <img
             className="brand__logo"
             src={logo}
+            width="50"
+            height="50"
             alt="Volver al Presente - Psicóloga Marcela Zamora"
           />
           <div className="brand__text">
@@ -31,7 +54,7 @@ export default function Header() {
           </div>
         </NavLink>
 
-        <nav id="site-navigation" className={`nav ${isOpen ? "is-open" : ""}`}>
+        <nav ref={navigation} aria-label="Navegación principal" id="site-navigation" className={`nav ${isOpen ? "is-open" : ""}`}>
           {/* Navegación principal.
               Mantener etiquetas y rutas sincronizadas con App.jsx. */}
           {mainLinks.map((item) => (
@@ -40,7 +63,7 @@ export default function Header() {
               className={({ isActive }) => `nav__link ${isActive ? "is-active" : ""}`}
               to={item.to}
               end={item.end}
-              onClick={() => setIsOpen(false)}
+              onClick={closeMenu}
             >
               {item.label}
             </NavLink>
@@ -49,12 +72,13 @@ export default function Header() {
 
         <div className="topbar__actions">
           <button
+            ref={menuButton}
             type="button"
             className="pill topIconBtn"
             aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
             aria-controls="site-navigation"
             aria-expanded={isOpen}
-            onClick={() => setIsOpen((prev) => !prev)}
+            onClick={() => setOpenKey(isOpen ? null : key)}
           >
             <svg className="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />

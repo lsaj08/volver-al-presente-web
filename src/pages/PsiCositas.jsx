@@ -1,9 +1,11 @@
 import React from "react";
 import usePageMeta from "../hooks/usePageMeta.js";
-import { EXTERNAL_LINKS, isPlaceholderUrl } from "../data/externalLinks.js";
+import { buildWhatsAppLink, EXTERNAL_LINKS, isPlaceholderUrl } from "../data/externalLinks.js";
+import { SITE_MESSAGES } from "../data/content.js";
 import "../styles/internal.css";
 
 export default function PsiCositas() {
+  const catalogAvailable = !isPlaceholderUrl(EXTERNAL_LINKS.canvaCatalog);
   usePageMeta(
     "Psicositas | Volver al Presente",
     "Materiales físicos, recursos especiales y productos vinculados al bienestar emocional."
@@ -22,16 +24,16 @@ export default function PsiCositas() {
           <div className="innerHero__cta">
             <a
               className="btn btn-primary"
-              href={EXTERNAL_LINKS.canvaCatalog}
+              href={catalogAvailable ? EXTERNAL_LINKS.canvaCatalog : buildWhatsAppLink("Hola, me gustaría consultar sobre los materiales de Psicositas.")}
               target="_blank"
               rel="noopener noreferrer"
             >
-              Ver catálogo en Canva
+              {catalogAvailable ? "Ver catálogo en Canva" : SITE_MESSAGES.catalogContact}
             </a>
           </div>
-          {isPlaceholderUrl(EXTERNAL_LINKS.canvaCatalog) && (
+          {!catalogAvailable && (
             <p className="muted">
-              Pendiente: agregar el enlace final del catálogo de Canva en <code>CANVA_CATALOG_URL</code>.
+              {SITE_MESSAGES.catalogPending}
             </p>
           )}
         </div>

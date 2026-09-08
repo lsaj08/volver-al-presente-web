@@ -1,5 +1,7 @@
 import React from "react";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import RouteNavigation from "./components/RouteNavigation.jsx";
+import NotFound from "./pages/NotFound.jsx";
 import Header from "./components/Header.jsx";
 import Home from "./pages/Home.jsx";
 import Contacto from "./pages/Contacto.jsx";
@@ -18,9 +20,11 @@ import LegalPrivacidad from "./pages/LegalPrivacidad.jsx";
 import AvisoLegal from "./pages/AvisoLegal.jsx";
 import Footer from "./components/Footer.jsx";
 
-export default function App() {
+export function AppContent() {
   return (
-    <BrowserRouter>
+    <>
+      <RouteNavigation />
+      <a className="skipLink" href="#main-content">Saltar al contenido</a>
       <Header />
       <Routes>
         {/* Rutas principales del sitio Vite/React.
@@ -48,9 +52,13 @@ export default function App() {
 
         <Route path="/politica-de-privacidad" element={<LegalPrivacidad />} />
         <Route path="/aviso-legal" element={<AvisoLegal />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
-    </BrowserRouter>
+    </>
   );
+}
+
+export default function App() {
+  return <BrowserRouter><AppContent /></BrowserRouter>;
 }

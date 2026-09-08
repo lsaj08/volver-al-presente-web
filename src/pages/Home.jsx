@@ -86,8 +86,8 @@ export default function Home() {
   const waLink = useMemo(() => buildWhatsAppLink(WHATSAPP_DEFAULT_TEXT), []);
 
   usePageMeta(
-    "Volver al Presente | Psicóloga Marcela Zamora",
-    "Espacio de acompañamiento psicológico para ansiedad, autoestima, trauma, depresión y bienestar emocional."
+    "Psicóloga en Costa Rica | Marcela Zamora — Volver al Presente",
+    "Psicoterapia con Marcela Zamora en Costa Rica. Atención online y presencial para ansiedad, trauma, autoestima y depresión. Consultá horarios por WhatsApp."
   );
 
   return (

@@ -12,7 +12,7 @@ export default function Servicios() {
   );
 
   usePageMeta(
-    "Servicios | Volver al Presente",
+    "Servicios de psicoterapia en Costa Rica | Marcela Zamora",
     "Conocé las áreas de acompañamiento psicológico de Marcela Zamora: ansiedad, trauma, autoestima, estrés, depresión e imagen corporal."
   );
 
