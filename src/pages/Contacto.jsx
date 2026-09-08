@@ -273,7 +273,7 @@ export default function Contacto() {
               title="Agendar atención presencial en Tree Cowork, Heredia"
               allow="payment"
               className="bookingModal__iframe"
-              scrolling="no"
+              scrolling="auto"
               id="IJxymokUAyRDjO6Y6dqs_1788825993648"
             />
             <script src={EXTERNAL_LINKS.herediaBookingWidgetScript} type="text/javascript" />
