@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import usePageMeta from "../hooks/usePageMeta.js";
 import { SERVICE_AREAS, WHATSAPP_DEFAULT_TEXT } from "../data/content.js";
 import { buildWhatsAppLink, EXTERNAL_LINKS } from "../data/externalLinks.js";
+import { breadcrumbSchema, serviceSchema } from "../data/seo.js";
 import "../styles/internal.css";
 
 export default function ServiceDetailPage({ slug }) {
@@ -13,12 +14,33 @@ export default function ServiceDetailPage({ slug }) {
     return buildWhatsAppLink(`${WHATSAPP_DEFAULT_TEXT} ${service.ctaLabel}.`);
   }, [service]);
 
+  // Áreas relacionadas declaradas en content.js: dan salida a la página y
+  // reparten autoridad entre los servicios en lugar de dejarlos aislados.
+  const related = useMemo(
+    () =>
+      (service?.relatedSlugs ?? [])
+        .map((item) => SERVICE_AREAS.find(({ slug: other }) => other === item))
+        .filter(Boolean),
+    [service]
+  );
+
+  const schemas = useMemo(() => {
+    if (!service) return [];
+    return [
+      serviceSchema(service),
+      breadcrumbSchema([
+        { name: "Servicios", path: "/servicios" },
+        { name: service.title, path: `/${service.slug}` },
+      ]),
+    ];
+  }, [service]);
+
   usePageMeta(
     service ? service.seoTitle : "Servicio | Volver al Presente",
     service
       ? service.seoDescription
       : "Acompañamiento psicológico en Volver al Presente.",
-    { canonicalPath: service ? `/${service.slug}` : "/servicios" }
+    { canonicalPath: service ? `/${service.slug}` : "/servicios", schemas }
   );
 
   if (!service) {
@@ -38,7 +60,7 @@ export default function ServiceDetailPage({ slug }) {
       <section className="innerHero">
         <div className="container innerHero__content">
           <span className="sub">Acompañamiento psicológico</span>
-          <h1>{service.title}</h1>
+          <h1>{service.h1}</h1>
           <p>{service.subtitle}</p>
           <div className="innerHero__cta">
             <a className="btn btn-primary" href={waLink} target="_blank" rel="noopener noreferrer">
@@ -122,6 +144,22 @@ export default function ServiceDetailPage({ slug }) {
                   <p>{item.a}</p>
                 </div>
               ))}
+            </div>
+          </article>
+
+          {/* Enlaces internos entre áreas relacionadas y regreso al listado.
+              Reutiliza las clases existentes: no introduce estilos nuevos. */}
+          <article className="card sectionCard">
+            <h2>Otras áreas de acompañamiento</h2>
+            <div className="innerHero__cta">
+              {related.map((item) => (
+                <Link className="btn btn-secondary small" key={item.slug} to={`/${item.slug}`}>
+                  {item.shortTitle}
+                </Link>
+              ))}
+              <Link className="btn btn-ghost small" to="/servicios">
+                Ver todos los servicios
+              </Link>
             </div>
           </article>
 

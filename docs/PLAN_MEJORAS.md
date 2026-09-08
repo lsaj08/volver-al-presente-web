@@ -2,6 +2,27 @@
 
 Fecha: 6 de septiembre de 2026.
 
+## Avance — 7 de septiembre de 2026 (auditoría SEO)
+
+Segunda ronda, sobre la base ya prerenderizada. Implementado localmente, sin publicar.
+
+- **SEO local.** Las dos sedes presenciales (Tree Cowork, Heredia y Tree Armonioso, San José) se publican como entidades `MedicalBusiness`/`Psychologist` con dirección postal, área servida y teléfono. Antes solo existía una `Organization` genérica, sin señal geográfica para el paquete local de Google. Las direcciones visibles de `Contacto` ahora salen de `LOCATIONS` en `content.js`, para que el texto y los datos estructurados no se separen.
+- **Datos estructurados por página.** `usePageMeta` acepta `schemas`: las seis áreas de terapia llevan ficha `Service` y todas las secciones llevan `BreadcrumbList`.
+- **Imágenes.** El logo pesaba 319 KB (2284×1599) para dibujarse a 50 px y el retrato 303 KB. Se generaron versiones ajustadas: el peso de imágenes por página bajó de 638 KB a 183 KB. Se conservan los originales en `src/assets` como maestros; Vite solo empaqueta los importados.
+- **Imagen social.** `og:image` era el retrato vertical 899×1600 declarado como `summary_large_image`, y las tarjetas lo recortaban. Se añadió `og-image.jpg` de 1200×628 con dimensiones declaradas.
+- **Iconos.** El sitio no tenía favicon: Google mostraba el globo genérico. Se agregaron `favicon.ico`, `apple-touch-icon`, iconos 192/512 y `site.webmanifest`.
+- **Hidratación.** `main.jsx` usaba `createRoot`, que descartaba el HTML prerenderizado y volvía a dibujar todo. Ahora hidrata cuando el contenedor llega con contenido. Verificado en las 15 rutas: sin avisos de desajuste en consola.
+- **Enlaces internos.** `relatedSlugs` estaba definido en `content.js` pero sin usar. Las páginas de servicio enlazan a sus áreas relacionadas y al listado, reutilizando clases existentes.
+- **Encabezados y títulos.** Los H1 de servicio pasan de la etiqueta corta ("Ansiedad") a la intención de búsqueda ("Terapia para la ansiedad"). Se reescribieron los títulos de Recursos, Talleres, Psicositas y Contacto.
+- **Otros.** `lang="es-CR"`, `lastmod` en el sitemap y dimensiones intrínsecas en el retrato de Sobre mí.
+- **Verificación.** `check-seo.mjs` cubre ahora iconos, `og:image` con dimensiones, las dos sedes con dirección, ficha y migas por servicio, enlaces internos, `lastmod` y un presupuesto de 200 KB por imagen.
+
+Decidido: `/psi-cositas`, `/talleres` y `/recursos` se mantienen indexadas pese a su poco contenido; se revisará cuando exista el material definitivo.
+
+- **Perfiles y coordenadas.** El usuario aportó Instagram y Facebook oficiales (`SOCIAL_PROFILES`), publicados como `sameAs` en la clínica, la persona y ambas sedes. Las coordenadas se obtuvieron de los Plus Codes indicados (`2V2P+MV Heredia` y `WWHJ+3R7 San José`) y se contrastaron con el marcador de las fichas de Google Maps ya enlazadas: coinciden dentro de 5 m. Se publican como `geo` junto a `hasMap`. Los enlaces de Maps y Waze pasaron a derivarse de `LOCATIONS`, para que no vivan duplicados en `externalLinks.js`.
+
+Pendiente por falta de datos: horarios de atención por sede (`openingHours`) y la ficha de Google Business Profile de cada consultorio.
+
 ## Avance — 7 de septiembre de 2026
 
 Implementación local iniciada por solicitud del usuario. No se ha publicado.

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import logo from "../assets/logo-marcela.png";
+import logo from "../assets/logo-header.png";
 import "../styles/contacto.css";
 
 const mainLinks = [

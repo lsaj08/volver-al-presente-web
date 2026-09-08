@@ -1,5 +1,6 @@
 import React from "react";
 import usePageMeta from "../hooks/usePageMeta.js";
+import { breadcrumbSchema } from "../data/seo.js";
 import { buildWhatsAppLink, EXTERNAL_LINKS, isPlaceholderUrl } from "../data/externalLinks.js";
 import { SITE_MESSAGES } from "../data/content.js";
 import "../styles/internal.css";
@@ -7,8 +8,9 @@ import "../styles/internal.css";
 export default function PsiCositas() {
   const catalogAvailable = !isPlaceholderUrl(EXTERNAL_LINKS.canvaCatalog);
   usePageMeta(
-    "Psicositas | Volver al Presente",
-    "Materiales físicos, recursos especiales y productos vinculados al bienestar emocional."
+    "Psicositas | Materiales de bienestar emocional",
+    "Materiales físicos, recursos especiales y productos vinculados al bienestar emocional.",
+    { schemas: [breadcrumbSchema([{ name: "Psicositas", path: "/psi-cositas" }])] }
   );
 
   return (

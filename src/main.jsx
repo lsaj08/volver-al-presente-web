@@ -10,6 +10,11 @@ const app = (
   </React.StrictMode>
 );
 
-// El HTML prerenderizado queda disponible para buscadores y se reemplaza al iniciar React.
-// Así evitamos que diferencias de atributos propios de la navegación SPA provoquen errores de hidratación.
-ReactDOM.createRoot(root).render(app);
+// El HTML prerenderizado se hidrata en lugar de volver a dibujarse: así el
+// contenido que ya pintó el navegador se conserva y no hay repintado inicial.
+// En desarrollo (sin prerender) el contenedor llega vacío y se monta normalmente.
+if (root.hasChildNodes()) {
+  ReactDOM.hydrateRoot(root, app);
+} else {
+  ReactDOM.createRoot(root).render(app);
+}

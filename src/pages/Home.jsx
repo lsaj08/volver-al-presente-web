@@ -12,7 +12,7 @@ import {
 import { buildWhatsAppLink, EXTERNAL_LINKS } from "../data/externalLinks.js";
 import "../styles/home.css";
 import "../styles/internal.css";
-import heroPic from "../assets/banner.jpeg";
+import heroPic from "../assets/marcela-retrato.jpg";
 
 function WhatsIcon({ className }) {
   return (

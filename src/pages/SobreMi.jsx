@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import usePageMeta from "../hooks/usePageMeta.js";
-import marcelaPhoto from "../assets/banner.jpeg";
+import { breadcrumbSchema } from "../data/seo.js";
+import marcelaPhoto from "../assets/marcela-retrato.jpg";
 import {
   ABOUT_CONTENT,
   APPROACH_POINTS,
@@ -24,7 +25,8 @@ export default function SobreMi() {
 
   usePageMeta(
     "Marcela Zamora, psicóloga | Volver al Presente",
-    "Conocé a la Psicóloga Marcela Zamora, su enfoque terapéutico, misión, visión, valores y experiencia profesional."
+    "Conocé a la Psicóloga Marcela Zamora, su enfoque terapéutico, misión, visión, valores y experiencia profesional.",
+    { schemas: [breadcrumbSchema([{ name: "Sobre mí", path: "/sobre-mi" }])] }
   );
 
   return (
@@ -53,7 +55,14 @@ export default function SobreMi() {
               </a>
             </div>
           </div>
-          <img className="aboutHero__photo" src={marcelaPhoto} alt="Psicóloga Marcela Zamora" />
+          {/* Dimensiones intrínsecas para que el navegador reserve el espacio y no haya salto de layout. */}
+          <img
+            className="aboutHero__photo"
+            src={marcelaPhoto}
+            width="899"
+            height="1600"
+            alt="Psicóloga Marcela Zamora"
+          />
         </div>
       </section>
 
