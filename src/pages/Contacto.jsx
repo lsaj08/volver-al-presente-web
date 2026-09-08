@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import FAQ from "../components/FAQ.jsx";
 import usePageMeta from "../hooks/usePageMeta.js";
-import { CONTACT, WHATSAPP_DEFAULT_TEXT } from "../data/content.js";
+import { WHATSAPP_DEFAULT_TEXT } from "../data/content.js";
 import { buildWhatsAppLink, EXTERNAL_LINKS } from "../data/externalLinks.js";
 import "../styles/contacto.css";
 
@@ -18,19 +18,6 @@ function WhatsIcon() {
         d="M8.5 8.8c.3-.7.6-.8 1.1-.8h.4c.3 0 .6 0 .8.6l.5 1.3c.1.3.1.6-.1.8l-.4.5c-.1.2-.2.3 0 .6.3.6 1.2 1.8 2.7 2.4.3.1.5.1.6-.1l.6-.7c.2-.2.5-.3.8-.2l1.4.5c.5.2.6.5.6.8 0 .3-.1.9-.6 1.3-.6.6-1.4.7-2 .6-1.2-.2-2.6-.9-3.8-2.1-1.2-1.2-2-2.6-2.2-3.8-.1-.6 0-1.4.5-2Z"
         fill="currentColor"
         opacity=".9"
-      />
-    </svg>
-  );
-}
-
-function PhoneIcon() {
-  return (
-    <svg className="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M8 3h3l1.5 5-2 1.2c1 2.3 2.8 4.2 5.3 5.3L17 13l4 1.5V18c0 1.1-.9 2-2 2h-1C9.7 20 4 14.3 4 7V6c0-1.1.9-2 2-2Z"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinejoin="round"
       />
     </svg>
   );
@@ -106,7 +93,7 @@ export default function Contacto() {
             </p>
 
             <div className="hero__cta">
-              <a className="btn btn-primary" href={waLink} target="_blank" rel="noopener noreferrer">
+              <a className="btn channelWhatsApp" href={waLink} target="_blank" rel="noopener noreferrer">
                 <WhatsIcon /> Escribir por WhatsApp
               </a>
 
@@ -133,7 +120,7 @@ export default function Contacto() {
       </section>
 
       <section className="section">
-        <div className="container grid2">
+        <div className="container contactContent">
           <div className="stack">
             <h2 className="h2 sectionTitle">Elegí la modalidad que mejor se adapte a vos</h2>
 
@@ -161,9 +148,6 @@ export default function Contacto() {
                   >
                     <CalendarIcon /> Agendar
                   </button>
-                  <a className="btn btn-secondary small" href={waLink} target="_blank" rel="noopener noreferrer">
-                    <WhatsIcon /> Consultar por WhatsApp
-                  </a>
                 </div>
               </div>
             </div>
@@ -177,6 +161,19 @@ export default function Contacto() {
                   <div className="locationSub">
                     <span>Barrio Corazón de Jesús, Heredia, Costa Rica</span>
                     <span>Tree Cowork</span>
+                  </div>
+                  <div className="locationActions">
+                    <button
+                      className="btn btn-primary small"
+                      type="button"
+                      aria-expanded={activeBooking?.url === EXTERNAL_LINKS.bookingWidgets.heredia}
+                      onClick={() => setActiveBooking({
+                        title: "Agendar atención presencial en Tree Cowork, Heredia",
+                        url: EXTERNAL_LINKS.bookingWidgets.heredia,
+                      })}
+                    >
+                      <CalendarIcon /> Agendar
+                    </button>
                   </div>
                   <div className="locationSub">¿Cómo llegar?</div>
                   <div className="locationActions">
@@ -196,17 +193,6 @@ export default function Contacto() {
                     >
                       <WazeIcon /> Waze
                     </a>
-                    <button
-                      className="btn btn-primary small"
-                      type="button"
-                      aria-expanded={activeBooking?.url === EXTERNAL_LINKS.bookingWidgets.heredia}
-                      onClick={() => setActiveBooking({
-                        title: "Agendar atención presencial en Tree Cowork, Heredia",
-                        url: EXTERNAL_LINKS.bookingWidgets.heredia,
-                      })}
-                    >
-                      <CalendarIcon /> Agendar
-                    </button>
                   </div>
                 </div>
               </div>
@@ -217,6 +203,19 @@ export default function Contacto() {
                   <div className="locationSub">
                     <span>Barrio González Lahmann, Catedral, San José, Costa Rica</span>
                     <span>Tree Armonioso</span>
+                  </div>
+                  <div className="locationActions">
+                    <button
+                      className="btn btn-primary small"
+                      type="button"
+                      aria-expanded={activeBooking?.url === EXTERNAL_LINKS.bookingWidgets.sanJose}
+                      onClick={() => setActiveBooking({
+                        title: "Agendar atención presencial en Tree Armonioso, San José",
+                        url: EXTERNAL_LINKS.bookingWidgets.sanJose,
+                      })}
+                    >
+                      <CalendarIcon /> Agendar
+                    </button>
                   </div>
                   <div className="locationSub">¿Cómo llegar?</div>
                   <div className="locationActions">
@@ -236,17 +235,6 @@ export default function Contacto() {
                     >
                       <WazeIcon /> Waze
                     </a>
-                    <button
-                      className="btn btn-primary small"
-                      type="button"
-                      aria-expanded={activeBooking?.url === EXTERNAL_LINKS.bookingWidgets.sanJose}
-                      onClick={() => setActiveBooking({
-                        title: "Agendar atención presencial en Tree Armonioso, San José",
-                        url: EXTERNAL_LINKS.bookingWidgets.sanJose,
-                      })}
-                    >
-                      <CalendarIcon /> Agendar
-                    </button>
                   </div>
                 </div>
               </div>
@@ -259,39 +247,6 @@ export default function Contacto() {
             </div>
           </div>
 
-          <div className="stack">
-            <h2 className="h2 sectionTitle">Canales de contacto</h2>
-
-            <div className="card formCard">
-              <p className="muted">
-                La forma más rápida de iniciar es por WhatsApp o agenda online. Si no sabés qué
-                modalidad elegir, podés escribirme y vemos juntas cuál se ajusta mejor a tu momento.
-              </p>
-              <a className="btn formBtn channelWhatsApp" href={waLink} target="_blank" rel="noopener noreferrer">
-                <WhatsIcon /> Escribir por WhatsApp
-              </a>
-              <a
-                className="btn formBtn channelBooking"
-                href={EXTERNAL_LINKS.booking}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <CalendarIcon /> Ir a agenda online
-              </a>
-              <a className="btn btn-ghost formBtn" href={EXTERNAL_LINKS.phone}>
-                <PhoneIcon /> {CONTACT.phoneDisplay}
-              </a>
-            </div>
-
-            <div className="card miniCTA">
-              <h3 className="miniCTA__title">¿No sabés si te conviene online o Presencial?</h3>
-              <p className="muted">
-                Ambas modalidades permiten un proceso terapéutico cuidado. La opción online puede
-                ser ideal si buscás mayor flexibilidad, mientras que la Presencial queda disponible
-                si preferís encontrarte en consultorio.
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 
