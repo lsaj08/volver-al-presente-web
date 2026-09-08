@@ -251,23 +251,17 @@ export default function Contacto() {
             className="bookingModal__dialog"
             role="dialog"
             aria-modal="true"
-            aria-labelledby="heredia-booking-title"
+            aria-label="Agendar atención presencial en Tree Cowork, Heredia"
           >
-            <div className="bookingModal__header">
-              <div>
-                <span className="sub">Agenda presencial</span>
-                <h2 id="heredia-booking-title">Tree Cowork, Heredia</h2>
-              </div>
-              <button
-                ref={closeBookingButton}
-                className="bookingModal__close"
-                type="button"
-                aria-label="Cerrar agenda"
-                onClick={() => setHerediaBookingOpen(false)}
-              >
-                ×
-              </button>
-            </div>
+            <button
+              ref={closeBookingButton}
+              className="bookingModal__close"
+              type="button"
+              aria-label="Cerrar agenda"
+              onClick={() => setHerediaBookingOpen(false)}
+            >
+              ×
+            </button>
             <iframe
               src={EXTERNAL_LINKS.herediaBookingWidget}
               title="Agendar atención presencial en Tree Cowork, Heredia"
