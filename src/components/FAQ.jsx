@@ -57,8 +57,8 @@ const FAQ_ITEMS = [
     a: "Podés escribir por WhatsApp o reservar en agenda online. Si tenés dudas sobre qué servicio elegir, podés iniciar con un mensaje breve y lo orientamos juntas.",
   },
   {
-    q: "¿La terapia es virtual, Presencial o ambas?",
-    a: "Se ofrece modalidad online y Presencial. En el primer contacto te indico qué opciones están habilitadas y cuál puede ajustarse mejor a tu momento.",
+    q: "¿La terapia es virtual, presencial o ambas?",
+    a: "Se ofrece modalidad online y presencial. En el primer contacto te indico qué opciones están habilitadas y cuál puede ajustarse mejor a tu momento.",
   },
   {
     q: "¿Cuánto dura una sesión psicológica?",

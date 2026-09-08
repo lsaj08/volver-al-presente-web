@@ -441,6 +441,18 @@ input:focus, textarea:focus{
   box-shadow: 0 0 0 4px rgba(106,18,117,.10);
 }
 .formBtn{ width: 100%; }
+.channelWhatsApp{
+  background: #25d366;
+  color: #fff;
+  box-shadow: 0 12px 24px rgba(37,211,102,.22);
+}
+.channelWhatsApp:hover{ opacity: .92; }
+.channelBooking{
+  background: var(--purple);
+  color: #fff;
+  box-shadow: 0 12px 24px rgba(106,18,117,.22);
+}
+.channelBooking:hover{ opacity: .95; }
 .formHint{ font-size: 12px; line-height: 1.4; }
 
 /* Mini CTA */

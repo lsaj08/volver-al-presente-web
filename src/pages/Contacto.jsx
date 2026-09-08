@@ -36,16 +36,31 @@ function PhoneIcon() {
   );
 }
 
-function PinIcon() {
+function CalendarIcon() {
   return (
     <svg className="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M12 21s7-4.6 7-11a7 7 0 1 0-14 0c0 6.4 7 11 7 11Z"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinejoin="round"
-      />
-      <path d="M12 11.2a2.2 2.2 0 1 0 0-4.4 2.2 2.2 0 0 0 0 4.4Z" fill="currentColor" opacity=".9" />
+      <rect x="4" y="5" width="16" height="15" rx="2" stroke="currentColor" strokeWidth="2" />
+      <path d="M8 3v4M16 3v4M4 10h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <path d="m9 15 2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function MapsIcon() {
+  return (
+    <svg className="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 21s7-4.6 7-11a7 7 0 1 0-14 0c0 6.4 7 11 7 11Z" stroke="currentColor" strokeWidth="2" />
+      <circle cx="12" cy="10" r="2.2" fill="currentColor" />
+    </svg>
+  );
+}
+
+function WazeIcon() {
+  return (
+    <svg className="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M18.5 15.5c1.4-1.1 2.2-2.7 2.2-4.6 0-3.7-3.4-6.7-7.6-6.7-4.4 0-7.8 2.8-7.8 6.6 0 2.2 1.2 4.1 3.2 5.2v2.1h8.7l1.3-2.6Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+      <circle cx="10" cy="10" r="1" fill="currentColor" /><circle cx="15" cy="10" r="1" fill="currentColor" />
+      <path d="M10 13.5c1.6 1.1 3.4 1.1 5 0" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
     </svg>
   );
 }
@@ -96,7 +111,7 @@ export default function Contacto() {
               </a>
 
               <a className="btn btn-secondary" href={EXTERNAL_LINKS.booking} target="_blank" rel="noopener noreferrer">
-                <PhoneIcon /> Agendar sesión
+                <CalendarIcon /> Agendar sesión
               </a>
             </div>
           </div>
@@ -144,7 +159,7 @@ export default function Contacto() {
                       url: EXTERNAL_LINKS.bookingWidgets.online,
                     })}
                   >
-                    <PhoneIcon /> Agendar
+                    <CalendarIcon /> Agendar
                   </button>
                   <a className="btn btn-secondary small" href={waLink} target="_blank" rel="noopener noreferrer">
                     <WhatsIcon /> Consultar por WhatsApp
@@ -170,7 +185,15 @@ export default function Contacto() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <PinIcon /> Cómo llegar
+                      <MapsIcon /> Maps
+                    </a>
+                    <a
+                      className="btn btn-ghost small"
+                      href={EXTERNAL_LINKS.waze.heredia}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <WazeIcon /> Waze
                     </a>
                     <button
                       className="btn btn-primary small"
@@ -181,7 +204,7 @@ export default function Contacto() {
                         url: EXTERNAL_LINKS.bookingWidgets.heredia,
                       })}
                     >
-                      <PhoneIcon /> Agendar
+                      <CalendarIcon /> Agendar
                     </button>
                   </div>
                 </div>
@@ -201,7 +224,15 @@ export default function Contacto() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <PinIcon /> Cómo llegar
+                      <MapsIcon /> Maps
+                    </a>
+                    <a
+                      className="btn btn-ghost small"
+                      href={EXTERNAL_LINKS.waze.sanJose}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <WazeIcon /> Waze
                     </a>
                     <button
                       className="btn btn-primary small"
@@ -212,7 +243,7 @@ export default function Contacto() {
                         url: EXTERNAL_LINKS.bookingWidgets.sanJose,
                       })}
                     >
-                      <PhoneIcon /> Agendar
+                      <CalendarIcon /> Agendar
                     </button>
                   </div>
                 </div>
@@ -234,16 +265,16 @@ export default function Contacto() {
                 La forma más rápida de iniciar es por WhatsApp o agenda online. Si no sabés qué
                 modalidad elegir, podés escribirme y vemos juntas cuál se ajusta mejor a tu momento.
               </p>
-              <a className="btn btn-primary formBtn" href={waLink} target="_blank" rel="noopener noreferrer">
+              <a className="btn formBtn channelWhatsApp" href={waLink} target="_blank" rel="noopener noreferrer">
                 <WhatsIcon /> Escribir por WhatsApp
               </a>
               <a
-                className="btn btn-secondary formBtn"
+                className="btn formBtn channelBooking"
                 href={EXTERNAL_LINKS.booking}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <PhoneIcon /> Ir a agenda online
+                <CalendarIcon /> Ir a agenda online
               </a>
               <a className="btn btn-ghost formBtn" href={EXTERNAL_LINKS.phone}>
                 <PhoneIcon /> {CONTACT.phoneDisplay}
