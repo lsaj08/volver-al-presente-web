@@ -1,0 +1,65 @@
+/* Lámina de políticas: fondo original de Marcela y tarjetas inspiradas en la referencia. */
+.termsPage{ padding: 28px 20px 48px; background: #fbf7fc; }
+.termsSheet{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 190px 64px 90px;
+  background: white url('../assets/terms-background.jpg') center top / 100% auto no-repeat;
+  border-radius: 28px;
+  box-shadow: 0 14px 48px rgba(106,18,117,.07);
+}
+.termsHeading{ text-align: center; margin-bottom: 38px; }
+.termsHeading h1{
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(30px, 4.5vw, 56px);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -.035em;
+  text-transform: uppercase;
+  color: var(--purple);
+  text-wrap: balance;
+}
+.termsPolicies{ display: grid; gap: 24px; }
+.termsPolicy{
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr);
+  align-items: center;
+  gap: 24px;
+  padding: 24px 28px;
+  border: 2px solid var(--purple);
+  border-radius: 28px;
+  background: rgba(255,255,255,.97);
+  box-shadow: 0 5px 0 rgba(106,18,117,.06);
+}
+.termsPolicy__icon{ color: var(--purple); }
+.termsPolicy__icon svg{ display: block; width: 100%; height: auto; }
+.termsPolicy h2{
+  margin: 0 0 10px;
+  font-family: 'Atma', sans-serif;
+  font-size: clamp(25px, 3vw, 34px);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--purple);
+  text-align: center;
+}
+.termsPolicy p, .termsPolicy li{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #5e5662;
+}
+.termsPolicy p{ margin: 0; text-align: center; }
+.termsPolicy ul{ margin: 0; padding-left: 20px; }
+.termsPolicy li + li{ margin-top: 12px; }
+/* En pantallas pequeñas, los iconos se colocan arriba para dar espacio al texto. */
+@media (max-width: 640px){
+  .termsPage{ padding: 12px 10px 28px; }
+  .termsSheet{ padding: 110px 16px 36px; border-radius: 20px; }
+  .termsHeading{ margin-bottom: 26px; }
+  .termsPolicies{ gap: 20px; }
+  .termsPolicy{ grid-template-columns: minmax(0, 1fr); gap: 12px; padding: 20px 18px; border-radius: 24px; }
+  .termsPolicy__icon{ width: 58px; margin-inline: auto; }
+  .termsPolicy p, .termsPolicy li{ font-size: 14px; line-height: 1.65; }
+}
