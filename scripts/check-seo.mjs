@@ -46,4 +46,4 @@ const azure = JSON.parse(await readFile(new URL("staticwebapp.config.json", outp
 assert.equal(azure.responseOverrides[404].rewrite, "/404.html");
 assert.ok(!azure.navigationFallback, "No ocultar páginas inexistentes con HTTP 200");
 assert.equal(azure.trailingSlash, "never");
-process.stdout.write("SEO verificado: 15 rutas, 404, metadatos, enlaces, imágenes, seguimiento y sitemap.\n");
+process.stdout.write(`SEO verificado: ${SITE_PATHS.length} rutas, 404, metadatos, enlaces, imágenes, seguimiento y sitemap.\n`);

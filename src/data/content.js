@@ -11,6 +11,37 @@ export const CANVA_CATALOG_URL = "PENDIENTE_AGREGAR_LINK_DE_CANVA";
 
 export const SITE_URL = "https://psicomarcelazamora.com";
 
+// Políticas transcritas de la imagen proporcionada por la clínica.
+export const TERMS_CONTENT = {
+  title: "Términos y condiciones",
+  description: "Condiciones de confirmación de citas, métodos de pago, reembolso, puntualidad y recargo por ausencia en Volver al Presente.",
+  sections: [
+    {
+      title: "Confirmación de cita",
+      paragraphs: ["Para confirmar tu espacio, el pago debe realizarse el día antes de la sesión. En caso contrario queda cancelada y con gusto te ayudamos a reagendarla."],
+    },
+    {
+      title: "Métodos de pago",
+      paragraphs: ["Aceptamos transferencia bancaria, SINPE Móvil y tarjeta. No se recibe efectivo."],
+    },
+    {
+      title: "Política de reembolso",
+      paragraphs: ["Una vez confirmada y pagada la cita, no se hacen devoluciones de dinero."],
+    },
+    {
+      title: "Puntualidad",
+      items: [
+        "Si no te presentas y no te comunicas en los primeros 15 minutos, la cita se cancela automáticamente.",
+        "Si llegas tarde y avisaste con anticipación, la sesión se realizará en el tiempo restante de la cita.",
+      ],
+    },
+    {
+      title: "Recargo por ausencia",
+      paragraphs: ["En caso de haber confirmado tu espacio y no presentarte a la cita, se debe pagar un recargo de ₡15 000 o su equivalente en dólares para reagendar."],
+    },
+  ],
+};
+
 // Estados de disponibilidad y navegación; no sustituyen el contenido clínico.
 export const SITE_MESSAGES = {
   catalogPending: "El catálogo estará disponible próximamente. Podés consultar por WhatsApp sobre los materiales.",

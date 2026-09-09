@@ -5,7 +5,7 @@ import logo from "../assets/logo-marcela.png";
 export const SITE_PATHS = [
   "/", "/servicios", "/sobre-mi", "/recursos", "/psi-cositas", "/talleres", "/contacto",
   ...SERVICE_AREAS.map(({ slug }) => `/${slug}`),
-  "/politica-de-privacidad", "/aviso-legal",
+  "/politica-de-privacidad", "/aviso-legal", "/terminos-y-condiciones",
 ];
 
 export const SOCIAL_IMAGE = new URL(portrait, SITE_URL).href;
