@@ -13,6 +13,21 @@ function PolicyIcon({ index }) {
   return <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{drawings[index]}</svg>;
 }
 
+// Conserva el texto original y marca únicamente las frases destacadas en la lámina.
+function PolicyText({ text, emphasis = [] }) {
+  let cursor = 0;
+  const parts = [];
+  for (const phrase of emphasis) {
+    const start = text.indexOf(phrase, cursor);
+    if (start === -1) continue;
+    parts.push(text.slice(cursor, start));
+    parts.push(<strong key={start}>{phrase}</strong>);
+    cursor = start + phrase.length;
+  }
+  parts.push(text.slice(cursor));
+  return parts;
+}
+
 export default function TerminosCondiciones() {
   usePageMeta(
     `${TERMS_CONTENT.title} | Volver al Presente`,
@@ -27,12 +42,12 @@ export default function TerminosCondiciones() {
           <h1>{TERMS_CONTENT.title}</h1>
         </header>
         <div className="termsPolicies">
-          {TERMS_CONTENT.sections.map(({ title, paragraphs, items }, index) => (
+          {TERMS_CONTENT.sections.map(({ title, paragraphs, items, emphasis }, index) => (
             <section className="termsPolicy" key={title}>
               <div className="termsPolicy__icon"><PolicyIcon index={index} /></div>
               <div className="termsPolicy__content">
               <h2>{title}</h2>
-              {paragraphs?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              {paragraphs?.map((paragraph) => <p key={paragraph}><PolicyText text={paragraph} emphasis={emphasis} /></p>)}
               {items && <ul>{items.map((item) => <li key={item}>{item}</li>)}</ul>}
               </div>
             </section>

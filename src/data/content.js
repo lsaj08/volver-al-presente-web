@@ -18,14 +18,17 @@ export const TERMS_CONTENT = {
   sections: [
     {
       title: "Confirmación de cita",
+      emphasis: ["pago", "día antes de la sesión"],
       paragraphs: ["Para confirmar tu espacio, el pago debe realizarse el día antes de la sesión. En caso contrario queda cancelada y con gusto te ayudamos a reagendarla."],
     },
     {
       title: "Métodos de pago",
+      emphasis: ["No se recibe efectivo."],
       paragraphs: ["Aceptamos transferencia bancaria, SINPE Móvil y tarjeta. No se recibe efectivo."],
     },
     {
       title: "Política de reembolso",
+      emphasis: ["no se hacen devoluciones de dinero."],
       paragraphs: ["Una vez confirmada y pagada la cita, no se hacen devoluciones de dinero."],
     },
     {
@@ -37,6 +40,7 @@ export const TERMS_CONTENT = {
     },
     {
       title: "Recargo por ausencia",
+      emphasis: ["no presentarte a la cita", "recargo de ₡15 000 o su equivalente"],
       paragraphs: ["En caso de haber confirmado tu espacio y no presentarte a la cita, se debe pagar un recargo de ₡15 000 o su equivalente en dólares para reagendar."],
     },
   ],
