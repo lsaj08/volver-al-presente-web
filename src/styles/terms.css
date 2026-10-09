@@ -63,3 +63,7 @@
   .termsPolicy__icon{ width: 58px; margin-inline: auto; }
   .termsPolicy p, .termsPolicy li{ font-size: 14px; line-height: 1.65; }
 }
+/* Variante EAP: tarjetas sin icono, con subtítulo y texto alineado a la izquierda. */
+.termsHeading p{ margin: 14px auto 0; max-width: 640px; font-family: 'Atma', sans-serif; font-size: clamp(19px, 2.4vw, 24px); color: var(--purple); }
+.termsPolicy--plain{ grid-template-columns: minmax(0, 1fr); }
+.termsPolicy--plain p + p, .termsPolicy--plain p + ul{ margin-top: 12px; }

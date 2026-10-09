@@ -19,6 +19,7 @@ import TerapiaDepresion from "./pages/TerapiaDepresion.jsx";
 import LegalPrivacidad from "./pages/LegalPrivacidad.jsx";
 import AvisoLegal from "./pages/AvisoLegal.jsx";
 import TerminosCondiciones from "./pages/TerminosCondiciones.jsx";
+import TerminosEAP from "./pages/TerminosEAP.jsx";
 import Footer from "./components/Footer.jsx";
 
 export function AppContent() {
@@ -54,6 +55,7 @@ export function AppContent() {
         <Route path="/politica-de-privacidad" element={<LegalPrivacidad />} />
         <Route path="/aviso-legal" element={<AvisoLegal />} />
         <Route path="/terminos-y-condiciones" element={<TerminosCondiciones />} />
+        <Route path="/terminos-y-condiciones-eap" element={<TerminosEAP />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
