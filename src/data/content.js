@@ -12,6 +12,53 @@ export const CANVA_CATALOG_URL = "PENDIENTE_AGREGAR_LINK_DE_CANVA";
 export const SITE_URL = "https://psicomarcelazamora.com";
 
 // Políticas transcritas de la imagen proporcionada por la clínica.
+// Encuadre y consentimiento del Programa de Asistencia al Empleado (EAP LatinA), según el PDF entregado.
+export const EAP_TERMS_CONTENT = {
+  title: "Términos y condiciones EAP",
+  subtitle: "Encuadre y consentimiento para el proceso de Orientación Psicológica",
+  description: "Encuadre, confidencialidad, citas y cancelaciones del servicio de Orientación Psicológica brindado a través del Programa de Asistencia al Empleado (EAP LatinA).",
+  sections: [
+    {
+      title: "Encuadre del servicio",
+      paragraphs: [
+        "El presente hace referencia a las características del servicio de Orientación Psicológica que recibirá a través del Programa de Asistencia al Empleado (EAP).",
+      ],
+      items: [
+        "El servicio no tiene costo para mí y entiendo que el proceso incluye un número limitado de entrevistas por caso.",
+        "El Programa de Asistencia al Empleado no compartirá la información con nadie fuera del Programa sin mi consentimiento por escrito. La única excepción a esta norma sería en caso de que estuviera en riesgo de dañarme a mí mismo o a otros, o si la ley lo requiriese.",
+        "Los Profesionales de EAP LatinA no participarán de procesos legales, salvo que fuese requerido por un juez.",
+        "Los Profesionales de EAP LatinA NO realizan evaluaciones diagnósticas, psicodiagnósticos, NI INFORMES POR ESCRITO. Entiendo que el proceso es de Orientación Psicológica y NO DE TRATAMIENTO.",
+        "Para asegurar la calidad del servicio, el profesional a cargo llevará un registro del proceso de orientación, al que sólo tendrán acceso dicho profesional y el supervisor clínico de EAP LatinA.",
+        "En caso de que el beneficiario sea menor de edad, la valoración realizada por el profesional será de orientación verbal exclusiva a los padres y/o tutor legal del menor.",
+      ],
+    },
+    {
+      title: "Procedimiento",
+      paragraphs: ["Por medio de la presente me comprometo a:"],
+      items: [
+        "Aceptar que la entrevista de Admisión realizada en forma telefónica por el Profesional del Equipo Clínico de EAP LatinA tiene una validez de un mes (30 días). En efecto, cuento con ese tiempo para contactar al Profesional asignado y coordinar la primera cita de orientación.",
+        "Si pasados los 30 días quisiera retomar el proceso, deberé comunicarme nuevamente al Programa de Asistencia y se me asignará una nueva entrevista de admisión.",
+        "Asistir puntualmente y en el día y horario pactado con el profesional de EAP LatinA, aceptando que hay una tolerancia de 10 minutos a partir de la hora en la que estoy citado.",
+        "En caso de necesitar cancelar la cita, entiendo que debo hacerlo con un mínimo de 24 horas de antelación. En caso contrario, se tomará como entrevista utilizada. Si doy aviso de mi ausencia con más de 24 horas de anticipación del día y horario pactado, entiendo que la entrevista podrá ser reprogramada acorde a la disponibilidad del profesional de EAP LatinA.",
+        "Entiendo que los profesionales de EAP LatinA NO ESTÁN AUTORIZADOS a continuar procesos con consultantes de EAP LatinA por fuera de la cobertura del Programa de Asistencia al Empleado.",
+      ],
+    },
+    {
+      title: "Dudas o quejas",
+      paragraphs: [
+        "Si usted tiene dificultades, dudas o quejas acerca del servicio recibido por parte del profesional que lo está asesorando, puede contactarse con el Programa de Asistencia a la línea gratuita de su país o bien a eapconsultas@eaplatina.com",
+        "De no cumplir los puntos anteriores, acepto que el Profesional tratante o bien el admisor de EAP LatinA se ponga en comunicación conmigo en los teléfonos registrados buscando la continuidad y la correcta aplicación de los servicios.",
+      ],
+    },
+    {
+      title: "Aceptación del encuadre",
+      paragraphs: [
+        "He leído, acepto y estoy de acuerdo con el Encuadre establecido por EAP LatinA para el Proceso de Orientación Psicológica que inicio con el Profesional asignado.",
+      ],
+    },
+  ],
+};
+
 export const TERMS_CONTENT = {
   title: "Términos y condiciones",
   description: "Condiciones de confirmación de citas, métodos de pago, reembolso, puntualidad y recargo por ausencia en Volver al Presente.",

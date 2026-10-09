@@ -29,6 +29,10 @@ export default function Footer() {
           <NavLink className="footerLink" to="/terminos-y-condiciones">
             Términos y condiciones
           </NavLink>
+          <span className="footerSep">•</span>
+          <NavLink className="footerLink" to="/terminos-y-condiciones-eap">
+            Términos EAP
+          </NavLink>
         </div>
 
         <div className="footer__right">
