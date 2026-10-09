@@ -12,7 +12,7 @@ import logoMark from "../assets/logo-mark.png";
 export const SITE_PATHS = [
   "/", "/servicios", "/sobre-mi", "/recursos", "/psi-cositas", "/talleres", "/contacto",
   ...SERVICE_AREAS.map(({ slug }) => `/${slug}`),
-  "/politica-de-privacidad", "/aviso-legal",
+  "/politica-de-privacidad", "/aviso-legal", "/terminos-y-condiciones", "/terminos-y-condiciones-eap",
 ];
 
 // Imagen para compartir en redes: 1200x628 (1.91:1), el formato que esperan
