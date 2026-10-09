@@ -63,7 +63,6 @@ export const SOCIAL_PROFILES = [
 // Encuadre y consentimiento del Programa de Asistencia al Empleado (EAP LatinA), según el PDF entregado.
 export const EAP_TERMS_CONTENT = {
   title: "Términos y condiciones EAP",
-  subtitle: "Encuadre y consentimiento para el proceso de Orientación Psicológica",
   description: "Encuadre, confidencialidad, citas y cancelaciones del servicio de Orientación Psicológica brindado a través del Programa de Asistencia al Empleado (EAP LatinA).",
   heading: "Encuadre y consentimiento para el proceso de Orientación Psicológica",
   intro: "El presente hace referencia a las características del servicio de Orientación Psicológica que recibiré a través del Programa de Asistencia al Empleado (EAP).",
@@ -84,13 +83,13 @@ export const EAP_TERMS_CONTENT = {
     "En caso de necesitar cancelar la cita, entiendo que debo hacerlo con un mínimo de 24 horas de antelación. En caso contrario, se tomará como entrevista utilizada. Si doy aviso de mi ausencia con más de 24 horas de anticipación del día y horario pactado, entiendo que la entrevista podrá ser reprogramada acorde a la disponibilidad del profesional de EAP LatinA.",
     "Entiendo que los profesionales de EAP LatinA NO ESTÁN AUTORIZADOS a continuar procesos con consultantes de EAP LatinA por fuera de la cobertura del Programa de Asistencia al Empleado.",
   ],
-};
-
   contactText: "Si usted tiene dificultades, dudas o quejas acerca del servicio recibido por parte del profesional que lo está asesorando, puede contactarse con el Programa de Asistencia a la línea gratuita de su país o bien a",
   contactEmail: "eapconsultas@eaplatina.com",
   closing: "De no cumplir los puntos anteriores, acepto que el Profesional tratante o bien el admisor de EAP LatinA se ponga en comunicación conmigo en los teléfonos registrados buscando la continuidad y la correcta aplicación de los servicios.",
 // Políticas transcritas de la imagen proporcionada por la clínica.
 export const TERMS_CONTENT = {
+};
+
   title: "Términos y condiciones",
   description: "Condiciones de confirmación de citas, métodos de pago, reembolso, puntualidad y recargo por ausencia en Volver al Presente.",
   sections: [

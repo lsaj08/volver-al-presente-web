@@ -15,7 +15,6 @@ export default function TerminosEAP() {
       <article className="termsSheet">
         <header className="termsHeading">
           <h1>{EAP.title}</h1>
-          <p>{EAP.subtitle}</p>
         </header>
         <section className="termsPolicy eapDoc">
           <h2>{EAP.heading}</h2>
@@ -34,6 +33,7 @@ export default function TerminosEAP() {
           </p>
           <p className="eapDoc__note">{EAP.closing}</p>
           <img className="eapDoc__logo" src={eapLogo} alt="EAP LatinA" width="1301" height="308" loading="lazy" />
+          <div className="eapDoc__bar" aria-hidden="true" />
         </section>
       </article>
     </main>
