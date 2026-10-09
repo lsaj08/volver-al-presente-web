@@ -11,7 +11,55 @@ export const CANVA_CATALOG_URL = "PENDIENTE_AGREGAR_LINK_DE_CANVA";
 
 export const SITE_URL = "https://psicomarcelazamora.com";
 
-// Políticas transcritas de la imagen proporcionada por la clínica.
+// Sedes de atención presencial.
+// Alimentan las tarjetas de Contacto, los enlaces de mapas y los datos
+// estructurados LocalBusiness. Las coordenadas son las del marcador publicado
+// en cada ficha de Google Maps; los Plus Codes quedan como referencia legible.
+// Pendiente: horarios de atención por sede (no se inventan).
+export const LOCATIONS = [
+  {
+    id: "heredia",
+    name: "Volver al Presente — Tree Cowork, Heredia",
+    venue: "Tree Cowork",
+    heading: "Atención Presencial en Heredia",
+    neighborhood: "Barrio Corazón de Jesús",
+    city: "Heredia",
+    region: "Provincia de Heredia",
+    country: "CR",
+    addressLine: "Barrio Corazón de Jesús, Heredia, Costa Rica",
+    plusCode: "2V2P+MV Heredia",
+    latitude: 10.001714,
+    longitude: -84.112853,
+    mapsUrl: "https://maps.app.goo.gl/6eB9cJSxreBWGnp27",
+    wazeUrl:
+      "https://ul.waze.com/ul?venue_id=180813924.1808073704.16530836&overview=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location",
+  },
+  {
+    id: "sanJose",
+    name: "Volver al Presente — Tree Armonioso, San José",
+    venue: "Tree Armonioso",
+    heading: "Atención Presencial en San José",
+    neighborhood: "Barrio González Lahmann, Catedral",
+    city: "San José",
+    region: "Provincia de San José",
+    country: "CR",
+    addressLine: "Barrio González Lahmann, Catedral, San José, Costa Rica",
+    plusCode: "WWHJ+3R7 San José",
+    latitude: 9.927675,
+    longitude: -84.067964,
+    mapsUrl: "https://maps.app.goo.gl/S1orV7wxxUjh2RWU9",
+    wazeUrl:
+      "https://ul.waze.com/ul?venue_id=180813923.1808335841.41790147&overview=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location",
+  },
+];
+
+// Perfiles públicos oficiales. Se publican como `sameAs` para que Google
+// vincule el sitio con la misma entidad profesional en redes.
+export const SOCIAL_PROFILES = [
+  "https://www.instagram.com/psicomarcelazamora/",
+  "https://www.facebook.com/PsicoMarcelaZamora",
+];
+
 // Encuadre y consentimiento del Programa de Asistencia al Empleado (EAP LatinA), según el PDF entregado.
 export const EAP_TERMS_CONTENT = {
   title: "Términos y condiciones EAP",
@@ -59,6 +107,7 @@ export const EAP_TERMS_CONTENT = {
   ],
 };
 
+// Políticas transcritas de la imagen proporcionada por la clínica.
 export const TERMS_CONTENT = {
   title: "Términos y condiciones",
   description: "Condiciones de confirmación de citas, métodos de pago, reembolso, puntualidad y recargo por ausencia en Volver al Presente.",
@@ -194,6 +243,7 @@ export const SERVICE_AREAS = [
   {
     slug: "terapia-ansiedad",
     title: "Ansiedad",
+    h1: "Terapia para la ansiedad",
     shortTitle: "Ansiedad",
     subtitle: "Cuando la alarma no se apaga, puedes aprender a bajar el volumen.",
     intro:
@@ -244,6 +294,7 @@ export const SERVICE_AREAS = [
   {
     slug: "imagen-corporal-conducta-alimentaria",
     title: "Imagen corporal y conducta alimentaria",
+    h1: "Terapia para imagen corporal y conducta alimentaria",
     shortTitle: "Imagen corporal y alimentación",
     subtitle: "Reconectá con tu cuerpo y con la comida desde el cuidado, no la culpa.",
     intro:
@@ -296,6 +347,7 @@ export const SERVICE_AREAS = [
   {
     slug: "terapia-trauma",
     title: "Trauma y experiencias difíciles",
+    h1: "Terapia para trauma y experiencias difíciles",
     shortTitle: "Trauma y experiencias difíciles",
     subtitle: "Lo que te pasó no define quién eres.",
     intro:
@@ -345,6 +397,7 @@ export const SERVICE_AREAS = [
   {
     slug: "autocuidado-limites-autoestima",
     title: "Autocuidado, límites, autoestima y relaciones",
+    h1: "Terapia de autoestima, límites y autocuidado",
     shortTitle: "Autocuidado, límites y autoestima",
     subtitle: "Aprendé a cuidarte sin culpa y a construir vínculos más sanos.",
     intro:
@@ -395,6 +448,7 @@ export const SERVICE_AREAS = [
   {
     slug: "estres-perfeccionismo",
     title: "Estrés, perfeccionismo y rumia",
+    h1: "Terapia para estrés, perfeccionismo y rumia",
     shortTitle: "Estrés y perfeccionismo",
     subtitle: "Menos vuelta en la cabeza, más foco y descanso real.",
     intro:
@@ -444,6 +498,7 @@ export const SERVICE_AREAS = [
   {
     slug: "terapia-depresion",
     title: "Depresión",
+    h1: "Terapia para la depresión",
     shortTitle: "Depresión",
     subtitle: "Cuando todo pesa, no tenés por qué cargar sola/o.",
     intro:

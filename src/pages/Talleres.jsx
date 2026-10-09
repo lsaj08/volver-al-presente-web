@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import usePageMeta from "../hooks/usePageMeta.js";
+import { breadcrumbSchema } from "../data/seo.js";
 import { WHATSAPP_DEFAULT_TEXT } from "../data/content.js";
 import { buildWhatsAppLink } from "../data/externalLinks.js";
 import "../styles/internal.css";
@@ -30,8 +31,9 @@ export default function Talleres() {
   );
 
   usePageMeta(
-    "Talleres | Volver al Presente",
-    "Talleres de bienestar emocional: límites e imagen corporal positiva."
+    "Talleres de bienestar emocional | Marcela Zamora",
+    "Talleres de bienestar emocional: límites e imagen corporal positiva.",
+    { schemas: [breadcrumbSchema([{ name: "Talleres", path: "/talleres" }])] }
   );
 
   return (

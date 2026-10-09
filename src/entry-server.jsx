@@ -3,7 +3,8 @@ import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom/server.js";
 import { AppContent } from "./App.jsx";
 import { PageMetaContext } from "./hooks/PageMetaContext.js";
-export { SITE_PATHS, SOCIAL_IMAGE, SITE_SCHEMA } from "./data/seo.js";
+export { SITE_PATHS, SOCIAL_IMAGE, HERO_IMAGE, SITE_SCHEMA } from "./data/seo.js";
+export { SERVICE_AREAS } from "./data/content.js";
 
 // Se ejecuta únicamente al compilar; no hay servidor React ni datos privados en producción.
 export function render(path) {

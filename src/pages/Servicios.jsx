@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import { Link } from "react-router-dom";
 import usePageMeta from "../hooks/usePageMeta.js";
+import { breadcrumbSchema } from "../data/seo.js";
 import { SERVICE_AREAS, WHATSAPP_DEFAULT_TEXT } from "../data/content.js";
 import { buildWhatsAppLink } from "../data/externalLinks.js";
 import "../styles/internal.css";
@@ -13,7 +14,8 @@ export default function Servicios() {
 
   usePageMeta(
     "Servicios de psicoterapia en Costa Rica | Marcela Zamora",
-    "Conocé las áreas de acompañamiento psicológico de Marcela Zamora: ansiedad, trauma, autoestima, estrés, depresión e imagen corporal."
+    "Conocé las áreas de acompañamiento psicológico de Marcela Zamora: ansiedad, trauma, autoestima, estrés, depresión e imagen corporal.",
+    { schemas: [breadcrumbSchema([{ name: "Servicios", path: "/servicios" }])] }
   );
 
   return (

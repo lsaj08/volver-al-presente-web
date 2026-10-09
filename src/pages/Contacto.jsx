@@ -1,7 +1,8 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import FAQ from "../components/FAQ.jsx";
 import usePageMeta from "../hooks/usePageMeta.js";
-import { WHATSAPP_DEFAULT_TEXT } from "../data/content.js";
+import { breadcrumbSchema } from "../data/seo.js";
+import { LOCATIONS, WHATSAPP_DEFAULT_TEXT } from "../data/content.js";
 import { buildWhatsAppLink, EXTERNAL_LINKS } from "../data/externalLinks.js";
 import "../styles/contacto.css";
 
@@ -75,9 +76,10 @@ export default function Contacto() {
   }, [activeBooking]);
 
   usePageMeta(
-    "Agendar terapia en Costa Rica | Contacto Psicóloga Marcela Zamora",
+    "Agendar terapia en Costa Rica | Marcela Zamora",
     "Contacto para agendar cita psicológica en Costa Rica con Marcela Zamora. WhatsApp y agenda online para iniciar terapia.",
-    { canonicalPath: "/contacto" }
+    { canonicalPath: "/contacto" },
+    { schemas: [breadcrumbSchema([{ name: "Contacto", path: "/contacto" }])] }
   );
 
   return (
@@ -157,10 +159,10 @@ export default function Contacto() {
             <div className="cards2">
               <div className="card locationCard">
                 <div className="locationCard__info">
-                  <div className="locationTitle">Atención Presencial en Heredia</div>
+                  <div className="locationTitle">{LOCATIONS[0].heading}</div>
                   <div className="locationSub">
-                    <span>Barrio Corazón de Jesús, Heredia, Costa Rica</span>
-                    <span>Tree Cowork</span>
+                    <span>{LOCATIONS[0].addressLine}</span>
+                    <span>{LOCATIONS[0].venue}</span>
                   </div>
                   <div className="locationActions">
                     <button
@@ -199,10 +201,10 @@ export default function Contacto() {
 
               <div className="card locationCard">
                 <div className="locationCard__info">
-                  <div className="locationTitle">Atención Presencial en San José</div>
+                  <div className="locationTitle">{LOCATIONS[1].heading}</div>
                   <div className="locationSub">
-                    <span>Barrio González Lahmann, Catedral, San José, Costa Rica</span>
-                    <span>Tree Armonioso</span>
+                    <span>{LOCATIONS[1].addressLine}</span>
+                    <span>{LOCATIONS[1].venue}</span>
                   </div>
                   <div className="locationActions">
                     <button

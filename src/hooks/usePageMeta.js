@@ -16,6 +16,21 @@ function upsertMeta(name, content, attribute = "name") {
   tag.setAttribute("content", content);
 }
 
+function upsertSchema(id, json) {
+  let script = document.getElementById(id);
+  if (!json) {
+    script?.remove();
+    return;
+  }
+  if (!script) {
+    script = document.createElement("script");
+    script.id = id;
+    script.type = "application/ld+json";
+    document.head.appendChild(script);
+  }
+  script.textContent = json;
+}
+
 function upsertCanonical(url) {
   if (!url) return;
   let link = document.querySelector('link[rel="canonical"]');
@@ -36,12 +51,19 @@ export default function usePageMeta(title, description, options = {}) {
     ogDescription = description,
     ogType = "website",
     noIndex = false,
+    // Datos estructurados propios de la página (migas de pan, ficha de servicio).
+    // Se suman a SITE_SCHEMA, que es común a todo el sitio.
+    schemas = [],
   } = options;
   const canonical = canonicalUrl(canonicalPath);
   const robots = noIndex ? "noindex, follow" : "index, follow, max-image-preview:large";
+  const pageSchema = schemas.length ? JSON.stringify(schemas) : "";
 
   if (import.meta.env.SSR && collectMeta) {
-    collectMeta({ title, description, canonical, ogTitle, ogDescription, ogType, robots });
+    collectMeta({
+      title, description, canonical, ogTitle, ogDescription, ogType, robots,
+      schemas,
+    });
   }
 
   useEffect(() => {
@@ -61,16 +83,12 @@ export default function usePageMeta(title, description, options = {}) {
     upsertMeta("twitter:description", ogDescription);
     upsertMeta("twitter:image", SOCIAL_IMAGE);
 
-    let schema = document.getElementById("site-schema");
-    if (!schema) {
-      schema = document.createElement("script");
-      schema.id = "site-schema";
-      schema.type = "application/ld+json";
-      document.head.appendChild(schema);
-    }
-    schema.textContent = JSON.stringify(SITE_SCHEMA);
+    upsertSchema("site-schema", JSON.stringify(SITE_SCHEMA));
+    // El bloque por página se reemplaza en cada navegación y se retira si la
+    // siguiente ruta no aporta datos propios.
+    upsertSchema("page-schema", pageSchema);
 
     upsertCanonical(canonical);
     upsertMeta("og:url", canonical, "property");
-  }, [title, description, canonical, ogTitle, ogDescription, ogType, robots]);
+  }, [title, description, canonical, ogTitle, ogDescription, ogType, robots, pageSchema]);
 }

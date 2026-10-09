@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import usePageMeta from "../hooks/usePageMeta.js";
+import { breadcrumbSchema } from "../data/seo.js";
 import { SITE_MESSAGES, WHATSAPP_DEFAULT_TEXT } from "../data/content.js";
 import { buildWhatsAppLink } from "../data/externalLinks.js";
 import "../styles/internal.css";
@@ -96,8 +97,9 @@ export default function Recursos() {
   );
 
   usePageMeta(
-    "Recursos | Volver al Presente",
-    "Conocé los recursos de bienestar emocional que estamos preparando sobre ansiedad, autocuidado, límites, imagen corporal y estrés."
+    "Recursos de bienestar emocional | Marcela Zamora",
+    "Conocé los recursos de bienestar emocional que estamos preparando sobre ansiedad, autocuidado, límites, imagen corporal y estrés.",
+    { schemas: [breadcrumbSchema([{ name: "Recursos", path: "/recursos" }])] }
   );
 
   return (
