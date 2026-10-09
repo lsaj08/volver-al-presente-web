@@ -5,6 +5,13 @@ import { breadcrumbSchema } from "../data/seo.js";
 import { LOCATIONS, WHATSAPP_DEFAULT_TEXT } from "../data/content.js";
 import { buildWhatsAppLink, EXTERNAL_LINKS } from "../data/externalLinks.js";
 import "../styles/contacto.css";
+import sedeHeredia from "../assets/sede-heredia.jpg";
+import sedeSanJose from "../assets/sede-san-jose.jpg";
+
+const LOCATION_PHOTOS = {
+  heredia: sedeHeredia,
+  sanJose: sedeSanJose,
+};
 
 function WhatsIcon() {
   return (
@@ -157,89 +164,57 @@ export default function Contacto() {
             <div className="sectionLabel">Atención Presencial</div>
 
             <div className="cards2">
-              <div className="card locationCard">
-                <div className="locationCard__info">
-                  <div className="locationTitle">{LOCATIONS[0].heading}</div>
-                  <div className="locationSub">
-                    <span>{LOCATIONS[0].addressLine}</span>
-                    <span>{LOCATIONS[0].venue}</span>
-                  </div>
-                  <div className="locationActions">
-                    <button
-                      className="btn btn-primary small"
-                      type="button"
-                      aria-expanded={activeBooking?.url === EXTERNAL_LINKS.bookingWidgets.heredia}
-                      onClick={() => setActiveBooking({
-                        title: "Agendar atención presencial en Tree Cowork, Heredia",
-                        url: EXTERNAL_LINKS.bookingWidgets.heredia,
-                      })}
-                    >
-                      <CalendarIcon /> Agendar
-                    </button>
-                  </div>
-                  <div className="locationSub">¿Cómo llegar?</div>
-                  <div className="locationActions">
-                    <a
-                      className="btn btn-ghost small"
-                      href={EXTERNAL_LINKS.maps.heredia}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <MapsIcon /> Maps
-                    </a>
-                    <a
-                      className="btn btn-ghost small"
-                      href={EXTERNAL_LINKS.waze.heredia}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <WazeIcon /> Waze
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="card locationCard">
-                <div className="locationCard__info">
-                  <div className="locationTitle">{LOCATIONS[1].heading}</div>
-                  <div className="locationSub">
-                    <span>{LOCATIONS[1].addressLine}</span>
-                    <span>{LOCATIONS[1].venue}</span>
-                  </div>
-                  <div className="locationActions">
-                    <button
-                      className="btn btn-primary small"
-                      type="button"
-                      aria-expanded={activeBooking?.url === EXTERNAL_LINKS.bookingWidgets.sanJose}
-                      onClick={() => setActiveBooking({
-                        title: "Agendar atención presencial en Tree Armonioso, San José",
-                        url: EXTERNAL_LINKS.bookingWidgets.sanJose,
-                      })}
-                    >
-                      <CalendarIcon /> Agendar
-                    </button>
-                  </div>
-                  <div className="locationSub">¿Cómo llegar?</div>
-                  <div className="locationActions">
-                    <a
-                      className="btn btn-ghost small"
-                      href={EXTERNAL_LINKS.maps.sanJose}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <MapsIcon /> Maps
-                    </a>
-                    <a
-                      className="btn btn-ghost small"
-                      href={EXTERNAL_LINKS.waze.sanJose}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <WazeIcon /> Waze
-                    </a>
+              {LOCATIONS.map((location) => (
+                <div className="card locationCard locationCard--withPhoto" key={location.id}>
+                  <img
+                    className="locationCard__photo"
+                    src={LOCATION_PHOTOS[location.id]}
+                    alt={location.photoAlt}
+                    width="104"
+                    height="94"
+                    loading="lazy"
+                  />
+                  <div className="locationCard__info">
+                    <div className="locationTitle">{location.heading}</div>
+                    <div className="locationSub">
+                      <span>{location.addressLine}</span>
+                      <span>{location.venue}</span>
+                    </div>
+                    <div className="locationActions">
+                      <button
+                        className="btn btn-primary small"
+                        type="button"
+                        aria-expanded={activeBooking?.url === EXTERNAL_LINKS.bookingWidgets[location.id]}
+                        onClick={() => setActiveBooking({
+                          title: `Agendar atención presencial en ${location.venue}, ${location.city}`,
+                          url: EXTERNAL_LINKS.bookingWidgets[location.id],
+                        })}
+                      >
+                        <CalendarIcon /> Agendar
+                      </button>
+                    </div>
+                    <div className="locationSub">¿Cómo llegar?</div>
+                    <div className="locationActions">
+                      <a
+                        className="btn btn-ghost small"
+                        href={EXTERNAL_LINKS.maps[location.id]}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <MapsIcon /> Maps
+                      </a>
+                      <a
+                        className="btn btn-ghost small"
+                        href={EXTERNAL_LINKS.waze[location.id]}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <WazeIcon /> Waze
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
 
             <div className="card faqCard">

@@ -19,6 +19,7 @@ export const SITE_URL = "https://psicomarcelazamora.com";
 export const LOCATIONS = [
   {
     id: "heredia",
+    photoAlt: "Entrada de Tree Cowork, la sede de atención presencial en Heredia",
     name: "Volver al Presente — Tree Cowork, Heredia",
     venue: "Tree Cowork",
     heading: "Atención Presencial en Heredia",
@@ -36,6 +37,7 @@ export const LOCATIONS = [
   },
   {
     id: "sanJose",
+    photoAlt: "Fachada de Tree Armonioso, la sede de atención presencial en San José",
     name: "Volver al Presente — Tree Armonioso, San José",
     venue: "Tree Armonioso",
     heading: "Atención Presencial en San José",

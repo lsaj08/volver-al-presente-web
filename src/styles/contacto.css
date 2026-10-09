@@ -215,6 +215,18 @@
 /* Columna de contacto centrada, con ancho de lectura limitado en escritorio. */
 .container.contactContent{ max-width: 820px; margin-inline: auto; }
 .contactContent .locationCard{ grid-template-columns: minmax(0, 1fr); }
+/* Foto de sede: mismo formato que la ilustración de la tarjeta online (104x94, radio 16px). */
+.contactContent .locationCard--withPhoto{ grid-template-columns: auto minmax(0, 1fr); gap: 16px; }
+.locationCard__photo{
+  width: 104px;
+  height: 94px;
+  object-fit: cover;
+  border-radius: 16px;
+  align-self: start;
+}
+@media (max-width: 560px){
+  .contactContent .locationCard--withPhoto{ grid-template-columns: 1fr; }
+}
 .contactContent .locationActions + .locationSub{ margin-top: 16px; }
 .sectionTitle{ margin: 0; font-size: 22px; }
 
