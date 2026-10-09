@@ -63,7 +63,21 @@
   .termsPolicy__icon{ width: 58px; margin-inline: auto; }
   .termsPolicy p, .termsPolicy li{ font-size: 14px; line-height: 1.65; }
 }
-/* Variante EAP: tarjetas sin icono, con subtítulo y texto alineado a la izquierda. */
+/* Variante EAP: una sola caja con el formato del documento de EAP LatinA. */
 .termsHeading p{ margin: 14px auto 0; max-width: 640px; font-family: 'Atma', sans-serif; font-size: clamp(19px, 2.4vw, 24px); color: var(--purple); }
-.termsPolicy--plain{ grid-template-columns: minmax(0, 1fr); }
-.termsPolicy--plain p + p, .termsPolicy--plain p + ul{ margin-top: 12px; }
+.eapDoc{ display: block; padding: 36px 40px 28px; }
+.eapDoc h2{ font-family: 'Montserrat', sans-serif; font-size: 17px; font-weight: 700; text-transform: uppercase; color: #1a9e8f; margin-bottom: 24px; }
+.eapDoc h3{ margin: 28px 0 8px; font-family: 'Montserrat', sans-serif; font-size: 17px; font-weight: 700; color: #1a9e8f; }
+.termsPolicy.eapDoc p{ text-align: left; }
+.eapDoc ul{ margin: 14px 0 22px; padding-left: 28px; }
+.eapDoc li + li{ margin-top: 6px; }
+.eapDoc__dashes{ list-style: "-   "; }
+.eapDoc__note{ font-style: italic; }
+.eapDoc__note + .eapDoc__note{ margin-top: 18px; }
+.eapDoc a{ color: #1a6fd1; text-decoration: underline; }
+.eapDoc__logo{ display: block; width: 180px; height: auto; margin: 28px 0 0 auto; }
+@media (max-width: 640px){
+  .eapDoc{ padding: 22px 18px; }
+  .eapDoc ul{ padding-left: 18px; }
+  .eapDoc__logo{ width: 140px; }
+}
