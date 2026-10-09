@@ -170,8 +170,8 @@ export default function Contacto() {
                     className="locationCard__photo"
                     src={LOCATION_PHOTOS[location.id]}
                     alt={location.photoAlt}
-                    width="104"
-                    height="94"
+                    width="180"
+                    height="163"
                     loading="lazy"
                   />
                   <div className="locationCard__info">
@@ -213,6 +213,13 @@ export default function Contacto() {
                       </a>
                     </div>
                   </div>
+                  <iframe
+                    className="locationCard__miniMap"
+                    src={EXTERNAL_LINKS.mapsEmbed[location.id]}
+                    title={`Mapa de ${location.venue}, ${location.city}`}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
                 </div>
               ))}
             </div>

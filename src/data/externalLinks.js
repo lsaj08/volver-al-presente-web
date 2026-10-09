@@ -17,6 +17,13 @@ export const EXTERNAL_LINKS = {
   phone: `tel:${CONTACT.phoneTel}`,
   maps: byId("mapsUrl"),
   waze: byId("wazeUrl"),
+  // Mini mapa embebido (sin API key) a partir de las coordenadas de cada sede.
+  mapsEmbed: Object.fromEntries(
+    LOCATIONS.map((location) => [
+      location.id,
+      `https://maps.google.com/maps?q=${location.latitude},${location.longitude}&z=16&output=embed`,
+    ])
+  ),
 };
 
 export function buildWhatsAppLink(message = WHATSAPP_DEFAULT_TEXT) {
