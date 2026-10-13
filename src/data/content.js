@@ -4,7 +4,7 @@ export const CONTACT = {
   phoneDisplay: "+506 8565 0659",
   phoneTel: "+50685650659",
   waNumber: "50685650659",
-  bookingUrl: "https://app.hulivida.com/citas/marcela-zamora-arrieta",
+  bookingUrl: "https://api.psicoceo.com/widget/group/vtrK8EQndYn4GLXmSxQM",
 };
 
 export const CANVA_CATALOG_URL = "PENDIENTE_AGREGAR_LINK_DE_CANVA";
@@ -134,7 +134,7 @@ export const SITE_MESSAGES = {
   notFoundTitle: "Página no encontrada",
   notFoundDescription: "La página que buscás no existe o cambió de dirección.",
   backHome: "Volver al inicio",
-  privacyTracking: "Este sitio utiliza PsicoCEO para registrar visitas y tiempo de navegación mediante identificadores de sesión. Al usar WhatsApp o la agenda de HuliVida, la información que compartís se procesa en esos servicios.",
+  privacyTracking: "Este sitio utiliza PsicoCEO para registrar visitas y tiempo de navegación mediante identificadores de sesión. Al usar WhatsApp o la agenda de PsicoCEO, la información que compartís se procesa en esos servicios.",
 };
 
 export const WHATSAPP_DEFAULT_TEXT =
